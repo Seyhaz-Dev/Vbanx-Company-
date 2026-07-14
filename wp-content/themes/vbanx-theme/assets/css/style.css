@@ -1,0 +1,339 @@
+/* ==========================================================================
+   RESET & CUSTOM PROPERTIES
+   ========================================================================== */
+
+:root {
+    /* Colors */
+    --navy-950: #08111f;
+    --navy-700: #123b7a;
+    --navy-text: #0f172a;
+    --navy-pill: rgba(46, 45, 174, 1);
+    --raksa-footer: rgba(0, 51, 153, 1);
+    --blue-accent: #2563eb;
+    --orange-600: #f97316;
+    --gray-200: #e5e7eb;
+    
+    /* Layout & Typography */
+    --radius-pill: 999px;
+    --radius-md: 12px;
+    --font-display: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    --container-max-width: 1200px;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-display);
+    color: var(--navy-text);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Global Layout Container */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: #ffffff;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+/* Logo Setup */
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.site-logo .mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--navy-700), var(--blue-accent));
+    display: flex;
+    align-items: center;
+    list-style: none;;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+
+.site-logo .mark {
+    width: 100%;
+}
+
+.site-logo .mark-1{
+    width: 70%;
+    border-radius: 30px;
+}
+.site-logo .logo-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+
+/* Desktop Navigation */
+.primary-nav {
+    background: var(--navy-pill);
+    border-radius: var(--radius-pill);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.primary-nav a {
+    color: #dbe1f5;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+.primary-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Keeps items inline if you wrap them in <li> */
+    align-items: center;
+    gap: 2px;
+}
+
+.primary-nav li {
+    list-style: none;
+    display: inline-block;
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus-visible,
+.primary-nav a.is-active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    outline: none;
+}
+
+/* CTA & Utilities */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--orange-600);
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    transition: var(--transition-smooth);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--navy-pill);
+}
+
+.header-cta .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+}
+
+/* Mobile Menu Trigger */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--navy-text);
+    margin: 5px auto;
+    transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.site-footer {
+    background: var(--raksa-footer);
+    color: #9aa6c9;
+    padding: 70px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr 1.2fr;
+    gap: 40px 32px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand .site-logo .word,
+.footer-brand .site-logo .tag {
+    color: #ffffff;
+}
+
+.footer-brand p {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 260px;
+}
+
+.footer-col h5 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+}
+
+.footer-col a {
+    font-size: 14px;
+    color: #9aa6c9;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+    padding-left: 2px; /* Subtle modern interaction hint */
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-socials a:hover {
+    background: #ffffff;
+    color: var(--navy-950);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-bottom a {
+    color: white;
+}
+
+
+.footer-bottom-links a:hover {
+    color: #b80000;
+}
+
+
+
+/* Medium Screens / Small Desktops */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+}
+
+/* Mobile Layout Structure (Navigation UI shifts here) */
+@media (max-width: 920px) {
+    .primary-nav {
+        position: fixed;
+        inset: 75px 16px auto 16px;
+        flex-direction: column;
+        background: var(--navy-pill);
+        padding: 16px;
+        border-radius: var(--radius-md);
+        box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+        
+        /* Smooth state transitions */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: var(--transition-smooth);
+    }
+
+    .primary-nav.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .primary-nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Target standard state vs active toggle state */
+    .nav-toggle.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.is-active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg)}
