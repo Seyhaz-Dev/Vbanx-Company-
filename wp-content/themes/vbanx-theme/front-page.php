@@ -61,7 +61,7 @@ $vbanx_partner_logos = array(
     --dark-navy-border:rgba(255,255,255,0.18);
 
     --cyan:#22d3ee;
-    --orange:#F5A623;
+    --orange:#f2932e;
     --white:#ffffff;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
