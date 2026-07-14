@@ -1,0 +1,27 @@
+:root{
+    --bg:#ffffff;
+    --bg-soft:#f6f8fc;
+    --surface:#ffffff;
+    --border-soft:#e4e8f2;
+    --ink:#101828;
+    --ink-soft:#5b6472;
+    --text-dim:#5b6472;
+
+    --blue-accent:#01319B;
+    --blue-bright:#2f7cf6;
+    --blue-soft:#eaf1ff;
+    --navy-700:#0a1330;
+    --navy-800:#ffffff;
+    --navy-900:#f6f8fc;
+    --navy-950:#ffffff;
+
+    --dark-navy-1:#0a1330;
+    --dark-navy-2:#132a63;
+    --dark-navy-ink:#ffffff;
+    --dark-navy-ink-soft:rgba(255,255,255,0.72);
+    --dark-navy-border:rgba(255,255,255,0.18);
+
+    --cyan:#22d3ee;
+    --orange:#f2932e;
+    --white:#ffffff;
+  }
