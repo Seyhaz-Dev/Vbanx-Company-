@@ -44,4 +44,21 @@ function vbanx_enqueue_assets() {
         true
     );
 }
+<<<<<<< HEAD
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
+=======
+
+add_action('wp_enqueue_scripts','vbanx_enqueue');
+
+// Enqueue Montserrat font from Google Fonts
+
+function mytheme_enqueue_montserrat() {
+    wp_enqueue_style(
+        'montserrat-font',
+        'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap',
+        [],
+        null
+    );
+}
+add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );
+>>>>>>> ae15f15b9748f3fb0a60abcc3696946480a1daa8

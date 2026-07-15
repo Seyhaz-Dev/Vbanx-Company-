@@ -1,16 +1,16 @@
 # Environment
-wp-config.php
+wordpress/wp-config.php
 .env
 
 # Uploads
-wp-content/uploads/
+wordpress/wp-content/uploads/
 
 # Cache
-wp-content/cache/
-wp-content/upgrade/
+wordpress/wp-content/cache/
+wordpress/wp-content/upgrade/
 
 # Debug logs
-wp-content/debug.log
+wordpress/wp-content/debug.log
 debug.log
 
 # Dependencies
@@ -27,15 +27,11 @@ vendor/
 # OS
 .DS_Store
 Thumbs.db
-wp-admin/
-wp-includes/
-wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php`
+
+# WordPress core - ignore everything except our theme
+/*
+!wp-content/
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/vbanx-theme/
