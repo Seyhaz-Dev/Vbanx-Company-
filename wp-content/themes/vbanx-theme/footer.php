@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 				<div class="footer-brand">
 					      <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+<<<<<<< HEAD
         <div class="site-logo">
     <?php 
     if ( has_custom_logo() ) {
@@ -38,6 +39,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     </a>
 
 </div>
+=======
+    <span class="mark-1">
+        <img src="http://localhost/wordpress/wp-content/uploads/2026/07/logo1.jpeg" alt="<?php bloginfo( 'name' ); ?> Logo" class="logo-img">
+    </span>
+   
+</a>
+					<p>Empowering financial institutions with innovative digital banking solutions for a smarter future.</p>
+					<div class="footer-socials">
+						<a href="#" aria-label="Facebook">f</a>
+						<a href="#" aria-label="Instagram">ig</a>
+						<a href="#" aria-label="X">x</a>
+						<a href="#" aria-label="Discord">dc</a>
+					</div>
+>>>>>>> f1824b0 (first commit)
 				</div>
 
 				<div class="footer-col">

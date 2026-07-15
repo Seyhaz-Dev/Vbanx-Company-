@@ -10,9 +10,15 @@
     --navy-pill: rgba(46, 45, 174, 1);
     --raksa-footer: rgba(0, 51, 153, 1);
     --blue-accent: #2563eb;
+<<<<<<< HEAD
     --orange-600: rgba(245, 166, 35, 1);
     --gray-200: #e5e7eb;
 
+=======
+    --orange-600: #f97316;
+    --gray-200: #e5e7eb;
+    
+>>>>>>> f1824b0 (first commit)
     /* Layout & Typography */
     --radius-pill: 999px;
     --radius-md: 12px;
@@ -21,9 +27,13 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+<<<<<<< HEAD
 *,
 *::before,
 *::after {
+=======
+*, *::before, *::after {
+>>>>>>> f1824b0 (first commit)
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -69,7 +79,10 @@ body {
 /* Logo Setup */
 .site-logo {
     display: flex;
+<<<<<<< HEAD
     margin-left: -8px;
+=======
+>>>>>>> f1824b0 (first commit)
     align-items: center;
     gap: 10px;
     text-decoration: none;
@@ -82,8 +95,12 @@ body {
     background: linear-gradient(135deg, var(--navy-700), var(--blue-accent));
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     list-style: none;
     ;
+=======
+    list-style: none;;
+>>>>>>> f1824b0 (first commit)
     justify-content: center;
     color: #ffffff;
     font-weight: 800;
@@ -95,6 +112,7 @@ body {
     width: 100%;
 }
 
+<<<<<<< HEAD
 .site-logo .mark-1 {
     width: 70%;
     border-radius: 30px;
@@ -102,6 +120,14 @@ body {
 
 .site-logo .logo-img {
     width: 140px;
+=======
+.site-logo .mark-1{
+    width: 70%;
+    border-radius: 30px;
+}
+.site-logo .logo-img {
+    width: 100%;
+>>>>>>> f1824b0 (first commit)
     height: 100%;
     display: flex;
 }
@@ -126,13 +152,20 @@ body {
     text-decoration: none;
     transition: var(--transition-smooth);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f1824b0 (first commit)
 .primary-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     display: flex;
     /* Keeps items inline if you wrap them in <li> */
+=======
+    display: flex; /* Keeps items inline if you wrap them in <li> */
+>>>>>>> f1824b0 (first commit)
     align-items: center;
     gap: 2px;
 }
@@ -142,7 +175,17 @@ body {
     display: inline-block;
 }
 
+<<<<<<< HEAD
 
+=======
+.primary-nav a:hover,
+.primary-nav a:focus-visible,
+.primary-nav a.is-active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    outline: none;
+}
+>>>>>>> f1824b0 (first commit)
 
 /* CTA & Utilities */
 .btn {
@@ -212,7 +255,10 @@ body {
 .footer-brand p {
     margin-top: 16px;
     font-size: 14px;
+<<<<<<< HEAD
     color: #FFFFFF;
+=======
+>>>>>>> f1824b0 (first commit)
     line-height: 1.6;
     max-width: 260px;
 }
@@ -229,22 +275,33 @@ body {
 .footer-col ul {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     color: #ffffffb4;
+=======
+>>>>>>> f1824b0 (first commit)
     gap: 12px;
     list-style: none;
 }
 
 .footer-col a {
     font-size: 14px;
+<<<<<<< HEAD
     color: #ffffffb4;
+=======
+    color: #9aa6c9;
+>>>>>>> f1824b0 (first commit)
     text-decoration: none;
     transition: var(--transition-smooth);
 }
 
 .footer-col a:hover {
     color: #ffffff;
+<<<<<<< HEAD
     padding-left: 2px;
     /* Subtle modern interaction hint */
+=======
+    padding-left: 2px; /* Subtle modern interaction hint */
+>>>>>>> f1824b0 (first commit)
 }
 
 .footer-socials {
@@ -293,6 +350,7 @@ body {
 }
 
 
+<<<<<<< HEAD
 .primary-nav {
     background: var(--navy-pill);
     border-radius: var(--radius-pill);
@@ -482,16 +540,36 @@ body {
    MOBILE — one breakpoint, one behavior
    ========================================================================== */
 
+=======
+
+/* Medium Screens / Small Desktops */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+}
+
+/* Mobile Layout Structure (Navigation UI shifts here) */
+>>>>>>> f1824b0 (first commit)
 @media (max-width: 920px) {
     .primary-nav {
         position: fixed;
         inset: 75px 16px auto 16px;
         flex-direction: column;
+<<<<<<< HEAD
         align-items: stretch;
         padding: 16px;
         border-radius: var(--radius-md);
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 
+=======
+        background: var(--navy-pill);
+        padding: 16px;
+        border-radius: var(--radius-md);
+        box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+        
+        /* Smooth state transitions */
+>>>>>>> f1824b0 (first commit)
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
@@ -506,6 +584,7 @@ body {
         pointer-events: auto;
     }
 
+<<<<<<< HEAD
     .primary-nav ul {
         flex-direction: column;
         align-items: stretch;
@@ -515,6 +594,11 @@ body {
     .primary-nav a {
         width: 100%;
         text-align: left;
+=======
+    .primary-nav a {
+        width: 100%;
+        text-align: center;
+>>>>>>> f1824b0 (first commit)
         padding: 12px;
     }
 
@@ -522,6 +606,7 @@ body {
         display: block;
     }
 
+<<<<<<< HEAD
     /* dropdown becomes an inline accordion — no hover on touch */
     .primary-nav .menu-item-has-children::after {
         display: none;
@@ -1018,3 +1103,9 @@ body {
 
 
     }
+=======
+    /* Target standard state vs active toggle state */
+    .nav-toggle.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.is-active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg)}
+>>>>>>> f1824b0 (first commit)
