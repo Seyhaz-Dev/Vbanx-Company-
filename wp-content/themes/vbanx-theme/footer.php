@@ -10,18 +10,34 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 				<div class="footer-brand">
 					      <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-    <span class="mark-1">
-        <img src="http://localhost/wordpress/wp-content/uploads/2026/07/logo1.jpeg" alt="<?php bloginfo( 'name' ); ?> Logo" class="logo-img">
-    </span>
-   
+        <div class="site-logo">
+    <?php 
+    if ( has_custom_logo() ) {
+        
+        the_custom_logo();
+    } else {
+        
+        $fallback_logo_url = 'http://localhost/wordpress/wp-content/uploads/2026/07/logo1.jpeg';
+        ?>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link">
+            <img src="<?php echo esc_url( $fallback_logo_url ); ?>" alt="<?php bloginfo( 'name' ); ?> Logo" class="logo-img">
+        </a>
+        <?php
+    }
+    ?>
+</div>
 </a>
 					<p>Empowering financial institutions with innovative digital banking solutions for a smarter future.</p>
 					<div class="footer-socials">
-						<a href="#" aria-label="Facebook">f</a>
-						<a href="#" aria-label="Instagram">ig</a>
-						<a href="#" aria-label="X">x</a>
-						<a href="#" aria-label="Discord">dc</a>
-					</div>
+    <a href="#" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="#" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+</div>
 				</div>
 
 				<div class="footer-col">
