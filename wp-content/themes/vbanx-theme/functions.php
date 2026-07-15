@@ -1,5 +1,6 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**
  * VBANX theme functions and definitions
  */
@@ -49,6 +50,8 @@ function vbanx_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
 
 =======
+=======
+>>>>>>> a613512 (first commit)
 
 function vbanx_theme_setup() {
 
@@ -76,7 +79,10 @@ function vbanx_enqueue(){
 }
 
 add_action('wp_enqueue_scripts','vbanx_enqueue');
+<<<<<<< HEAD
 >>>>>>> f1824b0 (first commit)
+=======
+>>>>>>> a613512 (first commit)
 
 // Enqueue Montserrat font from Google Fonts
 
@@ -89,8 +95,12 @@ function mytheme_enqueue_montserrat() {
     );
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );
 
 =======
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );
 >>>>>>> f1824b0 (first commit)
+=======
+add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );
+>>>>>>> a613512 (first commit)

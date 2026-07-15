@@ -11,6 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				<div class="footer-brand">
 					      <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div class="site-logo">
     <?php 
     if ( has_custom_logo() ) {
@@ -40,6 +41,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 </div>
 =======
+=======
+>>>>>>> a613512 (first commit)
     <span class="mark-1">
         <img src="http://localhost/wordpress/wp-content/uploads/2026/07/logo1.jpeg" alt="<?php bloginfo( 'name' ); ?> Logo" class="logo-img">
     </span>
@@ -52,7 +55,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 						<a href="#" aria-label="X">x</a>
 						<a href="#" aria-label="Discord">dc</a>
 					</div>
+<<<<<<< HEAD
 >>>>>>> f1824b0 (first commit)
+=======
+>>>>>>> a613512 (first commit)
 				</div>
 
 				<div class="footer-col">

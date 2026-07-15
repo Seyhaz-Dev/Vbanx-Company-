@@ -11,16 +11,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 =======
 >>>>>>> f1824b0 (first commit)
+=======
+>>>>>>> a613512 (first commit)
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
 <header class="site-header">
     <div class="container">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div class="site-logo">
             <?php 
@@ -53,6 +57,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             </nav>
         </div>
 =======
+=======
+>>>>>>> a613512 (first commit)
        <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
     <span class="mark">
         <img src="http://localhost/wordpress/wp-content/uploads/2026/07/hikhik.jpeg" alt="<?php bloginfo( 'name' ); ?> Logo" class="logo-img">
@@ -73,12 +79,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             }
             ?>
         </nav>
+<<<<<<< HEAD
 >>>>>>> f1824b0 (first commit)
+=======
+>>>>>>> a613512 (first commit)
 
         <div class="header-cta">
             <a href="#contact" class="btn btn-primary">Request Demo &nearr;</a>
         </div>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
             <span></span>
@@ -157,9 +167,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 </html>
 =======
+=======
+>>>>>>> a613512 (first commit)
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </div>
+<<<<<<< HEAD
 </header>
 >>>>>>> f1824b0 (first commit)
+=======
+</header>
+>>>>>>> a613512 (first commit)

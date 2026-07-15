@@ -14,6 +14,7 @@
  *   /wp-content/themes/your-theme/assets/logo-1.svg (etc.)
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 get_header(); ?>
 =======
 
@@ -37,6 +38,9 @@ get_header(); ?>
 
 
 >>>>>>> f1824b0 (first commit)
+=======
+
+>>>>>>> a613512 (first commit)
 $theme_uri = esc_url( get_template_directory_uri() );
 
 
@@ -685,10 +689,14 @@ $vbanx_partner_logos = array(
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
      <form class="contact-right" onsubmit="event.preventDefault();" method="post">
 =======
      <form class="contact-right" method="post" action="">
 >>>>>>> f1824b0 (first commit)
+=======
+     <form class="contact-right" onsubmit="event.preventDefault();" method="post">
+>>>>>>> a613512 (first commit)
         <?php wp_nonce_field( 'vbanx_contact_form', 'vbanx_contact_nonce' ); ?>
         <div class="form-row">
           <div class="form-field"><label>First Name</label><input type="text" name="first_name" placeholder="John"></div>
