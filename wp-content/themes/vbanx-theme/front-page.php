@@ -33,6 +33,7 @@
 
 
 
+get_header(); ?>
 $theme_uri = esc_url( get_template_directory_uri() );
 
 
