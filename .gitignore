@@ -2,8 +2,7 @@
 wordpress/wp-config.php
 .env
 
-# Uploads
-wordpress/wp-content/uploads/
+
 
 # Cache
 wordpress/wp-content/cache/
@@ -31,7 +30,7 @@ Thumbs.db
 # WordPress core - ignore everything except our theme
 /*
 !wp-content/
-wp-content/*
+!wp-content/uploads/
 !wp-content/themes/
 wp-content/themes/*
 !wp-content/themes/vbanx-theme/
