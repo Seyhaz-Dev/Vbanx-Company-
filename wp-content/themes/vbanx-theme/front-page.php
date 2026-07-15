@@ -13,6 +13,7 @@
  * Put the partner logo SVGs inside your theme at:
  *   /wp-content/themes/your-theme/assets/logo-1.svg (etc.)
  */
+get_header();
 
 $theme_uri = esc_url( get_template_directory_uri() );
 
@@ -916,4 +917,6 @@ $vbanx_partner_logos = array(
   groups.forEach(list => list.forEach(el => io.observe(el)));
 })();
 </script>
-
+</script>
+<?php
+get_footer();
