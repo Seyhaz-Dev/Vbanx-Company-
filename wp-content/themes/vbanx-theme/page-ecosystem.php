@@ -90,8 +90,11 @@ get_header();
 
 
 <!-- ================= CIFRS INTEGRATION ENGINE ================= -->
+<!-- "data-block-grid-reverse" removed: the image <div> is already first
+     in the HTML below, so plain row order already puts image-left /
+     text-right. Adding reverse on top of that flipped it backwards. -->
 <section class="data-block data-block-highlight">
-  <div class="container data-block-grid data-block-grid-reverse">
+  <div class="container data-block-grid">
 
     <?php $cifrs_diagram = get_field('cifrs_diagram'); if ($cifrs_diagram): ?>
       <div class="data-block-image">
@@ -149,8 +152,9 @@ get_header();
 
 
 <!-- ================= ECOSYSTEM GATEWAY ================= -->
+<!-- "data-block-grid-reverse" removed here too, same reason as CIFRS above. -->
 <section class="data-block data-block-highlight">
-  <div class="container data-block-grid data-block-grid-reverse">
+  <div class="container data-block-grid">
     <?php $img = get_field('gateway_diagram'); if ($img): ?>
       <div class="data-block-image">
         <?php if (is_array($img)): ?>
@@ -203,7 +207,36 @@ get_header();
   </div>
 </section>
 
+<!-- ================= ODOO ERP INTEGRATION ================= -->
+<section class="data-block data-block-highlight">
 
+
+  <div class="container data-block-grid">
+
+      <?php $img = get_field('odoo_diagram'); if ($img): ?>
+      <div class="data-block-image">
+        <?php if (is_array($img)): ?>
+          <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+        <?php else: ?>
+          <img src="<?php echo esc_url($img); ?>" alt="Odoo ERP Diagram">
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
+    <div class="data-block-text">
+      <span class="badge-text"><?php echo esc_html(get_field('odoo_eyebrow')); ?></span>
+      <h2><?php echo esc_html(get_field('odoo_title')); ?></h2>
+      <p><?php echo esc_html(get_field('odoo_description')); ?></p>
+      <ul class="check-list">
+        <?php
+        $items = array_filter(array_map('trim', explode("\n", get_field('odoo_checklist'))));
+        foreach ($items as $item): ?>
+          <li><span class="check-icon">✓</span><?php echo esc_html($item); ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
 
 </main>

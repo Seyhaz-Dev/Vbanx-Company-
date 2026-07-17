@@ -1315,7 +1315,7 @@ body {
 
 .data-block-image img {
     width: 100%;
-    height: auto;
+    height: 350px;
     display: block;
     border-radius: 10px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
@@ -1366,7 +1366,8 @@ body {
 }
 
 .check-icon {
-    background: #0b5cff;
+    background: #002870;
+    
     color: white;
     width: 20px;
     height: 20px;
