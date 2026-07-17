@@ -947,9 +947,9 @@ body {
         flex-direction: column;
         width: 100%;
         gap: 5px;
->>>>>>> 92e41a5d7931743067d75b3b3044cad05519fbe4
 
-    }
+
+    
 
 
     /* Tablet */
@@ -1083,7 +1083,7 @@ body {
         gap: 35px;
 
         }
-=======
+
     .primary-nav li {
         width: 100%;
     }
@@ -1828,4 +1828,4 @@ body {
         font-size: 14px;
     }
 }
-
+    
