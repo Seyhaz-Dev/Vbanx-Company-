@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: VBANX Landing (No Header/Footer)
+ * Template Name: Home Page
  *
  * A standalone WordPress page template.
  * On purpose this file does NOT call get_header() or get_footer() —
@@ -17,433 +17,35 @@ get_header();
 
 $theme_uri = esc_url( get_template_directory_uri() );
 
+$vbanx_partner_logos = array();
+$partner_alts = array( 'CMA', 'AC', 'CBC', 'PMTK', 'PCG', 'SEC', 'CAFT', 'BNI', 'ACC', 'TCG', 'NTT DATA', 'KOSIGN' );
 
-$vbanx_partner_logos = array(
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners1.png', 'alt' => 'CMA' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners2.png', 'alt' => 'AC' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners3.png', 'alt' => 'CBC' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners4.png', 'alt' => 'PMTK' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners5.png', 'alt' => 'PCG' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners6.jpeg', 'alt' => 'SEC' ),
-  array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners7.jpg', 'alt' => 'CAFT' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners8.png', 'alt' => 'BNI' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners9.png', 'alt' => 'ACC' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners10.png', 'alt' => 'TCG' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners11.png', 'alt' => 'NTT DATA' ),
-	array( 'src' => 'http://localhost/vbanx-project/wp-content/uploads/2026/07/partners12.png', 'alt' => 'KOSIGN' ),
-);
+for ( $i = 1; $i <= 12; $i++ ) {
+	$url = get_field( "partner_logo_{$i}" );
+	if ( $url ) {
+		$vbanx_partner_logos[] = array(
+			'src' => $url,
+			'alt' => isset( $partner_alts[ $i - 1 ] ) ? $partner_alts[ $i - 1 ] : 'Partner logo',
+		);
+	}
+}
 
 
 ?>
 
-<style>
-  :root{
-    /* ---- Clean light palette ---- */
-    --bg:#ffffff;
-    --bg-soft:#f6f8fc;
-    --surface:#ffffff;
-    --border-soft:#e4e8f2;
-    --ink:#101828;
-    --ink-soft:#5b6472;
-    --text-dim:#5b6472;
-
-    --blue-accent:#01319B;
-    --blue-bright:#2f7cf6;
-    --blue-soft:#eaf1ff;
-    --navy-700:#0a1330;
-    --navy-800:#ffffff;
-    --navy-900:#f6f8fc;
-    --navy-950:#ffffff;
-
-    --dark-navy-1:#0a1330;
-    --dark-navy-2:#132a63;
-    --dark-navy-ink:#ffffff;
-    --dark-navy-ink-soft:rgba(255,255,255,0.72);
-    --dark-navy-border:rgba(255,255,255,0.18);
-
-    --cyan:#22d3ee;
-    --orange:#f2932e;
-    --white:#ffffff;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    overflow-x:hidden;
-  }
-  a{text-decoration:none;color:inherit;}
-
-  .cta-btn{
-    background:var(--orange);
-    color:#241300;
-    font-weight:700;
-    font-size:14px;
-    padding:12px 22px;
-    border-radius:999px;
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    box-shadow:0 4px 14px rgba(247,165,30,0.20);
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(247,165,30,0.30);}
-
-  /* ---------- hero ---------- */
-  .hero{
-    position:relative;
-    background:linear-gradient(135deg, var(--dark-navy-1) 0%, var(--dark-navy-2) 100%);
-    overflow:hidden;
-  }
-  .hero-inner{
-    position:relative;
-    display:grid;
-    grid-template-columns:1.05fr 1fr;
-    align-items:center;
-    padding:80px 60px 70px;
-    max-width:1400px;
-    margin:0 auto;
-    gap:20px;
-  }
-  .hero-copy{position:relative;z-index:2;}
-  .badge{
-    display:inline-block;
-    font-size:12px;
-    font-weight:600;
-    color:var(--cyan);
-    background:rgba(34,211,238,0.10);
-    border:1px solid rgba(34,211,238,0.30);
-    padding:6px 14px;
-    border-radius:999px;
-    margin-bottom:22px;
-  }
-  h1{
-    font-size:44px;
-    line-height:1.15;
-    font-weight:700;
-    letter-spacing:-0.5px;
-    margin-bottom:22px;
-    color:var(--dark-navy-ink);
-  }
-  h1 .accent{color:var(--orange);}
-  .hero-desc{
-    color:var(--dark-navy-ink-soft);
-    font-size:15.5px;
-    line-height:1.7;
-    max-width:480px;
-    margin-bottom:34px;
-  }
-  .hero-actions{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    margin-bottom:48px;
-  }
-  .btn-outline{
-    border:1px solid var(--dark-navy-border);
-    color:var(--dark-navy-ink);
-    font-weight:600;
-    font-size:14px;
-    padding:13px 24px;
-    border-radius:999px;
-    transition:background .2s ease, border-color .2s ease;
-  }
-  .btn-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.35);}
-
-  .stats{
-    display:flex;
-    gap:44px;
-  }
-  .stat-num{font-size:22px;font-weight:700;color:var(--dark-navy-ink);}
-  .stat-label{font-size:12.5px;color:var(--dark-navy-ink-soft);max-width:120px;margin-top:4px;line-height:1.4;}
-
-  /* ---------- globe ---------- */
-  .globe-wrap{
-    position:relative;
-    z-index:1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:520px;
-  }
-  .globe-glow{
-    position:absolute;
-    width:480px;height:480px;
-    border-radius:50%;
-    background:radial-gradient(circle at 45% 40%, rgba(34,211,238,0.20), rgba(255,255,255,0) 70%);
-    filter:blur(10px);
-  }
-  canvas#globeCanvas{
-    position:relative;
-    z-index:2;
-  }
-
-  /* ---------- partners ---------- */
-  .partners-section{
-    background:var(--white);
-    padding:30px 0 34px;
-    border-top:1px solid var(--border-soft);
-    border-bottom:1px solid var(--border-soft);
-  }
-  .partners-inner{
-    max-width:1400px;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    gap:36px;
-    padding:0 60px;
-  }
-  .partners-label{
-    color:var(--blue-accent);
-    font-weight:700;
-    font-size:14px;
-    white-space:nowrap;
-    position:relative;
-    padding-right:24px;
-    border-right:2px solid var(--orange);
-  }
-  .partners-label span{display:block;font-weight:400;color:#9aa5b8;font-size:12px;margin-top:2px;}
-
-  .marquee-mask{
-    flex:1;
-    overflow:hidden;
-    -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
-    mask-image:linear-gradient(90deg, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
-  }
-  .marquee-track{
-    display:flex;
-    align-items:center;
-    gap:64px;
-    width:max-content;
-    animation:scrollLogos 22s linear infinite;
-  }
-  .marquee-mask:hover .marquee-track{animation-play-state:paused;}
-  .partner-logo{
-    height:48px;
-    display:flex;
-    align-items:center;
-    flex-shrink:0;
-  }
-  .partner-logo img{
-    height:100%;
-    width:auto;
-    display:block;
-    object-fit:contain;
-    opacity:0.85;
-    filter:grayscale(10%);
-    transition:opacity .2s ease, filter .2s ease;
-  }
-  .partner-logo img:hover{opacity:1;filter:grayscale(0%);}
-
-  @keyframes scrollLogos{
-    from{transform:translateX(0);}
-    to{transform:translateX(-50%);}
-  }
-
-  /* ---------- shared section layout ---------- */
-  .section{padding:90px 60px;}
-  .section-tint{background:var(--bg-soft);}
-  .section-inner{max-width:1320px;margin:0 auto;}
-  .eyebrow{
-    display:inline-block;font-size:12px;font-weight:700;color:var(--orange);
-    background:rgba(247,165,30,0.12);padding:5px 14px;border-radius:999px;margin-bottom:18px;
-  }
-  .section-title{font-size:34px;font-weight:700;color:var(--blue-accent);line-height:1.2;margin-bottom:16px;}
-  .section-title.light{color:var(--blue-accent);}
-  .section-desc{font-size:15px;color:var(--ink-soft);max-width:640px;line-height:1.7;}
-  .section-desc.light{color:var(--ink-soft);}
-
-  /* ---------- module carousel ---------- */
-  .carousel-row{display:flex;align-items:center;gap:16px;margin-top:44px;}
-  .carousel-arrow{
-    flex-shrink:0;width:44px;height:44px;border-radius:50%;
-    border:1px solid #d8dceb;background:var(--white);color:#28304a;
-    display:flex;align-items:center;justify-content:center;cursor:pointer;
-    transition:background .2s ease, border-color .2s ease;
-  }
-  .carousel-arrow:hover{background:var(--bg-soft);border-color:#b9c1de;}
-  .carousel-mask{flex:1;overflow:hidden;}
-  .carousel-track{display:flex;gap:20px;transition:transform .4s ease;}
-  .module-card{
-    flex:0 0 280px;background:var(--white);border:1px solid var(--border-soft);border-radius:14px;
-    padding:26px 22px; cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .module-icon{
-    width:74px;height:74px;border-radius:50%;background:var(--blue-soft);color:var(--blue-accent);
-    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;margin-bottom:18px;
-  }
-  .module-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
-  .module-card h3{font-size:16px;color:var(--ink);margin-bottom:4px;}
-  .module-card h3 span{display:block;font-weight:400;font-size:13px;color:var(--ink-soft);margin-top:2px;}
-  .module-card p{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:14px 0 18px;min-height:80px;}
-  .module-tag{font-size:12px;font-weight:600;color:var(--blue-accent);background:var(--blue-soft);padding:5px 12px;border-radius:999px;}
-
-  /* ---------- real screens ---------- */
-  .screens-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;}
-  .see-all{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;color:var(--blue-accent);white-space:nowrap;}
-  .showcase-row{
-    max-width:1320px;margin:70px auto;padding:0 60px;display:grid;
-    grid-template-columns:1fr 1fr;gap:60px;align-items:center;
-  }
-  .showcase-row.reverse .phone-cluster{order:2;}
-  .showcase-row.reverse .showcase-copy{order:1;}
-  .badge-tag{display:inline-block;font-size:12px;font-weight:700;color:var(--orange);background:rgba(247,165,30,0.12);padding:5px 14px;border-radius:999px;margin-bottom:16px;}
-  .showcase-copy h3{font-size:26px;color:var(--ink);line-height:1.3;margin-bottom:14px;}
-  .showcase-copy p{font-size:14.5px;color:var(--ink-soft);line-height:1.7;margin-bottom:20px;max-width:440px;}
-  .check-list{list-style:none;margin-bottom:22px;}
-  .check-list li{
-    position:relative;padding-left:26px;font-size:14px;color:#3a4256;margin-bottom:10px;
-  }
-  .check-list li::before{
-    content:'';position:absolute;left:0;top:2px;width:16px;height:16px;border-radius:4px;
-    background:var(--blue-accent);
-  }
-  .check-list li::after{
-    content:'';position:absolute;left:4.5px;top:5.5px;width:7px;height:4px;
-    border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg);
-  }
-  .learn-more{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;color:var(--blue-accent);}
-
-  .phone-cluster{display:flex;align-items:center;justify-content:center;gap:0;position:relative;height:340px;}
-  .phone-cluster.single{height:380px;}
-  .phone-frame{
-    width:150px;height:300px;background:var(--ink);border-radius:24px;border:6px solid var(--ink);
-    box-shadow:0 20px 40px rgba(16,26,53,0.14);position:relative;
-  }
-  .phone-frame.small{width:120px;height:240px;border-radius:20px;}
-  .phone-frame.offset-1{transform:translateX(30px) rotate(-6deg);z-index:1;}
-  .phone-frame.offset-2{transform:translateY(-16px);z-index:2;}
-  .phone-frame.offset-3{transform:translateX(-30px) rotate(6deg);z-index:1;}
-  .phone-frame:not(.small){width:190px;height:390px;border-radius:28px;border-width:7px;}
-  .phone-screen{
-    width:100%;height:100%;border-radius:16px;overflow:hidden;position:relative;
-    background:linear-gradient(180deg,var(--blue-soft),#ffffff);
-  }
-  .phone-frame:not(.small) .phone-screen{border-radius:21px;}
-  .ops-screen::before{
-    content:'';position:absolute;inset:0;
-    background:
-      linear-gradient(180deg, var(--blue-accent) 0 34%, transparent 34%),
-      repeating-linear-gradient(180deg, transparent 0 44px, #e7ebf6 44px 46px);
-  }
-  .ops-screen.alt::before{
-    background:
-      linear-gradient(180deg, var(--cyan) 0 30%, transparent 30%),
-      repeating-linear-gradient(180deg, transparent 0 38px, #e7ebf6 38px 40px);
-  }
-  .consumer-screen::before{
-    content:'';position:absolute;inset:0;
-    background:
-      linear-gradient(180deg, var(--ink) 0 26%, transparent 26%),
-      radial-gradient(circle at 50% 46%, #ffffff 0 30%, transparent 31%),
-      repeating-linear-gradient(180deg, transparent 0 34px, #eef1fb 34px 36px);
-  }
-
-  .device-strip{max-width:1320px;margin:20px auto 0;padding:50px 60px 0;text-align:center;}
-  .device-strip-inner{
-    display:flex;align-items:flex-end;justify-content:center;gap:24px;
-    background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:20px;padding:44px 40px 0;overflow:hidden;height:180px;
-  }
-  .device{background:linear-gradient(180deg,#ffffff,var(--blue-soft));border:1px solid var(--border-soft);border-radius:10px 10px 0 0;}
-  .device.laptop{width:280px;height:150px;}
-  .device.phone-sm{width:60px;height:130px;border-radius:14px 14px 0 0;}
-  .device.tablet{width:130px;height:150px;}
-  .device.card{width:150px;height:95px;align-self:center;border-radius:10px;}
-  .device-caption{display:inline-block;margin-top:18px;font-size:12.5px;font-weight:600;letter-spacing:1px;color:var(--ink-soft);text-transform:uppercase;}
-
-  /* ---------- performance ---------- */
-  .perf-section{background:var(--bg-soft);padding:90px 60px;border-top:1px solid var(--border-soft);}
-  .perf-grid-wrap{display:grid;grid-template-columns:0.8fr 1.4fr;gap:50px;align-items:start;}
-  .perf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .perf-card{background:var(--white);border-radius:12px;padding:20px 18px;border:1px solid var(--border-soft);border-top:3px solid var(--orange);}
-  .perf-tag{font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:0.4px;}
-  .perf-card h4{font-size:14.5px;color:var(--blue-accent);margin:8px 0 8px;}
-  .perf-card p{font-size:12.5px;color:var(--ink-soft);line-height:1.6;}
-
-  /* ---------- contact ---------- */
-  .contact-card{
-    display:grid;grid-template-columns:0.85fr 1.15fr;background:var(--white);border-radius:20px;
-    overflow:hidden;box-shadow:0 20px 50px rgba(16,26,53,0.08);border:1px solid var(--border-soft);
-  }
-  .contact-left{
-    background:linear-gradient(160deg,var(--dark-navy-1),var(--dark-navy-2) 140%);
-    padding:48px 40px;position:relative;overflow:hidden;
-  }
-  .contact-left::after{
-    content:'';position:absolute;right:-40px;bottom:-60px;width:220px;height:220px;
-    border-radius:50%;background:radial-gradient(circle, rgba(34,211,238,0.18), transparent 70%);
-  }
-  .contact-left h3{font-size:24px;line-height:1.3;margin-bottom:14px;position:relative;color:var(--dark-navy-ink);}
-  .contact-left p{font-size:14px;color:var(--dark-navy-ink-soft);line-height:1.7;margin-bottom:26px;max-width:360px;position:relative;}
-  .contact-info{list-style:none;margin-bottom:30px;position:relative;}
-  .contact-info li{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--dark-navy-ink);margin-bottom:16px;line-height:1.6;}
-  .contact-info li svg{flex-shrink:0;margin-top:2px;color:var(--cyan);}
-  .contact-social{display:flex;gap:10px;position:relative;}
-  .contact-social a{
-    width:32px;height:32px;border-radius:50%;border:1px solid var(--dark-navy-border);
-    display:flex;align-items:center;justify-content:center;color:var(--dark-navy-ink);
-  }
-  .contact-right{padding:48px 40px;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .form-field{margin-bottom:18px;}
-  .form-field label{display:block;font-size:12.5px;color:var(--ink-soft);margin-bottom:6px;font-weight:600;}
-  .form-field input, .form-field select, .form-field textarea{
-    width:100%;border:1px solid #e0e3ee;border-radius:8px;padding:10px 12px;font-size:13.5px;
-    font-family:inherit;color:var(--ink);background:#fbfbfe;resize:none;
-  }
-  .form-field input:focus, .form-field select:focus, .form-field textarea:focus{outline:2px solid var(--blue-accent);outline-offset:1px;}
-  .submit-btn{
-    width:100%;background:var(--blue-accent);color:#fff;font-weight:700;font-size:14px;
-    padding:14px;border-radius:8px;margin-top:6px;transition:background .2s ease;border:none;cursor:pointer;
-  }
-  .submit-btn:hover{background:#1d4ed8;}
-
-  /* ---------- scroll reveal ---------- */
-  .module-card, .showcase-row, .perf-card, .contact-card{
-    opacity:0;transform:translateY(28px);
-    transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
-  }
-  .module-card.in-view, .showcase-row.in-view, .perf-card.in-view, .contact-card.in-view{
-    opacity:1;transform:translateY(0);
-  }
-  @media (prefers-reduced-motion: reduce){
-    .module-card, .showcase-row, .perf-card, .contact-card{opacity:1;transform:none;transition:none;}
-  }
-
-  @media (max-width:960px){
-    .hero-inner{grid-template-columns:1fr;padding:50px 24px;}
-    .globe-wrap{order:-1;height:320px;}
-    h1{font-size:32px;}
-    .stats{flex-wrap:wrap;row-gap:16px;}
-    .partners-inner{flex-direction:column;align-items:flex-start;padding:0 24px;gap:16px;}
-    .partners-label{border-right:none;border-bottom:2px solid var(--orange);padding-right:0;padding-bottom:10px;}
-
-    .section{padding:60px 24px;}
-    .section-title{font-size:26px;}
-    .showcase-row{grid-template-columns:1fr;padding:0 24px;gap:32px;margin:50px auto;}
-    .showcase-row.reverse .phone-cluster, .showcase-row.reverse .showcase-copy{order:initial;}
-    .phone-cluster{height:260px;}
-    .device-strip{padding:40px 24px 0;}
-    .device-strip-inner{flex-wrap:wrap;height:auto;padding:24px;gap:16px;}
-    .device.laptop{width:100%;height:110px;}
-    .perf-section{padding:60px 24px;}
-    .perf-grid-wrap{grid-template-columns:1fr;}
-    .perf-grid{grid-template-columns:1fr 1fr;}
-    .contact-card{grid-template-columns:1fr;}
-    .contact-left, .contact-right{padding:32px 24px;}
-    .form-row{grid-template-columns:1fr;}
-  }
-</style>
+<head>
+  <link rel="stylesheet" href="<?php echo $theme_uri; ?>/assets/css/front-page.css">
+</head>
 
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-copy">
-      <span class="badge">Full CBFS &amp; CPBS for SME Compliant</span>
-      <h1>The Core Banking Platform Built for<br><span class="accent">Global Financial Sector</span></h1>
-      <p class="hero-desc">VBANX unifies commercial banking, microfinance, leasing, rural credit, pawn shop and fund &amp; trust operations on one compliant, API-first platform with more than 20 years of banking and technology experience behind it.</p>
+      <span class="badge"><?php the_field('hero_badge'); ?></span>
+      <h1><?php the_field('hero_title'); ?><br><span class="accent"><?php the_field('hero_title_accent'); ?></span></h1>
+      <p class="hero-desc"><?php the_field('hero_description'); ?></p>
       <div class="hero-actions">
-        <a class="cta-btn" href="#">Booking a Free Demo</a>
-        <a class="btn-outline" href="#">Explore the Ecosystem</a>
+        <a class="cta-btn" href="<?php the_field('hero_cta_url'); ?>"><?php the_field('hero_cta_text'); ?></a>
+        <a class="btn-outline" href="<?php the_field('hero_outline_url'); ?>"><?php the_field('hero_outline_text'); ?></a>
       </div>
       <div class="stats">
         <div>
@@ -491,70 +93,29 @@ $vbanx_partner_logos = array(
 
       <div class="carousel-mask">
         <div class="carousel-track" id="moduleTrack">
-            <artic class="module-card">
-            <div class="module-icon">
-                <img src="http://localhost/vbanx-project/wp-content/uploads/2026/07/VBANXEFT.png" alt="Module Icon">
-            </div>
-            <h3 style="color: var(--blue-accent);">VBANXEFT<span>Fund & Trust</span></h3>
-            <p>SERC and TR-compliant fund distribution, trust origination, eKYC 360° and investor mobile banking for CIS and derivatives. &amp; </p>
-            <span class="module-tag">Fund & Trust</span>
-          </artic>
-          <article class="module-card">
-            <div class="module-icon">
-                <img src="http://localhost/vbanx-project/wp-content/uploads/2026/07/mobile-banking.png" alt="Module Icon">
-            </div>
-            <h3 style="color: var(--blue-accent);">Mobile Banking <span>Suite</span></h3>
-            <p>OAMBanking for operational & analytical oversight, plus VBANXConsumer for customer-facing digital banking. &amp; </p>
-            <span class="module-tag">Mobile Banking</span>
-          </article>
+          <?php for ( $i = 1; $i <= 8; $i++ ) :
+              $icon     = get_field( "module_{$i}_icon" );
+              $title    = get_field( "module_{$i}_title" );
+              $subtitle = get_field( "module_{$i}_subtitle" );
+              $desc = get_field( "module_{$i}_description" ); 
+              $tag      = get_field( "module_{$i}_tag" );
+
+              // Skip rendering a card entirely if it has no title set
+              if ( ! $title ) { continue; }
+          ?>
             <article class="module-card">
-            <div class="module-icon">
-                <img src="http://localhost/vbanx-project/wp-content/uploads/2026/07/VBANXLEASE.png" alt="Module Icon">
-            </div>
-            <h3 style="color: var(--blue-accent);">VBANXLEASE<span>Leasing</span></h3>
-            <p>End-to-end lease origination, scheduling, fixed asset tracking and CIFRS 16 lease accounting in one workflow. &amp; </p>
-            <span class="module-tag">Leasing</span>
-          </article>
-          <article class="module-card">
-            <div class="module-icon">
-                <img src="http://localhost/vbanx-project/wp-content/uploads/2026/07/VBANXPAWN-.png" alt="Module Icon">
-            </div>
-            <h3 style="color: var(--blue-accent);">VBANXPAWN<span>Pawn Shop</span></h3>
-            <p>Ticketing, collateral valuation, redemption and default handling built for the pace of pawn shop operations. &amp; </p>
-            <span class="module-tag">Pawn Shop</span>
-          </article>
-          <article class="module-card">
-            <div class="module-icon">
-                <img src="http://localhost/vbanx-project/wp-content/uploads/2026/07/vbanxcb.png" alt="Module Icon">
-            </div>
-            <h3 style="color: var(--blue-accent);">VBANXCB<span>Commercial Bank</span></h3>
-            <p>Full core banking for settlement, savings, term deposit, loans and cheque management with multi-branch and multi-currency support.</p>
-            <span class="module-tag">Core Banking</span>
-          </article>
-          <article class="module-card">
-            <div class="module-icon">
-                <img src="http://localhost/vbanx-project/wp-content/uploads/2026/07/VBANXMFI-.png" alt="Module Icon">
-            </div>
-            <h3 style="color: var(--blue-accent);">VBANXMFI<span>Microfinance</span></h3>
-            <p>Loan origination, collateral management, AML screening and collections purpose-built for microfinance institutions.</p>
-            <span class="module-tag">Microfinance</span>
-          </article>
-          <article class="module-card">
-            <div class="module-icon">
-                <img src="http://localhost/vbanx-project/wp-content/uploads/2026/07/VBANXCIE-.png" alt="Module Icon">
-            </div>
-            <h3 style="color: var(--blue-accent);">VBANXCIE<span>CIFRS Integration Engine</span></h3>
-            <p>Connects to any core banking system to automate CIFRS 9, 16, 19 and CAR ratio calculations and regulatory reports in real time.</p>
-            <span class="module-tag">Compliance Engine</span>
-          </article>
-          <article class="module-card">
-            <div class="module-icon">
-                <img src="http://localhost/vbanx-project/wp-content/uploads/2026/07/VBANXRCI-.png" alt="Module Icon">
-            </div>
-            <h3 style="color: var(--blue-accent);">VBANXRCI<span>Rural Credit</span></h3>
-            <p>A lightweight, scalable ledger for rural credit operators and cooperatives, with the same audit trail and reporting backbone.</p>
-            <span class="module-tag">Rural Credit</span>
-          </article>
+              <div class="module-icon">
+                <?php if ( $icon ) : ?>
+                  <img src="<?php echo esc_url( $icon ); ?>" alt="<?php echo esc_attr( $title ); ?> Icon">
+                <?php endif; ?>
+              </div>
+              <h3 style="color: var(--blue-accent);">
+                <?php echo esc_html( $title ); ?><span><?php echo esc_html( $subtitle ); ?></span>
+              </h3>
+              <p><?php echo esc_html( $desc ); ?></p>
+              <span class="module-tag"><?php echo esc_html( $tag ); ?></span>
+            </article>
+          <?php endfor; ?>
         </div>
       </div>
 
@@ -568,58 +129,62 @@ $vbanx_partner_logos = array(
   <div class="section-inner">
     <div class="screens-head">
       <div>
-        <span class="eyebrow">Products in Action</span>
-        <h2 class="section-title">Real screens.<br>Real operations.</h2>
-        <p class="section-desc">A look at the mobile experiences your staff and customers use every day.</p>
+        <span class="eyebrow"><?php the_field('screens_eyebrow'); ?></span>
+        <h2 class="section-title"><?php the_field('screens_title'); ?><br><?php the_field('screens_title_line_2'); ?></h2>        <p class="section-desc"><?php the_field('screens_description'); ?></p>
       </div>
-      <a href="#" class="see-all">See All <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="<?php the_field('screens_see_all_url'); ?>" class="see-all">See All <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 
   <div class="showcase-row">
     <div class="phone-cluster">
-      <div class="phone-frame small offset-1"><div class="phone-screen ops-screen"></div></div>
-      <div class="phone-frame small offset-2"><div class="phone-screen ops-screen alt"></div></div>
-      <div class="phone-frame small offset-3"><div class="phone-screen ops-screen"></div></div>
+      <?php $showcase1_img = get_field('showcase_1_image'); if ( $showcase1_img ) : ?>
+        <img src="<?php echo esc_url( $showcase1_img ); ?>" alt="<?php the_field('showcase_1_badge'); ?>">
+      <?php endif; ?>
     </div>
     <div class="showcase-copy">
-      <span class="badge-tag">OAMBanking</span>
-      <h3>Operational and analytical mobile banking, for your team.</h3>
-      <p>Monitor institutional health, approve transactions and read analytical dashboards from a phone built for rural credit operators, MFIs, MDIs and commercial banks alike.</p>
+      <span class="badge-tag"><?php the_field('showcase_1_badge'); ?></span>
+      <h3><?php the_field('showcase_1_title'); ?></h3>
+      <p><?php the_field('showcase_1_description'); ?></p>
       <ul class="check-list">
-        <li>Approve transactions at your fingertips</li>
-        <li>Transactional, visual and customer data in one view</li>
-        <li>Secure, fast and suitable for institutions of any size</li>
+        <?php for ( $i = 1; $i <= 3; $i++ ) :
+          $check = get_field( "showcase_1_check_{$i}" );
+          if ( $check ) : ?>
+          <li><?php echo esc_html( $check ); ?></li>
+        <?php endif; endfor; ?>
       </ul>
-      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 24 24" width="14" height="14"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="<?php the_field('showcase_1_url'); ?>" class="learn-more">Learn More <svg viewBox="0 0 24 24" width="14" height="14"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 
   <div class="showcase-row reverse">
     <div class="showcase-copy">
-      <span class="badge-tag">VBANXConsumer</span>
-      <h3>A banking app your customers will actually enjoy.</h3>
-      <p>Onboarding, eKYC, KHQR payments and full transaction history on a single, secure and unified API customizable to any institution's brand.</p>
+      <span class="badge-tag"><?php the_field('showcase_2_badge'); ?></span>
+      <h3><?php the_field('showcase_2_title'); ?></h3>
+      <p><?php the_field('showcase_2_description'); ?></p>
       <ul class="check-list">
-        <li>End-to-end customer lifecycle, from onboarding to history</li>
-        <li>Single, secure API integration with VBANX or other cores</li>
-        <li>Built by the VBANX Mobile Banking R&amp;D team</li>
+        <?php for ( $i = 1; $i <= 3; $i++ ) :
+          $check = get_field( "showcase_2_check_{$i}" );
+          if ( $check ) : ?>
+          <li><?php echo esc_html( $check ); ?></li>
+        <?php endif; endfor; ?>
       </ul>
-      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 24 24" width="14" height="14"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="<?php the_field('showcase_2_url'); ?>" class="learn-more">Learn More <svg viewBox="0 0 24 24" width="14" height="14"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
     <div class="phone-cluster single">
-      <div class="phone-frame"><div class="phone-screen consumer-screen"></div></div>
+      <?php $showcase2_img = get_field('showcase_2_image'); if ( $showcase2_img ) : ?>
+        <img src="<?php echo esc_url( $showcase2_img ); ?>" alt="<?php the_field('showcase_2_badge'); ?>">
+      <?php endif; ?>
     </div>
   </div>
 
   <div class="device-strip">
     <div class="device-strip-inner">
-      <div class="device laptop"></div>
-      <div class="device phone-sm"></div>
-      <div class="device tablet"></div>
-      <div class="device card"></div>
+      <?php $device_img = get_field('device_strip_image'); if ( $device_img ) : ?>
+        <img src="<?php echo esc_url( $device_img ); ?>" alt="<?php the_field('device_strip_caption'); ?>">
+      <?php endif; ?>
     </div>
-    <span class="device-caption">Any device &middot; anywhere &middot; anytime</span>
+    <span class="device-caption"><?php the_field('device_strip_caption'); ?></span>
   </div>
 </section>
 
@@ -627,19 +192,24 @@ $vbanx_partner_logos = array(
 <section class="perf-section">
   <div class="section-inner perf-grid-wrap">
     <div class="perf-copy">
-      <span class="eyebrow">Why Choose Us</span>
-      <h2 class="section-title light">Performance you can measure, compliance you can trust.</h2>
-      <p class="section-desc light">Eight commitments that shape every VBANX deployment, from first workshop to years of live operation.</p>
+      <span class="eyebrow"><?php the_field('perf_eyebrow'); ?></span>
+      <h2 class="section-title light"><?php the_field('perf_title'); ?></h2>
+      <p class="section-desc light"><?php the_field('perf_description'); ?></p>
     </div>
     <div class="perf-grid">
-      <div class="perf-card"><span class="perf-tag">Co-implement</span><h4>Guided implementation</h4><p>CIFRS co-implementation, validation, training and guideline documentation delivered with partner PCG.</p></div>
-      <div class="perf-card"><span class="perf-tag">Customization</span><h4>No extra-cost changes</h4><p>Full system and module-level customization, plus free report development after go-live.</p></div>
-      <div class="perf-card"><span class="perf-tag">Compliance</span><h4>Always current</h4><p>NBC, CBC, SERC, FIU, CMA and QDT support, with free updates as regulation changes.</p></div>
-      <div class="perf-card"><span class="perf-tag">Digital</span><h4>API-first banking</h4><p>Secure digital banking with seamless integration and mobile-first experiences.</p></div>
-      <div class="perf-card"><span class="perf-tag">Robustness</span><h4>Built to scale</h4><p>Secure architecture and scalable modules proven across compliance-heavy customers.</p></div>
-      <div class="perf-card"><span class="perf-tag">Resources</span><h4>A dedicated bench</h4><p>R&amp;D, engineers, data migration analysts and report developers behind every rollout.</p></div>
-      <div class="perf-card"><span class="perf-tag">24/7 Support</span><h4>Rapid resolution</h4><p>Structured ticketing with clear escalation paths, staffed around the clock.</p></div>
-      <div class="perf-card"><span class="perf-tag">Data Migration</span><h4>Audit-ready, always</h4><p>Unlimited data migration and CIFRS conversion, with extra hours for audit readiness.</p></div>
+      <?php for ( $i = 1; $i <= 8; $i++ ) :
+          $tag     = get_field( "perf_card_{$i}_tag" );
+          $heading = get_field( "perf_card_{$i}_heading" );
+          $desc    = get_field( "perf_card_{$i}_description" );
+
+          if ( ! $heading ) { continue; }
+      ?>
+        <div class="perf-card">
+          <span class="perf-tag"><?php echo esc_html( $tag ); ?></span>
+          <h4><?php echo esc_html( $heading ); ?></h4>
+          <p><?php echo esc_html( $desc ); ?></p>
+        </div>
+      <?php endfor; ?>
     </div>
   </div>
 </section>
@@ -879,8 +449,15 @@ $vbanx_partner_logos = array(
   const prev = document.getElementById('prevArrow');
   const next = document.getElementById('nextArrow');
   if(!track) return;
-  const cardWidth = 300;
   let offset = 0;
+
+  function cardStep(){
+    const firstCard = track.querySelector('.module-card');
+    if(!firstCard) return 300;
+    const style = getComputedStyle(track);
+    const gap = parseFloat(style.columnGap || style.gap || '20') || 20;
+    return firstCard.getBoundingClientRect().width + gap;
+  }
 
   function update(){
     const mask = track.parentElement;
@@ -888,8 +465,8 @@ $vbanx_partner_logos = array(
     offset = Math.min(Math.max(offset,0), maxOffset);
     track.style.transform = `translateX(-${offset}px)`;
   }
-  next.addEventListener('click', ()=>{ offset += cardWidth; update(); });
-  prev.addEventListener('click', ()=>{ offset -= cardWidth; update(); });
+  next.addEventListener('click', ()=>{ offset += cardStep(); update(); });
+  prev.addEventListener('click', ()=>{ offset -= cardStep(); update(); });
   window.addEventListener('resize', update);
 })();
 
@@ -916,7 +493,6 @@ $vbanx_partner_logos = array(
 
   groups.forEach(list => list.forEach(el => io.observe(el)));
 })();
-</script>
 </script>
 <?php
 get_footer();

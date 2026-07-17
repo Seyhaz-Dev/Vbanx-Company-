@@ -17,7 +17,7 @@ function vbanx_theme_setup() {
     // បន្ថែម Support សម្រាប់ Custom Logo
     add_theme_support( 'custom-logo', array(
         'height'      => 100,
-        'width'       => 400,
+        'width'       => 40,
         'flex-height' => true,
         'flex-width'  => true,
     ) );
