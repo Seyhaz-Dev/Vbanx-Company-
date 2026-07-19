@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                         'items_wrap'     => '%3$s',
                     ) );
                 } else {
-                   
+                    vbanx_fallback_primary_menu();
                 }
                 ?>
             </nav>
