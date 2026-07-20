@@ -38,14 +38,14 @@ $theme_uri = get_template_directory_uri();
 		style="background: url('<?php echo esc_url( $hero_bg ); ?>') center center / cover no-repeat;">
 		<div class="container">
 			<div class="hero-copy">
-				<p class="eyebrow"><?php the_field( 'hero_eyebrow' ); ?></p>
+				<p class="eyebrow"><?php the_field( 'eyebrow_text' ); ?></p>
 				<h1>
-					<span class="brand-name"><?php the_field( 'hero_brand_name' ); ?></span>
-					<?php the_field( 'hero_heading' ); ?>
+					<span class="brand-name"><?php the_field( 'heading_brand_name' ); ?></span>
+					<?php the_field( 'heading_main_text' ); ?>
 				</h1>
 				<p><?php the_field( 'hero_paragraph' ); ?></p>
 				<a href="<?php the_field( 'hero_button_url' ); ?>" class="btn btn-primary">
-					<?php the_field( 'hero_button_text' ); ?>
+					<?php the_field( 'button_text' ); ?>
 					<span class="btn-arrow" aria-hidden="true">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
 					</span>

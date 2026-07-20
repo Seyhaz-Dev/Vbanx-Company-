@@ -367,7 +367,10 @@ button:focus-visible{
 }
 
 .phone-gallery img{
-	width: 100%;
+	width: 70%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 	border-radius: var(--radius);
 	box-shadow: var(--shadow-card);
 	transition: transform var(--transition-base), box-shadow var(--transition-base);
@@ -379,7 +382,7 @@ button:focus-visible{
 }
 
 .phone-gallery-fallback{
-	width: 100%;
+	width: 70%;
 	aspect-ratio: 16 / 10;
 	border-radius: var(--radius);
 	background: var(--blue-soft);
