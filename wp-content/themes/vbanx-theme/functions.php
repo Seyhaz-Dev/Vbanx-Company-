@@ -35,6 +35,14 @@ function vbanx_enqueue_assets() {
         '1.0'
     );
 
+    // ហៅចូល CSS សម្រាប់ទំព័រ Ecosystem
+    wp_enqueue_style(
+        'ecosystem-style',
+        get_template_directory_uri() . '/assets/css/ecosystem.css',
+        array( 'main-style' ),
+        '1.0'
+    );
+
     // ហៅចូល JS
     wp_enqueue_script(
         'main-js',
@@ -59,4 +67,3 @@ function mytheme_enqueue_montserrat() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );
-
