@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-// ១. ចងក្រងរាល់ការ Setup Theme ទាំងអស់បញ្ចូលគ្នាក្នុង Function តែមួយ
+
 function vbanx_theme_setup() {
-    // ចុះឈ្មោះ Menu
+    
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'vbanx-theme' ),
     ) );
@@ -25,9 +25,8 @@ function vbanx_theme_setup() {
 add_action( 'after_setup_theme', 'vbanx_theme_setup' );
 
 
-// ២. បញ្ចូលឯកសារ CSS និង JS (ចងក្រងចូលគ្នាកុំឱ្យទើសកូដច្រើន)
 function vbanx_enqueue_assets() {
-    // ហៅចូល CSS
+    
     wp_enqueue_style(
         'main-style',
         get_template_directory_uri() . '/assets/css/style.css',
@@ -35,7 +34,42 @@ function vbanx_enqueue_assets() {
         '1.0'
     );
 
-    // ហៅចូល JS
+    
+    
+    
+    
+    
+    
+    
+    
+    wp_enqueue_style(
+        'profile-style',
+        get_template_directory_uri() . '/assets/css/profile.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'card-style',
+        get_template_directory_uri() . '/assets/css/card.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'expert-style',
+        get_template_directory_uri() . '/assets/css/expert.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'vision-style',
+        get_template_directory_uri() . '/assets/css/vision.css',
+        array(),
+        '1.0'
+    );
+    
     wp_enqueue_script(
         'main-js',
         get_template_directory_uri() . '/assets/js/main.js',
@@ -59,4 +93,3 @@ function mytheme_enqueue_montserrat() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );
-
