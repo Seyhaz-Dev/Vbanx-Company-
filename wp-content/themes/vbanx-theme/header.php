@@ -42,8 +42,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                         'container'      => false,
                         'items_wrap'     => '%3$s',
                     ) );
-                } else {
-                    vbanx_fallback_primary_menu();
                 }
                 ?>
             </nav>
