@@ -582,7 +582,62 @@ $cifrs_card2 = array(
 
 
 
+<!-- /* ===========================================================
+  COMPLIANCE CONSULTATION
+============================================================ */ -->
 
+<?php
+$wh_title    = get_field('warehouse_title');
+$wh_tagline  = get_field('warehouse_tagline');
+$wh_image    = get_field('warehouse_image');
+$wh_item1    = get_field('warehouse_item1');
+$wh_item2    = get_field('warehouse_item2');
+$wh_item3    = get_field('warehouse_item3');
+$wh_item4    = get_field('warehouse_item4');
+?>
+
+<section class="t24-warehouse">
+  <div class="t24-warehouse__inner">
+
+    <header class="t24-warehouse__header">
+      <?php if ( $wh_title ) : ?>
+        <h2 class="t24-warehouse__title"><?php echo esc_html( $wh_title ); ?></h2>
+      <?php endif; ?>
+      <span class="t24-warehouse__divider"></span>
+      <?php if ( $wh_tagline ) : ?>
+        <p class="t24-warehouse__tagline"><?php echo esc_html( $wh_tagline ); ?></p>
+      <?php endif; ?>
+    </header>
+
+    <div class="t24-warehouse__panel">
+      <div class="t24-warehouse__body">
+
+        <?php if ( $wh_image ) : ?>
+          <div class="t24-warehouse__image">
+            <img src="<?php echo esc_url( $wh_image ); ?>" alt="VBANX Data Warehouse" class="t24-warehouse__img">
+          </div>
+        <?php endif; ?>
+
+        <ul class="t24-warehouse__list">
+          <?php if ( $wh_item1 ) : ?>
+            <li><span class="t24-warehouse__icon">&#10003;</span><?php echo esc_html( $wh_item1 ); ?></li>
+          <?php endif; ?>
+          <?php if ( $wh_item2 ) : ?>
+            <li><span class="t24-warehouse__icon">&#10003;</span><?php echo esc_html( $wh_item2 ); ?></li>
+          <?php endif; ?>
+          <?php if ( $wh_item3 ) : ?>
+            <li><span class="t24-warehouse__icon">&#10003;</span><?php echo esc_html( $wh_item3 ); ?></li>
+          <?php endif; ?>
+          <?php if ( $wh_item4 ) : ?>
+            <li><span class="t24-warehouse__icon">&#10003;</span><?php echo esc_html( $wh_item4 ); ?></li>
+          <?php endif; ?>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 
