@@ -51,13 +51,21 @@ body {
    ========================================================================== */
 
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 200;
-    background: #ffffff;
-    border-bottom: 1px solid var(--gray-200);
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: transparent;
+    border-bottom: none;
+    transition: all .3s ease;
 }
 
+.site-header.scrolled {
+    background: #ffffff;
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
 .site-header .container {
     display: flex;
     align-items: center;
