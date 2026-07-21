@@ -51,13 +51,21 @@ body {
    ========================================================================== */
 
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 200;
-    background: #ffffff;
-    border-bottom: 1px solid var(--gray-200);
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: transparent;
+    border-bottom: none;
+    transition: all .3s ease;
 }
 
+.site-header.scrolled {
+    background: #ffffff;
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
 .site-header .container {
     display: flex;
     align-items: center;
@@ -604,6 +612,7 @@ body {
         list-style: none;
     }
 
+
    @media (max-width: 768px) {
     .mobile-menu-overlay .sub-menu {
         display: none !important;
@@ -948,8 +957,7 @@ body {
         gap: 5px;
 
 
-    }
-
+    
 
 
     /* Tablet */
@@ -1185,78 +1193,78 @@ body {
         }
 
 
-        .header-cta {
+    .header-cta {
 
-            display: none;
+        display: none;
 
-        }
-
-
-
-        /* Navigation */
-
-        .primary-nav {
-
-            left: 12px;
-            right: 12px;
-
-            top: 70px;
-
-        }
+    }
 
 
 
-        .primary-nav a {
+    /* Navigation */
 
-            font-size: 15px;
+    .primary-nav {
 
-        }
+        left: 12px;
+        right: 12px;
 
+        top: 70px;
 
-
-        /* Footer */
-
-        .site-footer {
-
-            padding-top: 50px;
-
-        }
+    }
 
 
-        .footer-grid {
 
-            grid-template-columns: 1fr;
+    .primary-nav a {
 
-            gap: 35px;
+        font-size: 15px;
 
-        }
-
-
-        .footer-brand p {
-
-            max-width: 100%;
-
-        }
+    }
 
 
-        .footer-bottom {
 
-            flex-direction: column;
+    /* Footer */
 
-            text-align: center;
+    .site-footer {
 
-        }
+        padding-top: 50px;
+
+    }
 
 
-        .footer-bottom-links {
+    .footer-grid {
 
-            display: flex;
+        grid-template-columns: 1fr;
 
-            flex-direction: column;
+        gap: 35px;
 
-            gap: 10px;
+    }
 
-        }
+
+    .footer-brand p {
+
+        max-width: 100%;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .footer-bottom-links {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
 
 
     /* Footer */
@@ -1828,4 +1836,4 @@ body {
         font-size: 14px;
     }
 }
-
+    
