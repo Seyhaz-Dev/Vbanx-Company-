@@ -67,9 +67,6 @@ function vbanx_enqueue_assets() {
         '1.0'
     );
 
-    
-
-
     if ( is_page( 'contact' ) ) {
         wp_enqueue_style(
             'contact-style',
