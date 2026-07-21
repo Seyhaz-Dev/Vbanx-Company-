@@ -60,3 +60,19 @@ function mytheme_enqueue_montserrat() {
 }
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );
 
+
+// ៣. ហៅចូល CSS សម្រាប់ទំព័រ Partnerships តែប៉ុណ្ណោះ (Template Name: PartnerShips)
+function vbanx_enqueue_partnerships_assets() {
+    if ( is_page_template( 'page-partnerships.php' ) ) {
+        $css_path = get_stylesheet_directory() . '/assets/css/partnerships.css';
+        $css_uri  = get_stylesheet_directory_uri() . '/assets/css/partnerships.css';
+
+        wp_enqueue_style(
+            'vbx-partnerships',
+            $css_uri,
+            array(),
+            file_exists( $css_path ) ? filemtime( $css_path ) : '1.0'
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_partnerships_assets' );
