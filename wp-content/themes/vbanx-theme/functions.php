@@ -7,7 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
+// ១. ចងក្រងរាល់ការ Setup Theme ទាំងអស់បញ្ចូលគ្នាក្នុង Function តែមួយ
 function vbanx_theme_setup() {
+    // ចុះឈ្មោះ Menu
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'vbanx-theme' ),
     ) );
@@ -37,15 +39,7 @@ function vbanx_enqueue_assets() {
         '1.0'
     );
 
-    if ( is_page( 'contact' ) ) {
-        wp_enqueue_style(
-            'contact-style',
-            get_template_directory_uri() . '/assets/css/contact.css',
-            array('main-style'),
-            '1.0'
-        );
-    }
-
+    // ហៅចូល JS
     wp_enqueue_script(
         'main-js',
         get_template_directory_uri() . '/assets/js/main.js',
