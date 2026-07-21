@@ -47,8 +47,8 @@ function vbanx_enqueue_assets() {
     );
 
     wp_enqueue_style(
-        'vision-style',
-        get_template_directory_uri() . '/assets/css/vision.css',
+        'value-style',
+        get_template_directory_uri() . '/assets/css/value.css',
         array(),
         '1.0'
     );
@@ -63,6 +63,13 @@ function vbanx_enqueue_assets() {
     wp_enqueue_style(
         'expert-style',
         get_template_directory_uri() . '/assets/css/expert.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'partnership-style',
+        get_template_directory_uri() . '/assets/css/partnership.css',
         array(),
         '1.0'
     );
