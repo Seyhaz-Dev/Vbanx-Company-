@@ -27,7 +27,8 @@ add_action( 'after_setup_theme', 'vbanx_theme_setup' );
 
 // ២. បញ្ចូលឯកសារ CSS និង JS (ចងក្រងចូលគ្នាកុំឱ្យទើសកូដច្រើន)
 function vbanx_enqueue_assets() {
-    // ហៅចូល CSS
+
+    // ហៅចូល CSS មេ (load រាល់ទំព័រ)
     wp_enqueue_style(
         'main-style',
         get_template_directory_uri() . '/assets/css/style.css',
@@ -35,7 +36,17 @@ function vbanx_enqueue_assets() {
         '1.0'
     );
 
-    // ហៅចូល JS
+    // ហៅចូល CSS Contact (load តែលើទំព័រ Contact ប៉ុណ្ណោះ)
+    if ( is_page_template( 'page-contact.php' ) ) {
+        wp_enqueue_style(
+            'contact-style',
+            get_template_directory_uri() . '/assets/css/contact.css',
+            array( 'main-style' ),
+            '1.0'
+        );
+    }
+
+    // ហៅចូល JS (load រាល់ទំព័រ)
     wp_enqueue_script(
         'main-js',
         get_template_directory_uri() . '/assets/js/main.js',
@@ -44,19 +55,27 @@ function vbanx_enqueue_assets() {
         true
     );
 }
-
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
 
 
-// Enqueue Montserrat font from Google Fonts
-
-function mytheme_enqueue_montserrat() {
+// ៣. Enqueue Montserrat font from Google Fonts
+function vbanx_enqueue_montserrat() {
     wp_enqueue_style(
         'montserrat-font',
         'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap',
-        [],
+        array(),
         null
     );
 }
-add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );
+add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_montserrat' );
 
+
+function vbanx_enqueue_fontawesome() {
+    wp_enqueue_style(
+        'font-awesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
+        array(),
+        '6.5.2'
+    );
+}
+add_action('wp_enqueue_scripts', 'vbanx_enqueue_fontawesome');
