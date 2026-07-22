@@ -63,6 +63,5 @@ function vbanx_enqueue_assets() {
             '1.0'
         );
 }
-
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
   
