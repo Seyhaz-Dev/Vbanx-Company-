@@ -1,221 +1,173 @@
-<section class="t24-hero">
-  <div class="t24-hero__inner">
+<?php
+/**
+ * Template Name: VBANX Consumer
+ *
+ * Selectable page template for the VBANX Consumer landing page.
+ * Assign it to any WordPress Page via Page Attributes → Template.
+ * (no site header/nav or site footer included — content only)
+ *
+ * Same coding style as front-page.php: the_field() printed directly
+ * inline, get_field() + conditional check for images.
+ */
+get_header();
 
-    <!-- BACKGROUND: full-bleed photo -->
-  
-    <svg class="t24-hero__icon t24-hero__icon--wifi" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
-      <path d="M5 12.5a11 11 0 0 1 14 0"/>
-      <path d="M8.5 16a6 6 0 0 1 7 0"/>
-      <circle cx="12" cy="19.5" r="1.2" fill="#fff" stroke="none"/>
-    </svg>
+if ( ! defined( 'ABSPATH' ) ) exit;
 
-    <svg class="t24-hero__icon t24-hero__icon--pin" viewBox="0 0 24 24" fill="#fff">
-      <path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-    </svg>
+$img_dir   = get_template_directory_uri() . '/assets/images';
+$theme_uri = get_template_directory_uri();
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="<?php echo esc_url( $theme_uri . '/assets/css/consumer.css' ); ?>">
+	<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
-    <!-- FOREGROUND: text panel, absolutely positioned over the photo -->
-    <div class="t24-hero__panel">
-      <p class="t24-hero__eyebrow">S.M.A.R.T Digital Banking Transformation</p>
+<main id="main-content">
 
-      <h1 class="t24-hero__title">
-        <span class="t24-hero__title-accent">VBAXConsumer
-</span>
-        <span class="t24-hero__title-main">Mobile Banking Made Simple, <br> Secure, and Smart</span>
-      </h1>
+	<!-- ============ HERO ============ -->
+	<?php
+	$hero_bg = get_field( 'hero_bg_image' );
+	if ( ! $hero_bg ) : $hero_bg = wp_get_upload_dir()['baseurl'] . '/2026/07/bgheroconsumer.png'; endif;
+	?>
+	<section
+		class="hero"
+		style="background: url('<?php echo esc_url( $hero_bg ); ?>') center center / cover no-repeat;">
+		<div class="container">
+			<div class="hero-copy">
+				<p class="eyebrow"><?php the_field( 'eyebrow_text' ); ?></p>
+				<h1>
+					<span class="brand-name"><?php the_field( 'heading_brand_name' ); ?></span>
+					<?php the_field( 'heading_main_text' ); ?>
+				</h1>
+				<p><?php the_field( 'hero_paragraph' ); ?></p>
+				<a href="<?php the_field( 'hero_button_url' ); ?>" class="btn btn-primary">
+					<?php the_field( 'button_text' ); ?>
+					<span class="btn-arrow" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+					</span>
+				</a>
+			</div>
+		</div>
 
-      <p class="t24-hero__desc">
-            A beautifully simple, highly secure, and intelligently designed banking 
-             experience that puts you in full control of your finances, anytime and 
-              anywhere.
-      </p>
+		<div class="hero-progress" aria-hidden="true"><span class="dot"></span></div>
+	</section>
 
-      <a href="#demo" class="t24-hero__cta">Booking a Free Demo</a>
+	<!-- ============ WHAT WE DO ============ -->
+	<section class="what-we-do">
+		<div class="container section-heading">
+			<h2><?php the_field( 'wwd_heading' ); ?></h2>
+			<p><?php the_field( 'wwd_subtext' ); ?></p>
+		</div>
 
-      <div class="t24-hero__logos">
-        <img class="t24-logo1 t24-logo--vconnect" src="http://localhost/wordpress/wp-content/uploads/2026/07/logovconnect.jpeg" alt="VConnect logo">
-        <img class="t24-logo2 t24-logo--vbanx" src="http://localhost/wordpress/wp-content/uploads/2026/07/logoblue.jpeg" alt="VBANX logo">
-      </div>
-    </div>
+		<div class="wwd-body">
+			<div class="container wwd-grid">
 
-  </div>
-</section>
-<style>
-  .t24-hero, .t24-hero *, .t24-hero *::before, .t24-hero *::after {
-    box-sizing: border-box;
-  }
+				<div class="wwd-cards">
+					<div class="feature-card" data-reveal>
+						<div class="num"><?php the_field( 'wwd_card_1_number' ); ?></div>
+						<h3><?php the_field( 'wwd_card_1_title' ); ?></h3>
+						<p><?php the_field( 'wwd_card_1_text' ); ?></p>
+					</div>
+					<div class="feature-card" data-reveal>
+						<div class="num"><?php the_field( 'wwd_card_2_number' ); ?></div>
+						<h3><?php the_field( 'wwd_card_2_title' ); ?></h3>
+						<p><?php the_field( 'wwd_card_2_text' ); ?></p>
+					</div>
+					<div class="feature-card" data-reveal>
+						<div class="num"><?php the_field( 'wwd_card_3_number' ); ?></div>
+						<h3><?php the_field( 'wwd_card_3_title' ); ?></h3>
+						<p><?php the_field( 'wwd_card_3_text' ); ?></p>
+					</div>
+				</div>
 
-  .t24-hero {
-    --t24-orange: #f2932e;
-    --t24-navy: #1b2f6b;
-    --t24-gray: #5a5f6a;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: #f4f5f7;
-    padding: 0;
-  }
+				<div class="phone-gallery">
+					<?php $gallery_img = get_field( 'wwd_gallery_image' ); if ( $gallery_img ) : ?>
+						<img src="<?php echo esc_url( $gallery_img ); ?>" alt="<?php the_field( 'wwd_gallery_alt' ); ?>">
+					<?php else : ?>
+						<div class="phone-gallery-fallback">
+							<span><?php esc_html_e( 'Add a Phone Gallery Image in the page editor', 'vbanx-consumer' ); ?></span>
+						</div>
+					<?php endif; ?>
+				</div>
 
-  /* BACKGROUND CONTAINER — the photo layer. Everything else is positioned relative to this. */
-  .t24-hero__inner {
-    position: relative !important;
-    max-width: full;
-    height: 600px;
-    margin: 0 auto !important;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(20, 30, 60, 0.12);
-    background-color: #0a1830;
-    background-size: cover;
-    background-position: left center;  
-    background-image: url('http://localhost/wordpress/wp-content/uploads/2026/07/consumer.png');
-  }
+			</div>
+		</div>
+	</section>
 
-  /* TEXT PANEL*/
-  .t24-hero__panel {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 800px !important;
-    max-width: 100%;
-    height: 600px !important;
-    background: #ffffff !important;
-    padding: 60px 50px 0 80px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 30px;
-    justify-content: flex-start;
-    border-radius: 0 0 300px 0 !important; /* top-left top-right bottom-right bottom-left */
-    overflow: hidden; /* clip content */
-    z-index: 2;
-    margin: 0;
-    
-  }
+	<!-- ============ PRODUCT INTRO BAND ============ -->
+	<section class="product-intro" id="products">
+		<div class="container">
+			<h2>
+				<?php the_field( 'intro_heading_main' ); ?><span class="text-accent"><?php the_field( 'intro_heading_accent' ); ?></span>
+			</h2>
+			<p><?php the_field( 'intro_text' ); ?></p>
+		</div>
+	</section>
 
-  .t24-hero__eyebrow {
-    color: var(--t24-navy);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    margin: 0;
-  }
+	<!-- ============ FEATURES GRID ============ -->
+	<section class="features-band">
+		<div class="container">
+			<div class="features-grid">
 
-  .t24-hero__title {
-    margin: 0;
-    line-height: 1.05;
-  }
+				<div class="card">
+					<div class="icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M2 20h20"/></svg>
+					</div>
+					<h3><?php the_field( 'feature_1_title' ); ?></h3>
+					<p><?php the_field( 'feature_1_text' ); ?></p>
+				</div>
 
-  .t24-hero__title-accent {
-    display: block;
-    color: var(--t24-orange);
-    font-size: 50px;
-    font-weight: 800;
-  }
+				<div class="card">
+					<div class="icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7L3 9h7z"/></svg>
+					</div>
+					<h3><?php the_field( 'feature_2_title' ); ?></h3>
+					<p><?php the_field( 'feature_2_text' ); ?></p>
+				</div>
 
-  .t24-hero__title-main {
-    display: block;
-    color: var(--t24-navy);
-    font-size: 39px;
-    font-weight: 800;
-    margin-top: 2px;
-  }
+				<div class="card">
+					<div class="icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="1"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+					</div>
+					<h3><?php the_field( 'feature_3_title' ); ?></h3>
+					<p><?php the_field( 'feature_3_text' ); ?></p>
+				</div>
 
-  .t24-hero__desc {
-    color: var(--t24-gray);
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 520px;
-    margin: 0;
-  }
+				<div class="card">
+					<div class="icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+					</div>
+					<h3><?php the_field( 'feature_4_title' ); ?></h3>
+					<p><?php the_field( 'feature_4_text' ); ?></p>
+				</div>
 
-    .t24-logo1 {
-    height: 60px;
-    width: auto;
-    }
-    .t24-logo2 {
-    height: 60px;
-    width: auto
-    }
-    .t24-hero__cta {
-    display: inline-block;
-    align-self: flex-start;
-    background: var(--t24-orange);
-    color: #fff;
-    font-weight: 700;
-    font-size: 14px;
-    text-decoration: none;
-    padding: 14px 30px;
-    border-radius: 30px;
-    box-shadow: 0 10px 20px rgba(242, 147, 46, 0.35);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .t24-hero__cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 26px rgba(242, 147, 46, 0.45);
-  }
-  .t24-hero__cta:focus-visible {
-    outline: 3px solid var(--t24-navy);
-    outline-offset: 2px;
-  }
+				<div class="card">
+					<div class="icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.1-1.2l2-1.5-2-3.4-2.3.9a7 7 0 00-2-1.2L14 3h-4l-.6 2.6a7 7 0 00-2 1.2l-2.3-.9-2 3.4 2 1.5A7 7 0 005 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.3-.9c.6.5 1.3.9 2 1.2L10 21h4l.6-2.6a7 7 0 002-1.2l2.3.9 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/></svg>
+					</div>
+					<h3><?php the_field( 'feature_5_title' ); ?></h3>
+					<p><?php the_field( 'feature_5_text' ); ?></p>
+				</div>
 
-  .t24-hero__logos {
-   
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    flex-wrap: wrap;
+				<div class="card">
+					<div class="icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4z"/><path d="M17 5h3a3 3 0 01-3 4M7 5H4a3 3 0 003 4"/></svg>
+					</div>
+					<h3><?php the_field( 'feature_6_title' ); ?></h3>
+					<p><?php the_field( 'feature_6_text' ); ?></p>
+				</div>
 
-  }
-  .t24-logo { height: 34px; width: auto; }
+			</div>
+		</div>
+	</section>
 
-  /* ICONS + BADGE — positioned relative to .t24-hero__inner (the photo layer) */
-  .t24-hero__badge {
-    position: absolute;
-    top: 50%;
-    left: 72%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    padding: 14px 26px;
-    border: 2px solid rgba(255,255,255,0.6);
-    background: rgba(10, 24, 48, 0.35);
-    backdrop-filter: blur(2px);
-    z-index: 1;
-    white-space: nowrap;
-  }
+</main>
 
-  .t24-hero__icon { position: absolute; z-index: 1; }
-  .t24-hero__icon--wifi { top: 34px; right: 60px; width: 34px; height: 34px; opacity: 0.9; }
-  .t24-hero__icon--pin { bottom: 28px; right: 50px; width: 26px; height: 26px; opacity: 0.9; }
-
-  /* RESPONSIVE */
-  @media (max-width: 1000px) {
-    .t24-hero__panel {
-      width: 55% !important;
-      padding: 50px 40px 0 60px !important;
-    }
-    .t24-hero__badge { left: 78%; font-size: 24px; }
-  }
-
-  @media (max-width: 860px) {
-    .t24-hero__inner {
-      height: auto !important;
-      min-height: 520px;
-      box-shadow: none;
-    }
-    .t24-hero__panel {
-      position: relative !important;
-      width: 100% !important;
-      height: auto !important;
-      padding: 40px 24px !important;
-      border-radius: 0 !important;
-    }
-    .t24-hero__badge,
-    .t24-hero__icon { display: none; }
-    .t24-hero__title-accent { font-size: 36px; }
-    .t24-hero__title-main { font-size: 28px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .t24-hero__cta { transition: none; }
-  }
-</style>
+<?php wp_footer(); ?>
+</body>
+</html>
+<?php get_footer();
