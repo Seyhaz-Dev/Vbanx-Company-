@@ -8,6 +8,8 @@ wordpress/wp-config.php
 wordpress/wp-content/cache/
 wordpress/wp-content/upgrade/
 
+
+
 # Debug logs
 wordpress/wp-content/debug.log
 debug.log
@@ -34,3 +36,4 @@ Thumbs.db
 !wp-content/themes/
 wp-content/themes/*
 !wp-content/themes/vbanx-theme/
+!wordpress/htaccess
