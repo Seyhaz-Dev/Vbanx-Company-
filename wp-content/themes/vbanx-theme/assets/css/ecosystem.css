@@ -1,0 +1,557 @@
+/* ==========================================================
+   VBANX ECOSYSTEM PAGE — ecosystem.css
+   ========================================================== */
+
+:root {
+	--vbx-navy: #16213f;
+	--vbx-navy-light: #2a3a63;
+	--vbx-gold: #e0983c;
+	--vbx-gold-dark: #c97f28;
+	--vbx-gray-text: #6b7280;
+	--vbx-border: #e5e7eb;
+	--vbx-bg-light: #f4f6fb;
+	--vbx-white: #ffffff;
+	--vbx-radius: 14px;
+	--vbx-shadow: 0 8px 24px rgba(22, 33, 63, 0.08);
+	--navy-700: #16213f;
+	--orange-600: #e0983c;
+	--radius-pill: 999px;
+	--transition-smooth: all 0.2s ease;
+	--font-display: "Poppins", sans-serif;
+}
+
+/* ---------- HERO (T24 style) ---------- */
+.eco-hero-banner, .eco-hero-banner *, .eco-hero-banner *::before, .eco-hero-banner *::after {
+  box-sizing: border-box;
+}
+.eco-hero-banner {
+  font-family: var(--font-display);
+  background: #f4f5f7;
+  padding: 0;
+}
+.eco-hero-banner__inner {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+  background-color: #0a1830;
+}
+
+/* the actual background photo — a real <img>, not a CSS background-image,
+   so it can't silently fail if the ACF field returns something unexpected.
+   object-position shifted down so the hand/fingers stay in frame instead
+   of being cropped off the bottom */
+.eco-hero-banner__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 75%;
+  z-index: 0;
+}
+
+.eco-hero-banner__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #f8f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 250px 30px 60px;
+  border-radius: 0 0 200px 0;
+  z-index: 2;
+}
+.eco-hero-banner__eyebrow {
+  color: var(--navy-700);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.eco-hero-banner__title {
+  margin: 0;
+  line-height: 1.05;
+}
+.eco-hero-banner__title-accent {
+  display: block;
+  color: var(--orange-600);
+  font-size: 50px;
+  font-weight: 800;
+}
+.eco-hero-banner__title-main {
+  display: block;
+  color: var(--navy-700);
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 2px;
+}
+.eco-hero-banner__desc {
+  color: #5a5f6a;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 380px;
+  margin: 0;
+}
+.eco-hero-banner__cta {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--orange-600);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 20px rgba(245, 166, 35, 0.35);
+  transition: var(--transition-smooth);
+}
+.eco-hero-banner__cta:hover {
+  transform: translateY(-2px);
+}
+.eco-hero-banner__logos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 6px;
+}
+.eco-hero-banner-logo1 { height: 60px; width: auto; }
+.eco-hero-banner-logo2 { height: 44px; width: auto; }
+.eco-hero-banner__icon { position: absolute; z-index: 1; }
+.eco-hero-banner__icon--wifi { top: 30px; right: 50px; width: 30px; height: 30px; opacity: 0.9; }
+.eco-hero-banner__icon--pin { bottom: 24px; right: 40px; width: 22px; height: 22px; opacity: 0.9; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .eco-hero-banner__panel {
+    width: 60%;
+    padding: 36px 30px;
+  }
+  .eco-hero-banner__title-accent { font-size: 32px; }
+  .eco-hero-banner__title-main { font-size: 22px; }
+}
+@media (max-width: 700px) {
+  .eco-hero-banner__inner {
+    height: auto;
+    min-height: 500px;
+  }
+  .eco-hero-banner__panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    padding: 36px 24px;
+  }
+  .eco-hero-banner__icon { display: none; }
+  .eco-hero-banner__bg {
+    position: relative;
+    height: 260px;
+  }
+}
+
+/* ---------- WHAT WE DO ---------- */
+.eco-what-we-do {
+	background: var(--vbx-bg-light);
+	padding: 72px 24px;
+	text-align: center;
+}
+
+.eco-what-we-do h2 {
+	font-family: "Poppins", sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	color: var(--vbx-navy);
+	margin: 0 0 8px;
+	position: relative;
+	display: inline-block;
+	padding-bottom: 14px;
+}
+
+.eco-what-we-do h2::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 48px;
+	height: 3px;
+	background: var(--vbx-gold);
+	border-radius: 2px;
+}
+
+.eco-what-we-do p {
+	font-family: "Inter", sans-serif;
+	font-size: 14px;
+	color: var(--vbx-gray-text);
+	max-width: 560px;
+	margin: 0 auto 48px;
+	line-height: 1.7;
+}
+
+.eco-cards-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+	max-width: 1155px;
+	margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+	.eco-cards-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.eco-cards-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.eco-card {
+	background: var(--vbx-white);
+	border-radius: var(--vbx-radius);
+	box-shadow: var(--vbx-shadow);
+	padding: 32px 24px;
+	text-align: center;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eco-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 14px 32px rgba(22, 33, 63, 0.12);
+}
+
+.eco-card-icon {
+	width: 40px;
+	height: 40px;
+	object-fit: contain;
+	margin: 0 auto 12px;
+}
+
+.eco-card-number {
+	display: block;
+	font-family: "Inter", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--vbx-gold);
+	letter-spacing: 1px;
+	margin-bottom: 6px;
+}
+
+.eco-card h3 {
+	font-family: "Poppins", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--vbx-navy);
+	margin: 0 0 8px;
+}
+
+.eco-card p {
+	font-family: "Inter", sans-serif;
+	font-size: 13px;
+	color: var(--vbx-gray-text);
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* ---------- SIX PILLARS, ONE PLATFORM ---------- */
+.eco-pillars {
+	background: var(--vbx-white);
+	padding: 72px 24px;
+	text-align: center;
+}
+
+.eco-pillars h2 {
+	font-family: "Poppins", sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	color: var(--vbx-navy);
+	margin: 0 0 8px;
+}
+
+.eco-pillars p {
+	font-family: "Inter", sans-serif;
+	font-size: 14px;
+	color: var(--vbx-gray-text);
+	max-width: 560px;
+	margin: 0 auto 56px;
+	line-height: 1.7;
+}
+
+.eco-pillars-timeline {
+	position: relative;
+	max-width: 860px;
+	margin: 0 auto;
+}
+
+.eco-pillars-timeline::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	width: 2px;
+	background: var(--vbx-border);
+	transform: translateX(-50%);
+}
+
+.eco-pillar-item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 32px;
+}
+
+.eco-pillar-item:last-child {
+	margin-bottom: 0;
+}
+
+.eco-pillar-icon {
+	position: relative;
+	z-index: 2;
+	flex: 0 0 64px;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background: var(--vbx-white);
+	box-shadow: var(--vbx-shadow);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+/* Image fills the entire circle edge-to-edge */
+.eco-pillar-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.eco-pillar-card {
+	flex: 0 0 46%;
+	max-width: 46%;
+	background: var(--vbx-white);
+	border: 1px solid var(--vbx-border);
+	border-top: 3px solid var(--vbx-navy);
+	border-radius: var(--vbx-radius);
+	box-shadow: var(--vbx-shadow);
+	padding: 20px 22px;
+	text-align: left;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eco-pillar-card:hover,
+.eco-pillar-card:focus-visible {
+	transform: translateY(-4px);
+	box-shadow: 0 14px 32px rgba(22, 33, 63, 0.16);
+	outline: none;
+}
+
+.eco-pillar-label {
+	display: block;
+	font-family: "Inter", sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: var(--vbx-gold);
+	margin-bottom: 4px;
+}
+
+.eco-pillar-card h3 {
+	font-family: "Poppins", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--vbx-navy);
+	margin: 0 0 10px;
+}
+
+.eco-pillar-points {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.eco-pillar-points li {
+	position: relative;
+	padding-left: 16px;
+	font-family: "Inter", sans-serif;
+	font-size: 13px;
+	color: var(--vbx-gray-text);
+	line-height: 1.7;
+}
+
+.eco-pillar-points li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 9px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: var(--vbx-gold);
+}
+
+.eco-pillar-left {
+	justify-content: flex-start;
+}
+
+.eco-pillar-left .eco-pillar-card {
+	order: 1;
+	margin-right: auto;
+}
+
+.eco-pillar-left .eco-pillar-icon {
+	order: 2;
+}
+
+.eco-pillar-right {
+	justify-content: flex-end;
+}
+
+.eco-pillar-right .eco-pillar-icon {
+	order: 1;
+}
+
+.eco-pillar-right .eco-pillar-card {
+	order: 2;
+	margin-left: auto;
+}
+
+.eco-pillars-timeline .eco-pillar-item:nth-child(1) .eco-pillar-card { border-top-color: #2a9d8f; }
+.eco-pillars-timeline .eco-pillar-item:nth-child(2) .eco-pillar-card { border-top-color: var(--vbx-navy); }
+.eco-pillars-timeline .eco-pillar-item:nth-child(3) .eco-pillar-card { border-top-color: #14b8c4; }
+.eco-pillars-timeline .eco-pillar-item:nth-child(4) .eco-pillar-card { border-top-color: var(--vbx-gold); }
+.eco-pillars-timeline .eco-pillar-item:nth-child(5) .eco-pillar-card { border-top-color: #2e9e5b; }
+.eco-pillars-timeline .eco-pillar-item:nth-child(6) .eco-pillar-card { border-top-color: #e05353; }
+
+/* ---------- PILLAR FULL-SCREEN MODAL ---------- */
+.eco-pillar-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 999;
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.eco-pillar-modal.is-open {
+	display: flex;
+}
+
+.eco-pillar-modal__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(22, 33, 63, 0.75);
+	backdrop-filter: blur(2px);
+}
+
+.eco-pillar-modal__panel {
+	position: relative;
+	z-index: 1;
+	background: var(--vbx-white);
+	width: min(90vw, 720px);
+	max-height: 85vh;
+	overflow-y: auto;
+	border-radius: 20px;
+	padding: 48px;
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+	animation: eco-modal-in 0.2s ease;
+}
+
+@keyframes eco-modal-in {
+	from { opacity: 0; transform: scale(0.96); }
+	to   { opacity: 1; transform: scale(1); }
+}
+
+.eco-pillar-modal__close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 36px;
+	height: 36px;
+	border: none;
+	background: var(--vbx-bg-light);
+	color: var(--vbx-navy);
+	font-size: 22px;
+	line-height: 1;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.15s ease;
+}
+
+.eco-pillar-modal__close:hover {
+	background: var(--vbx-border);
+}
+
+.eco-pillar-modal__label {
+	display: block;
+	font-family: "Inter", sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: var(--vbx-gold);
+	margin-bottom: 10px;
+}
+
+.eco-pillar-modal__title {
+	font-family: "Poppins", sans-serif;
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--vbx-navy);
+	margin: 0 0 24px;
+}
+
+.eco-pillar-modal__points {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.eco-pillar-modal__points li {
+	position: relative;
+	padding: 12px 0 12px 24px;
+	font-family: "Inter", sans-serif;
+	font-size: 17px;
+	color: var(--vbx-gray-text);
+	border-bottom: 1px solid var(--vbx-border);
+}
+
+.eco-pillar-modal__points li:last-child {
+	border-bottom: none;
+}
+
+.eco-pillar-modal__points li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 20px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--vbx-gold);
+}
+
+@media (max-width: 600px) {
+	.eco-pillar-modal__panel {
+		padding: 32px 24px;
+		width: 92vw;
+	}
+	.eco-pillar-modal__title {
+		font-size: 24px;
+	}
+}

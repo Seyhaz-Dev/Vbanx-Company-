@@ -1,0 +1,506 @@
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero-section {
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #1e1c1d; /* Fallback background color */
+}
+
+/* Dark overlay on background */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    
+    /* Creates the dark tint overlay over the image */
+    background: rgba(30, 28, 29, 0.85); 
+}
+
+/* Target the img inside the overlay to make it behave like a background cover */
+.hero-overlay img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    
+    /* Pushes the image behind the dark background tint color */
+    position: relative;
+    z-index: -1; 
+}
+
+/* Container */
+.hero-container {
+    position: relative;
+    z-index: 2; /* Sits completely on top of the dark overlay layer */
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    
+    /* Uses Flexbox to space out the columns like your layout picture */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Content Column (Left Side) */
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+    color: #F5A623;
+}
+
+/* Title */
+.hero-content h1 {
+    font-size: 56px;
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 25px;
+    
+}
+
+/* Description */
+.hero-content p {
+   
+    font-size: 18px;
+    line-height: 1.7;
+    color: #e5e5e5;
+    margin-bottom: 35px;
+    max-width: 600px;
+}
+
+/* Buttons wrapper */
+.hero-buttons {
+    
+    display: flex;
+    gap: 20px;
+}
+
+/* Primary button */
+.btn-primary {
+    display: inline-block;
+    padding: 15px 45px; /* Balanced padding to keep text centered neatly */
+    background: #f2932e;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background: #d97d1e;
+}
+
+/* Secondary button */
+.btn-secondary {
+    display: inline-block;
+    padding: 15px 45px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background: #ffffff;;
+    color: #111;
+}
+
+/* Image Column (Right Side) */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Rounded meeting picture style */
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px; 
+}
+/* ===========================
+   Responsive Design
+=========================== */
+
+/* Desktop layout constraint */
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 52px;
+    }
+}
+
+/* Tablets and iPad screens */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column; 
+        justify-content: center;
+        text-align: center;
+        gap: 50px;
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-image {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 85%;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 80px 20px 40px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+}
+
+/* ===========================
+   Dashboard Preview Section
+=========================== */
+
+.dashboard-preview-section {
+    padding: 20px 0;
+    background-color: #ffffff; 
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Container to hold both sides */
+.preview-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    
+    /* Uses flexbox to sit text and image side-by-side */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Left Content Column */
+.preview-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+/* The small description text */
+.preview-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4a4a4a; 
+}
+
+/* The BIG text styling for VBANX */
+.brand-highlight {
+    display: block;            
+    font-size: 56px;          
+    font-weight: 800;         
+    color: #F5A623;
+   
+}
+
+/* Right Image Column */
+.preview-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Dashboard Mockup Picture */
+.preview-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); 
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+/* Tablets and Smaller Screens */
+@media (max-width: 992px) {
+    .dashboard-preview-section {
+        padding: 60px 0;
+    }
+
+    .preview-container {
+        flex-direction: column; /* Stacks column layout vertically */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .preview-content {
+        max-width: 100%;
+    }
+
+    .brand-highlight {
+        font-size: 46px; /* Shrinks big text slightly on tablet */
+    }
+
+    .preview-image {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .preview-image img {
+        max-width: 90%; /* Keeps image neatly constrained */
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .preview-container {
+        padding: 0 20px;
+    }
+
+    .brand-highlight {
+        font-size: 38px; /* Safe mobile size for the big heading */
+        margin-bottom: 15px;
+    }
+
+    .preview-content p {
+        font-size: 16px;
+    }
+
+    .preview-image img {
+        max-width: 100%;
+    }
+}
+
+/* ===========================
+   Why VBANX Section Header
+=========================== */
+
+.main-section {
+    padding: 20px 0 40px 0;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    background: #F0F1FF;
+}
+
+/* Center Container */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;  ;;
+}
+
+/* 1. Pill Badge Style at the Top */
+.badge-tag {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #f6efe9; 
+    border: 2px solid #f2932e;  
+    border-radius: 50px;      
+    color: #f2932e;           
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;       
+}
+
+/* 2. Main Title "Why VBANX?" */
+.section-title {
+    font-size: 56px;           
+    font-weight: 800;          
+    color: #0038a8;            
+    margin: 0 0 20px 0;       
+    letter-spacing: -0.5px;
+}
+
+/* 3. Description Subtitle text */
+.section-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;            
+    font-weight: 400;
+    max-width: 500px;         
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width: 768px) {
+    .why-vbanx-section {
+        padding: 60px 0 30px 0;
+    }
+
+    .section-title {
+        font-size: 40px;       /* Safely scales down on mobile screens */
+    }
+
+    .section-subtitle {
+        font-size: 16px;       /* Slightly smaller text size for mobile readers */
+        max-width: 90%;
+    }
+
+    .badge-tag {
+        font-size: 12px;
+        padding: 8px 20px;     /* Makes the pill slightly smaller on mobile */
+    }
+}
+
+/* ===========================
+   trust-cards-section 
+=========================== */
+.trust-cards-section {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.card-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    padding: 0 20px;
+}
+
+
+/* card component */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+
+    min-height: 250px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card__number {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+
+.card__line {
+    width: 50px;
+    height: 3px;
+    margin: 20px 0;
+
+    background: #f2932e;
+}
+
+
+.card__title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+.card__description {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+@media(max-width: 900px){
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media(max-width: 600px){
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ===========================
+   Experts Section
+=========================== */
+.expert-section{
+    font-family: "Montserrat", sans-serif;
+    padding: 40px 0 20px 0;
+    width: 100%;
+
+}
+.expert-title{
+    font-size: 56px;           
+    font-weight: 800;          
+    color: #01319B;            
+    margin: 0 0 20px 0;       
+    letter-spacing: -0.5px;
+}
+.section-description {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
