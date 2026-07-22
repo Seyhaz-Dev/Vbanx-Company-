@@ -68,3 +68,14 @@ function vbanx_enqueue_montserrat() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_montserrat' );
+
+
+function vbanx_enqueue_fontawesome() {
+    wp_enqueue_style(
+        'font-awesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
+        array(),
+        '6.5.2'
+    );
+}
+add_action('wp_enqueue_scripts', 'vbanx_enqueue_fontawesome');
