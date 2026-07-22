@@ -38,6 +38,15 @@ function vbanx_enqueue_assets() {
         array(),
         '1.0'
     );
+    if ( is_page_template( 'page-contact.php' ) ) {
+        wp_enqueue_style(
+            'contact-style',
+            get_template_directory_uri() . '/assets/css/contact.css',
+            array( 'main-style' ),
+            '1.0'
+        );
+    }
+
 
     // ហៅចូល CSS សម្រាប់ទំព័រ Ecosystem
     wp_enqueue_style(
