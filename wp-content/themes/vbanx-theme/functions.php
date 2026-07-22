@@ -55,3 +55,15 @@ function vbanx_enqueue_assets() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
+    wp_enqueue_style(
+            't24-solution-style',
+            get_template_directory_uri() . '/assets/css/t24-solution.css',
+            array(),
+            '1.0'
+        );
+        wp_enqueue_style(
+            'oambanking-style',
+            get_template_directory_uri() . '/assets/css/oambanking.css',
+            array(),
+            '1.0'
+        );
