@@ -14,10 +14,9 @@ function vbanx_theme_setup() {
         'primary' => __( 'Primary Menu', 'vbanx-theme' ),
     ) );
 
-    // បន្ថែម Support សម្រាប់ Custom Logo
     add_theme_support( 'custom-logo', array(
         'height'      => 100,
-        'width'       => 40,
+        'width'       => 400,
         'flex-height' => true,
         'flex-width'  => true,
     ) );
@@ -25,13 +24,26 @@ function vbanx_theme_setup() {
 add_action( 'after_setup_theme', 'vbanx_theme_setup' );
 
 
-// ២. បញ្ចូលឯកសារ CSS និង JS (ចងក្រងចូលគ្នាកុំឱ្យទើសកូដច្រើន)
 function vbanx_enqueue_assets() {
-    // ហៅចូល CSS
+    wp_enqueue_style(
+        'montserrat-font',
+        'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap',
+        array(),
+        null
+    );
+
     wp_enqueue_style(
         'main-style',
         get_template_directory_uri() . '/assets/css/style.css',
         array(),
+        '1.0'
+    );
+
+    // ហៅចូល CSS សម្រាប់ទំព័រ Ecosystem
+    wp_enqueue_style(
+        'ecosystem-style',
+        get_template_directory_uri() . '/assets/css/ecosystem.css',
+        array( 'main-style' ),
         '1.0'
     );
 
@@ -43,6 +55,13 @@ function vbanx_enqueue_assets() {
         '1.0',
         true
     );
+    // call parnership
+     wp_enqueue_style(
+            'partnerships',
+            get_stylesheet_directory_uri() . '/assets/css/partnerships.css',
+            array(),
+            '1.0'
+        );
 }
 
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
@@ -59,4 +78,8 @@ function mytheme_enqueue_montserrat() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );
+
+
+
+
 

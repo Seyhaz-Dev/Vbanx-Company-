@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body <?php body_class(); ?>>
@@ -42,8 +42,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                         'container'      => false,
                         'items_wrap'     => '%3$s',
                     ) );
-                } else {
-                    vbanx_fallback_primary_menu();
                 }
                 ?>
             </nav>
@@ -63,6 +61,23 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+
+    // =========================
+    // Header Scroll Effect
+    // =========================
+    const header = document.querySelector('.site-header');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // =========================
+    // Mobile Menu Toggle
+    // =========================
     const navToggle = document.getElementById('nav-toggle');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -71,12 +86,12 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             navToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
-            
+
             const isOpen = mobileMenu.classList.contains('active');
             navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            
+
             if (isOpen) {
-                navToggle.innerHTML = '<i class="fa-solid fa-xmark" style="font-size: 22px; color: #000000; display: block; line-height: 1;"></i>';
+                navToggle.innerHTML = '<i class="fa-solid fa-xmark" style="font-size:22px;color:#000;display:block;line-height:1;"></i>';
                 navToggle.style.width = 'auto';
                 navToggle.style.height = 'auto';
             } else {
@@ -87,14 +102,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // =========================
+    // Mobile Submenu
+    // =========================
     document.querySelectorAll('.menu-item-has-children > a').forEach(link => {
         link.addEventListener('click', function(e) {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 const parentLi = this.parentElement;
-                
+
                 document.querySelectorAll('.menu-item-has-children').forEach(li => {
                     if (li !== parentLi) {
                         li.classList.remove('submenu-active');
@@ -105,24 +123,29 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
+    // =========================
+    // Close Mobile Menu
+    // =========================
     window.addEventListener('click', function(e) {
         if (mobileMenu && mobileMenu.classList.contains('active')) {
             if (!mobileMenu.contains(e.target) && !navToggle.contains(e.target)) {
+
                 navToggle.classList.remove('active');
                 mobileMenu.classList.remove('active');
                 navToggle.setAttribute('aria-expanded', 'false');
-                
+
                 navToggle.innerHTML = '<span></span><span></span><span></span>';
                 navToggle.style.width = '26px';
                 navToggle.style.height = '18px';
-                
+
                 document.querySelectorAll('.menu-item-has-children').forEach(li => {
                     li.classList.remove('submenu-active');
                 });
             }
         }
     });
+
 });
 </script>
 

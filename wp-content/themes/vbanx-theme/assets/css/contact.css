@@ -1,0 +1,315 @@
+/* ================= CONTACT PAGE ================= */
+
+.contact-page {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fb;
+    padding: 70px 0 0;
+}
+
+.contact-page .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-section {
+    padding-bottom: 60px;
+}
+
+.contact-panel {
+    display: flex;
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(6, 26, 64, 0.18);
+}
+
+/* ================= LEFT INFO PANEL ================= */
+
+.contact-info {
+    position: relative;
+    flex: 0 0 40%;
+    background: linear-gradient(160deg, #0b2a6e 0%, #061a40 100%);
+    color: #ffffff;
+    padding: 48px 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-info-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 18px;
+}
+
+.contact-info p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 32px;
+}
+
+.contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 18px;
+}
+
+.contact-details li a {
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+}
+
+.contact-details li a:hover {
+    text-decoration: underline;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.contact-social {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-social a:hover {
+    background: #f5a524;
+    color: #051230;
+    transform: translateY(-2px);
+}
+
+/* Decorative glowing circles, bottom-right of the panel */
+.contact-info-decor {
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 260px;
+    height: 260px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contact-info-decor::before,
+.contact-info-decor::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.contact-info-decor::before {
+    width: 200px;
+    height: 200px;
+    right: 40px;
+    bottom: 0;
+    background: rgba(11, 92, 255, 0.55);
+}
+
+.contact-info-decor::after {
+    width: 130px;
+    height: 130px;
+    right: 0;
+    bottom: 30px;
+    background: rgba(11, 92, 255, 0.3);
+}
+
+/* ================= RIGHT FORM PANEL ================= */
+
+.contact-form-wrap {
+    flex: 1;
+    padding: 48px 44px;
+}
+
+.form-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-full {
+    margin-bottom: 22px;
+}
+
+.contact-form label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #0b2a6e;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    border: none;
+    border-bottom: 1.5px solid #dbe1ee;
+    padding: 8px 2px 10px;
+    font-size: 14.5px;
+    font-family: inherit;
+    color: #111827;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-bottom-color: #0b5cff;
+}
+
+.contact-form select {
+    appearance: none;
+    background: #f3f5fa url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23556' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E") no-repeat right 12px center;
+    border: 1px solid #e3e7f0;
+    border-radius: 6px;
+    padding: 12px 34px 12px 14px;
+    cursor: pointer;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b2a6e;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.form-submit:hover {
+    background: #0b5cff;
+    transform: translateY(-2px);
+}
+
+.form-submit:active {
+    transform: translateY(0);
+}
+
+/* Honeypot: visually hidden, still present in the DOM for real users' browsers to ignore */
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.form-error {
+    background: #fdecec;
+    border: 1px solid #f5b5b5;
+    color: #9b1c1c;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.form-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    text-align: center;
+}
+
+.form-success p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0b2a6e;
+    max-width: 380px;
+}
+
+/* ================= GOOGLE MAP ================= */
+
+.map-section {
+    line-height: 0;
+}
+
+.map-section iframe {
+    display: block;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .contact-panel {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form-wrap {
+        flex: 1 1 auto;
+        padding: 36px 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-page {
+        padding-top: 40px;
+    }
+
+    .contact-info h2 {
+        font-size: 22px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 18px;
+    }
+
+    .contact-form-wrap {
+        padding: 30px 22px;
+    }
+}

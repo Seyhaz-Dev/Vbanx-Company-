@@ -132,7 +132,6 @@ for ( $i = 1; $i <= 12; $i++ ) {
         <span class="eyebrow"><?php the_field('screens_eyebrow'); ?></span>
         <h2 class="section-title"><?php the_field('screens_title'); ?><br><?php the_field('screens_title_line_2'); ?></h2>        <p class="section-desc"><?php the_field('screens_description'); ?></p>
       </div>
-      <a href="<?php the_field('screens_see_all_url'); ?>" class="see-all">See All <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 

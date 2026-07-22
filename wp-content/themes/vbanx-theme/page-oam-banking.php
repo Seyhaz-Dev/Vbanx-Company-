@@ -1,224 +1,184 @@
 
+<!-- /* ============================================================
+   OAMBanking Hero — Section
+============================================================ */ -->
 
-<section class="t24-hero">
-  <div class="t24-hero__inner">
+<?php
+/**
+ * Template Name: OAM Banking Page
+ */
 
-    <!-- BACKGROUND: full-bleed photo -->
-  
-    <svg class="t24-hero__icon t24-hero__icon--wifi" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
-      <path d="M5 12.5a11 11 0 0 1 14 0"/>
-      <path d="M8.5 16a6 6 0 0 1 7 0"/>
-      <circle cx="12" cy="19.5" r="1.2" fill="#fff" stroke="none"/>
-    </svg>
+get_header();
 
-    <svg class="t24-hero__icon t24-hero__icon--pin" viewBox="0 0 24 24" fill="#fff">
-      <path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-    </svg>
 
-    <!-- FOREGROUND: text panel, absolutely positioned over the photo -->
-    <div class="t24-hero__panel">
-      <p class="t24-hero__eyebrow">S.M.A.R.T Digital Banking Transformation</p>
-
-      <h1 class="t24-hero__title">
-        <span class="t24-hero__title-accent">OAMBanking
-</span>
-        <span class="t24-hero__title-main">Operational and Analytical <br>Mobile Banking</span>
+$oam_eyebrow   = get_field('oam_eyebrow');
+$oam_title1    = get_field('oam_title1');
+$oam_title2    = get_field('oam_title2');
+$oam_desc      = get_field('oam_hero_desc');
+$oam_btn       = get_field('oam_hero_btn');
+$oam_bg        = get_field('oam_hero_bg');
+?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/oambanking.css">
+<section class="oam-hero">
+  <div class="oam-hero__inner" <?php if ( $oam_bg ) : ?>style="background-image: url('<?php echo esc_url( $oam_bg ); ?>');"<?php endif; ?>>
+    <div class="oam-hero__panel">
+      <?php if ( $oam_eyebrow ) : ?>
+        <p class="oam-hero__eyebrow"><?php echo esc_html( $oam_eyebrow ); ?></p>
+      <?php endif; ?>
+      <h1 class="oam-hero__title">
+        <?php if ( $oam_title1 ) : ?>
+          <span class="oam-hero__title-accent"><?php echo esc_html( $oam_title1 ); ?></span>
+        <?php endif; ?>
+        <?php if ( $oam_title2 ) : ?>
+          <span class="oam-hero__title-main"><?php echo esc_html( $oam_title2 ); ?></span>
+        <?php endif; ?>
       </h1>
-
-      <p class="t24-hero__desc">
-            OAMBanking is an intelligent mobile banking solution that gives 
-            financial institutions real-time operational control and analytical i
-            nsights — enabling executives to monitor performance, approve transactions, 
-            and make informed decisions securely from anywhere, at any time.
-      </p>
-
-      <a href="#demo" class="t24-hero__cta">Booking a Free Demo</a>
-
-      <div class="t24-hero__logos">
-        <img class="t24-logo1 t24-logo--vconnect" src="http://localhost/wordpress/wp-content/uploads/2026/07/logovconnect.jpeg" alt="VConnect logo">
-        <img class="t24-logo2 t24-logo--vbanx" src="http://localhost/wordpress/wp-content/uploads/2026/07/logoblue.jpeg" alt="VBANX logo">
-      </div>
+      <?php if ( $oam_desc ) : ?>
+        <p class="oam-hero__desc"><?php echo esc_html( $oam_desc ); ?></p>
+      <?php endif; ?>
+      <?php if ( $oam_btn ) : ?>
+        <a href="#demo" class="oam-hero__cta"><?php echo esc_html( $oam_btn ); ?></a>
+      <?php endif; ?>
     </div>
-
   </div>
 </section>
-<style>
-  .t24-hero, .t24-hero *, .t24-hero *::before, .t24-hero *::after {
-    box-sizing: border-box;
-  }
 
-  .t24-hero {
-    --t24-orange: #f2932e;
-    --t24-navy: #1b2f6b;
-    --t24-gray: #5a5f6a;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: #f4f5f7;
-    padding: 0;
-  }
 
-  /* BACKGROUND CONTAINER — the photo layer. Everything else is positioned relative to this. */
-  .t24-hero__inner {
-    position: relative !important;
-    max-width: full;
-    height: 600px;
-    margin: 0 auto !important;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(20, 30, 60, 0.12);
-    background-color: #0a1830;
-    background-size: cover;
-    background-position: left center;  
-    background-image: url('http://localhost/wordpress/wp-content/uploads/2026/07/oamzin-1.png');
-  }
 
-  /* TEXT PANEL*/
-  .t24-hero__panel {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 800px !important;
-    max-width: 100%;
-    height: 600px !important;
-    background: #ffffff !important;
-    padding: 60px 50px 0 80px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 30px;
-    justify-content: flex-start;
-    border-radius: 0 0 300px 0 !important; /* top-left top-right bottom-right bottom-left */
-    overflow: hidden; /* clip content */
-    z-index: 2;
-    margin: 0;
-    
-  }
 
-  .t24-hero__eyebrow {
-    color: var(--t24-navy);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    margin: 0;
-  }
 
-  .t24-hero__title {
-    margin: 0;
-    line-height: 1.05;
-  }
 
-  .t24-hero__title-accent {
-    display: block;
-    color: var(--t24-orange);
-    font-size: 50px;
-    font-weight: 800;
-  }
+<!-- /* ============================================================
+   What We Do — Section
+============================================================ */ -->
 
-  .t24-hero__title-main {
-    display: block;
-    color: var(--t24-navy);
-    font-size: 39px;
-    font-weight: 800;
-    margin-top: 2px;
-  }
+<?php
+$wwd_tagline = get_field('whatwedo_tagline');
+$wwd_image   = get_field('whatwedo_image');
 
-  .t24-hero__desc {
-    color: var(--t24-gray);
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 520px;
-    margin: 0;
-  }
+$wwd_steps = array(
+    array( 'title' => get_field('wwd_step1_title'), 'desc' => get_field('wwd_step1_desc') ),
+    array( 'title' => get_field('wwd_step2_title'), 'desc' => get_field('wwd_step2_desc') ),
+    array( 'title' => get_field('wwd_step3_title'), 'desc' => get_field('wwd_step3_desc') ),
+);
+?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/oambanking.css">
 
-    .t24-logo1 {
-    height: 60px;
-    width: auto;
-    }
-    .t24-logo2 {
-    height: 60px;
-    width: auto
-    }
-    .t24-hero__cta {
-    display: inline-block;
-    align-self: flex-start;
-    background: var(--t24-orange);
-    color: #fff;
-    font-weight: 700;
-    font-size: 14px;
-    text-decoration: none;
-    padding: 14px 30px;
-    border-radius: 30px;
-    box-shadow: 0 10px 20px rgba(242, 147, 46, 0.35);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .t24-hero__cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 26px rgba(242, 147, 46, 0.45);
-  }
-  .t24-hero__cta:focus-visible {
-    outline: 3px solid var(--t24-navy);
-    outline-offset: 2px;
-  }
+<section class="oam-whatwedo">
+  <div class="oam-whatwedo__inner">
+    <header class="oam-whatwedo__header">
+      <h2 class="oam-whatwedo__title">What we do?</h2>
+      <span class="oam-whatwedo__divider"></span>
+      <?php if ( $wwd_tagline ) : ?>
+        <p class="oam-whatwedo__tagline"><?php echo esc_html( $wwd_tagline ); ?></p>
+      <?php endif; ?>
+    </header>
 
-  .t24-hero__logos {
-   
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    flex-wrap: wrap;
+    <div class="oam-whatwedo__body">
+      <div class="oam-whatwedo__steps">
+        <?php foreach ( $wwd_steps as $i => $step ) : ?>
+          <?php if ( $step['title'] ) : ?>
+            <div class="oam-step">
+              <div class="oam-step__number"><?php echo str_pad( $i + 1, 2, '0', STR_PAD_LEFT ); ?></div>
+              <span class="oam-step__underline"></span>
+              <h3 class="oam-step__title"><?php echo esc_html( $step['title'] ); ?></h3>
+              <p class="oam-step__desc"><?php echo esc_html( $step['desc'] ); ?></p>
+            </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
 
-  }
-  .t24-logo { height: 34px; width: auto; }
+      <?php if ( $wwd_image ) : ?>
+        <div class="oam-whatwedo__image">
+          <img src="<?php echo esc_url( $wwd_image ); ?>" alt="OAMBanking app screenshots" class="oam-whatwedo__img">
+        </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
 
-  /* ICONS + BADGE — positioned relative to .t24-hero__inner (the photo layer) */
-  .t24-hero__badge {
-    position: absolute;
-    top: 50%;
-    left: 72%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    padding: 14px 26px;
-    border: 2px solid rgba(255,255,255,0.6);
-    background: rgba(10, 24, 48, 0.35);
-    backdrop-filter: blur(2px);
-    z-index: 1;
-    white-space: nowrap;
-  }
 
-  .t24-hero__icon { position: absolute; z-index: 1; }
-  .t24-hero__icon--wifi { top: 34px; right: 60px; width: 34px; height: 34px; opacity: 0.9; }
-  .t24-hero__icon--pin { bottom: 28px; right: 50px; width: 26px; height: 26px; opacity: 0.9; }
 
-  /* RESPONSIVE */
-  @media (max-width: 1000px) {
-    .t24-hero__panel {
-      width: 55% !important;
-      padding: 50px 40px 0 60px !important;
-    }
-    .t24-hero__badge { left: 78%; font-size: 24px; }
-  }
 
-  @media (max-width: 860px) {
-    .t24-hero__inner {
-      height: auto !important;
-      min-height: 520px;
-      box-shadow: none;
-    }
-    .t24-hero__panel {
-      position: relative !important;
-      width: 100% !important;
-      height: auto !important;
-      padding: 40px 24px !important;
-      border-radius: 0 !important;
-    }
-    .t24-hero__badge,
-    .t24-hero__icon { display: none; }
-    .t24-hero__title-accent { font-size: 36px; }
-    .t24-hero__title-main { font-size: 28px; }
-  }
 
-  @media (prefers-reduced-motion: reduce) {
-    .t24-hero__cta { transition: none; }
-  }
-</style>
+
+
+<!-- /* ============================================================
+   OAMBanking Features — Section
+============================================================ */ -->
+
+<?php
+$oam_feat_tagline = get_field('oam_feat_tagline');
+
+$oam_icons = array(
+
+    // Robot
+    '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 640 640">
+        <path d="M320 64C337.7 64 352 78.3 352 96L352 128L416 128C451.3 128 480 156.7 480 192L480 448C480 483.3 451.3 512 416 512L224 512C188.7 512 160 483.3 160 448L160 192C160 156.7 188.7 128 224 128L288 128L288 96C288 78.3 302.3 64 320 64zM256 288C273.7 288 288 273.7 288 256C288 238.3 273.7 224 256 224C238.3 224 224 238.3 224 256C224 273.7 238.3 288 256 288zM384 288C401.7 288 416 273.7 416 256C416 238.3 401.7 224 384 224C366.3 224 352 238.3 352 256C352 273.7 366.3 288 384 288z"/>
+    </svg>',
+
+    // Chart
+    '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+        <path d="M32 32h32v416h416v32H32zM128 352h64V160h-64zm96 0h64V64h-64zm96 0h64V224h-64z"/>
+    </svg>',
+
+    // Lock
+    '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+        <path d="M144 192V128C144 83.8 179.8 48 224 48S304 83.8 304 128v64H144zm192 0V128C336 66.1 285.9 16 224 16S112 66.1 112 128v64H80c-26.5 0-48 21.5-48 48v224c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48h-32z"/>
+    </svg>',
+
+    // Check
+    '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+        <path d="M400 32H48C21.5 32 0 53.5 0 80V432c0 26.5 21.5 48 48 48H400c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM183 343L87 247l34-34 62 62 144-144 34 34L183 343z"/>
+    </svg>',
+
+    // Mobile
+    '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 384 512">
+        <path d="M80 0C53.5 0 32 21.5 32 48V464c0 26.5 21.5 48 48 48H304c26.5 0 48-21.5 48-48V48C352 21.5 330.5 0 304 0H80zM192 480a32 32 0 100-64 32 32 0 100 64z"/>
+    </svg>',
+
+    // Building
+    '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 640 640">
+        <path d="M320 64L32 192v64h64v256H32v64h576v-64h-64V256h64V192L320 64zm-96 192h64v256h-64zm128 0h64v256h-64z"/>
+    </svg>',
+);
+
+$oam_features = array(
+    array( 'title' => get_field('oam_f1_title'), 'desc' => get_field('oam_f1_desc') ),
+    array( 'title' => get_field('oam_f2_title'), 'desc' => get_field('oam_f2_desc') ),
+    array( 'title' => get_field('oam_f3_title'), 'desc' => get_field('oam_f3_desc') ),
+    array( 'title' => get_field('oam_f4_title'), 'desc' => get_field('oam_f4_desc') ),
+    array( 'title' => get_field('oam_f5_title'), 'desc' => get_field('oam_f5_desc') ),
+    array( 'title' => get_field('oam_f6_title'), 'desc' => get_field('oam_f6_desc') ),
+);
+?>
+
+<section class="oam-features">
+  <div class="oam-features__inner">
+    <header class="oam-features__header">
+      <h2 class="oam-features__title">OAM<span class="oam-features__title-accent">Banking</span></h2>
+      <span class="oam-whatwedo__divider"></span>
+      <span class="oam-features__divider"></span>
+      <?php if ( $oam_feat_tagline ) : ?>
+        <p class="oam-features__tagline"><?php echo esc_html( $oam_feat_tagline ); ?></p>
+      <?php endif; ?>
+    </header>
+
+    <div class="oam-features__grid">
+      <?php foreach ( $oam_features as $i => $feat ) : ?>
+        <?php if ( $feat['title'] ) : ?>
+          <div class="oam-feature">
+            <div class="oam-feature__icon"><?php echo $oam_icons[ $i ]; ?></div>
+            <h3 class="oam-feature__title"><?php echo esc_html( $feat['title'] ); ?></h3>
+            <p class="oam-feature__desc"><?php echo esc_html( $feat['desc'] ); ?></p>
+          </div>
+        <?php endif; ?>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+
+
+
+<?php get_footer(); ?>
