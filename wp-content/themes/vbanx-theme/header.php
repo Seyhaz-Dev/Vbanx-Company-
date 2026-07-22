@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <?php wp_head(); ?>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -48,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         </div>
 
         <div class="header-cta">
-            <a href="#contact" class="btn btn-primary">Request Demo &nearr;</a>
+           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener" class="btn btn-primary">Request Demo &nearr;</a>
         </div>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
