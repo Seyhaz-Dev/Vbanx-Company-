@@ -25,8 +25,18 @@ add_action( 'after_setup_theme', 'vbanx_theme_setup' );
 
 
 function vbanx_enqueue_assets() {
+<<<<<<< HEAD
 
     // ហៅចូល CSS មេ (load រាល់ទំព័រ)
+=======
+    wp_enqueue_style(
+        'montserrat-font',
+        'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap',
+        array(),
+        null
+    );
+
+>>>>>>> 1bca7dc6a59639310dc5a7115d11ee16483b0259
     wp_enqueue_style(
         'main-style',
         get_template_directory_uri() . '/assets/css/style.css',
@@ -34,6 +44,7 @@ function vbanx_enqueue_assets() {
         '1.0'
     );
 
+<<<<<<< HEAD
     // ហៅចូល CSS Contact (load តែលើទំព័រ Contact ប៉ុណ្ណោះ)
     if ( is_page_template( 'page-contact.php' ) ) {
         wp_enqueue_style(
@@ -45,6 +56,17 @@ function vbanx_enqueue_assets() {
     }
 
     // ហៅចូល JS (load រាល់ទំព័រ)
+=======
+    // ហៅចូល CSS សម្រាប់ទំព័រ Ecosystem
+    wp_enqueue_style(
+        'ecosystem-style',
+        get_template_directory_uri() . '/assets/css/ecosystem.css',
+        array( 'main-style' ),
+        '1.0'
+    );
+
+    // ហៅចូល JS
+>>>>>>> 1bca7dc6a59639310dc5a7115d11ee16483b0259
     wp_enqueue_script(
         'main-js',
         get_template_directory_uri() . '/assets/js/main.js',
@@ -52,6 +74,13 @@ function vbanx_enqueue_assets() {
         '1.0',
         true
     );
+    // call parnership
+     wp_enqueue_style(
+            'partnerships',
+            get_stylesheet_directory_uri() . '/assets/css/partnerships.css',
+            array(),
+            '1.0'
+        );
 }
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
 
@@ -68,6 +97,7 @@ function vbanx_enqueue_montserrat() {
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_montserrat' );
 
 
+<<<<<<< HEAD
 function vbanx_enqueue_fontawesome() {
     wp_enqueue_style(
         'font-awesome',
@@ -77,3 +107,8 @@ function vbanx_enqueue_fontawesome() {
     );
 }
 add_action('wp_enqueue_scripts', 'vbanx_enqueue_fontawesome');
+=======
+
+
+
+>>>>>>> 1bca7dc6a59639310dc5a7115d11ee16483b0259
