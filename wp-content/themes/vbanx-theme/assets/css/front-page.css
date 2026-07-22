@@ -346,7 +346,7 @@
   /* ---------- performance ---------- */
   .perf-section{
   position:relative;
-  background:url('http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/qaulity.png') center/cover no-repeat;
+  background:url('/wp-content/uploads/2026/07/qaulity-1024x576.png') center/cover no-repeat;
   padding:90px 60px;
   border-top:1px solid var(--border-soft);
   isolation:isolate; /* keeps any ::before overlay contained */
