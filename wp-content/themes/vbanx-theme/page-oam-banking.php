@@ -78,6 +78,7 @@ $wwd_steps = array(
           <?php if ( $step['title'] ) : ?>
             <div class="oam-step">
               <div class="oam-step__number"><?php echo str_pad( $i + 1, 2, '0', STR_PAD_LEFT ); ?></div>
+              <br>
               <span class="oam-step__underline"></span>
               <h3 class="oam-step__title"><?php echo esc_html( $step['title'] ); ?></h3>
               <p class="oam-step__desc"><?php echo esc_html( $step['desc'] ); ?></p>
