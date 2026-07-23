@@ -68,6 +68,13 @@ function vbanx_enqueue_assets() {
     );
 
     wp_enqueue_style(
+        'vision-mission-style',
+        get_template_directory_uri() . '/assets/css/vision-mission.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
         'partnership-style',
         get_template_directory_uri() . '/assets/css/partnership.css',
         array(),
