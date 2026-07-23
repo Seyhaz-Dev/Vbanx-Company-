@@ -9,21 +9,16 @@
     justify-content: center;
 }
 
-.card {
-    width: 410px;
-    height: 270px;
-    background: #ffffff;
-    padding: 32px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:32px 24px;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    font-family: "Montserrat", sans-serif;
 
-     /* Transition */
+    /* Transition */
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 /* Hover Effect */

@@ -13,7 +13,6 @@ for ($i = 1; $i <= 7; $i++) {
 
 ?>
 
-
 <div class="experts-container">
 
     <?php foreach ($experts as $expert) : ?>
