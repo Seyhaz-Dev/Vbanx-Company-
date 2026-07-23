@@ -305,7 +305,7 @@ body {
     background: var(--navy-pill);
     border-radius: var(--radius-pill);
     padding: 20px;
-    width: 613px;
+    width: 640px;
     display: flex;
     align-items: center;
     gap: 2px;
