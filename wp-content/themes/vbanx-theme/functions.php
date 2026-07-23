@@ -56,6 +56,14 @@ function vbanx_enqueue_assets() {
         '1.0'
     );
 
+    // Enqueue T24 Solution CSS (depends on main-style for CSS variables)
+    wp_enqueue_style(
+        't24-solution-style',
+        get_template_directory_uri() . '/assets/css/t24-solution.css',
+        array( 'main-style' ),
+        '1.0'
+    );
+
     // ហៅចូល JS
     wp_enqueue_script(
         'main-js',
