@@ -62,7 +62,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  padding: 60px 250px 30px 60px;
+  padding: 60px 250px 30px 250px;   /* left padding now matches right, like t24 */
   border-radius: 0 0 200px 0;
   z-index: 2;
 }
@@ -197,7 +197,7 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 24px;
-	max-width: 1155px;
+	max-width: 1050px;
 	margin: 0 auto;
 }
 
