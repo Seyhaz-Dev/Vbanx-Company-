@@ -104,9 +104,15 @@ for ( $i = 1; $i <= 12; $i++ ) {
               $desc = get_field( "module_{$i}_description" ); 
               $tag      = get_field( "module_{$i}_tag" );
 
+              $link = get_field( "module_{$i}_link" );
+              if ( ! $link ) {
+                  $link = home_url( '/page-product-core-banking/' );
+              }
+
               // Skip rendering a card entirely if it has no title set
               if ( ! $title ) { continue; }
           ?>
+          <a href="<?php echo esc_url( $link ); ?>" class="module-link">
             <article class="module-card">
               <div class="module-icon">
                 <?php if ( $icon ) : ?>
@@ -119,6 +125,7 @@ for ( $i = 1; $i <= 12; $i++ ) {
               <p><?php echo esc_html( $desc ); ?></p>
               <span class="module-tag"><?php echo esc_html( $tag ); ?></span>
             </article>
+            </a>
           <?php endfor; ?>
         </div>
       </div>

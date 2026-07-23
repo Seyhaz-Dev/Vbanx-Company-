@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Product Detail - Core Banking
+ * Template Name:VBANXMFI Detail
  * Matches the visual style of the existing VBANXCB product card
  * (white rounded card, blue logo ring, blue heading, gray body, light-blue pill badge).
  *
@@ -13,37 +13,34 @@ get_header();
 
 $product = array(
 	'logo'     => get_stylesheet_directory_uri() . '/assets/img/vbanx-logo.png',
-	'title'    => 'VBANXCB Commercial Bank',
-	'summary'  => 'Full core banking for settlement, savings, term deposit, loans and cheque management with multi-branch and multi-currency support.',
-	'badge'    => 'Core Banking',
+	'title'    => 'VBANXMFI',
+	'summary'  => 'Loan origination, collateral management, AML screening and collections purpose-built for microfinance institutions.',
+	'badge'    => 'Microfinance',
 	'features' => array(
 		array(
-			'name' => 'Settlement',
-			'desc' => 'Real-time interbank and intra-branch settlement with a full audit trail.',
+			'name' => 'Loan Origination',
+			'desc' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset\'s Body Type sheets',
 		),
 		array(
-			'name' => 'Savings',
-			'desc' => 'Configurable savings products with tiered interest and auto-posting.',
+			'name' => 'Collateral Management',
+			'desc' => 'Streamlined collateral setup and management with compliance automation.',
 		),
 		array(
-			'name' => 'Term Deposit',
-			'desc' => 'Fixed and rolling term deposits with maturity and rollover handling.',
+			'name' => 'AML Screening',
+			'desc' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset\'s Body Type sheets',
 		),
 		array(
-			'name' => 'Loans',
-			'desc' => 'Origination through repayment, with schedule and arrears tracking.',
+			'name' => 'Collections',
+			'desc' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset\'s Body Type sheets',
 		),
-		array(
-			'name' => 'Cheque Management',
-			'desc' => 'Issuance, clearing and reconciliation across every branch ledger.',
-		),
+		
 	),
 	'branches' => array( 'Multi-branch', 'Multi-currency' ),
 	'cta'      => array( 'label' => 'Request a demo', 'url' => '#contact' ),
 );
 ?>
 
-<link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/css/core-banking-detail.css' ); ?>">
+<link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/css/detail.css' ); ?>">
 
 <main class="pd-wrap">
 
@@ -64,7 +61,6 @@ $product = array(
 
 		<div class="pd-badge-row">
 			<?php foreach ( $product['branches'] as $tag ) : ?>
-				<span class="pd-tag pd-tag-outline"><?php echo esc_html( $tag ); ?></span>
 			<?php endforeach; ?>
 		</div>
 

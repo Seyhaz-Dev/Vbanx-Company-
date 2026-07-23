@@ -244,6 +244,11 @@
   .carousel-arrow:hover{background:var(--bg-soft);border-color:#b9c1de;}
   .carousel-mask{flex:1;min-width:0;overflow:hidden;}
   .carousel-track{display:flex;gap:20px;transition:transform .4s ease;}
+
+  .module-link {
+    flex:0 0 280px;border-radius:14px;
+    
+  }
   .module-card{
     flex:0 0 280px;background:var(--white);border:1px solid var(--border-soft);border-radius:14px;
     padding:26px 22px; cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;
