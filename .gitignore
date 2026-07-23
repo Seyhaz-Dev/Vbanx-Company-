@@ -1,15 +1,17 @@
 # Environment
-wordpress/wp-config.php
+wp-config.php
 .env
 
 
 
 # Cache
-wordpress/wp-content/cache/
-wordpress/wp-content/upgrade/
+wp-content/cache/
+wp-content/upgrade/
+
+
 
 # Debug logs
-wordpress/wp-content/debug.log
+wp-content/debug.log
 debug.log
 
 # Dependencies
@@ -26,7 +28,7 @@ vendor/
 # OS
 .DS_Store
 Thumbs.db
-
+ 
 # WordPress core - ignore everything except our theme
 /*
 !wp-content/

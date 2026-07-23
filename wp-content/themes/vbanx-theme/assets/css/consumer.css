@@ -90,8 +90,8 @@ button:focus-visible{
 }
 
 .eyebrow{
-	font-size: 13px;
-	font-weight: 700;
+	font-size: 12px;
+	font-weight: 600;
 	letter-spacing: 0.14em;
 	color: var(--text-dim);
 	text-transform: uppercase;
@@ -250,7 +250,6 @@ button:focus-visible{
 .hero-copy p{
 	color: var(--text-dim);
 	font-size: 16.5px;
-	max-width: 460px;
 	margin: 0 0 32px;
 }
 

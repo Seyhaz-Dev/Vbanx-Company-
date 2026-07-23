@@ -38,11 +38,28 @@ function vbanx_enqueue_assets() {
         array(),
         '1.0'
     );
+    if ( is_page_template( 'page-contact.php' ) ) {
+        wp_enqueue_style(
+            'contact-style',
+            get_template_directory_uri() . '/assets/css/contact.css',
+            array( 'main-style' ),
+            '1.0'
+        );
+    }
+
 
     // ហៅចូល CSS សម្រាប់ទំព័រ Ecosystem
     wp_enqueue_style(
         'ecosystem-style',
         get_template_directory_uri() . '/assets/css/ecosystem.css',
+        array( 'main-style' ),
+        '1.0'
+    );
+
+    // Enqueue T24 Solution CSS (depends on main-style for CSS variables)
+    wp_enqueue_style(
+        't24-solution-style',
+        get_template_directory_uri() . '/assets/css/t24-solution.css',
         array( 'main-style' ),
         '1.0'
     );
@@ -55,19 +72,13 @@ function vbanx_enqueue_assets() {
         '1.0',
         true
     );
+    wp_enqueue_style(
+    'oambanking-style',
+    get_template_directory_uri() . '/assets/css/oambanking.css',
+    array( 'main-style' ),
+    filemtime( get_template_directory() . '/assets/css/oambanking.css' )
+);
 }
-
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
 
 
-// Enqueue Montserrat font from Google Fonts
-
-function mytheme_enqueue_montserrat() {
-    wp_enqueue_style(
-        'montserrat-font',
-        'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap',
-        [],
-        null
-    );
-}
-add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_montserrat' );

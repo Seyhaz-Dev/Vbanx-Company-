@@ -16,6 +16,7 @@
 get_header();
 
 $theme_uri = esc_url( get_template_directory_uri() );
+$bg = content_url('/uploads/2026/07/qaulity.png');
 
 $vbanx_partner_logos = array();
 $partner_alts = array( 'CMA', 'AC', 'CBC', 'PMTK', 'PCG', 'SEC', 'CAFT', 'BNI', 'ACC', 'TCG', 'NTT DATA', 'KOSIGN' );
@@ -35,6 +36,9 @@ for ( $i = 1; $i <= 12; $i++ ) {
 
 <head>
   <link rel="stylesheet" href="<?php echo $theme_uri; ?>/assets/css/front-page.css">
+  <style>
+  .perf-section{ background-image:url('<?php echo esc_url($bg); ?>'); }
+</style>
 </head>
 
 <section class="hero">
