@@ -64,13 +64,13 @@ function vbanx_enqueue_assets() {
         '1.0',
         true
     );
-    // call parnership
-     wp_enqueue_style(
-            'partnerships',
-            get_stylesheet_directory_uri() . '/assets/css/partnerships.css',
-            array(),
-            '1.0'
-        );
+    wp_enqueue_style(
+    'oambanking-style',
+    get_template_directory_uri() . '/assets/css/oambanking.css',
+    array( 'main-style' ),
+    filemtime( get_template_directory() . '/assets/css/oambanking.css' )
+);
 }
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
-  
+
+
