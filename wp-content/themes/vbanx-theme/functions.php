@@ -38,7 +38,50 @@ function vbanx_enqueue_assets() {
         array(),
         '1.0'
     );
-    if ( is_page_template( 'page-contact.php' ) ) {
+
+    wp_enqueue_style(
+        'profile-style',
+        get_template_directory_uri() . '/assets/css/profile.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'value-style',
+        get_template_directory_uri() . '/assets/css/value.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'card-style',
+        get_template_directory_uri() . '/assets/css/card.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'expert-style',
+        get_template_directory_uri() . '/assets/css/expert.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'vision-mission-style',
+        get_template_directory_uri() . '/assets/css/vision-mission.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'partnership-style',
+        get_template_directory_uri() . '/assets/css/partnership.css',
+        array(),
+        '1.0'
+    );
+
+    if ( is_page( 'contact' ) ) {
         wp_enqueue_style(
             'contact-style',
             get_template_directory_uri() . '/assets/css/contact.css',
