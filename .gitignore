@@ -9,6 +9,9 @@ wp-content/cache/
 wp-content/upgrade/
 
 
+# Apache
+# -----------------------------
+.htaccess
 
 # Debug logs
 wp-content/debug.log
@@ -36,3 +39,5 @@ Thumbs.db
 !wp-content/themes/
 wp-content/themes/*
 !wp-content/themes/vbanx-theme/
+
+
