@@ -42,7 +42,85 @@ function vbanx_enqueue_assets()
         '1.0'
     );
 
-    // ហៅចូល CSS សម្រាប់ទំព័រ Ecosystem
+    wp_enqueue_style(
+        'profile-style',
+        get_template_directory_uri() . '/assets/css/profile.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'value-style',
+        get_template_directory_uri() . '/assets/css/value.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'card-style',
+        get_template_directory_uri() . '/assets/css/card.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'expert-style',
+        get_template_directory_uri() . '/assets/css/expert.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'vision-mission-style',
+        get_template_directory_uri() . '/assets/css/vision-mission.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'partnerships-style',
+        get_template_directory_uri() . '/assets/css/partnerships.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'solution-style',
+        get_template_directory_uri() . '/assets/css/solution.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'statistics-table-style',
+        get_template_directory_uri() . '/assets/css/statistics-table.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'membership-style',
+        get_template_directory_uri() . '/assets/css/membership.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'strategic-style',
+        get_template_directory_uri() . '/assets/css/strategic.css',
+        array(),
+        '1.0'
+    );
+
+    if ( is_page( 'contact' ) ) {
+        wp_enqueue_style(
+            'contact-style',
+            get_template_directory_uri() . '/assets/css/contact.css',
+            array( 'main-style' ),
+            '1.0'
+        );
+    }
+
     wp_enqueue_style(
         'ecosystem-style',
         get_template_directory_uri() . '/assets/css/ecosystem.css',
@@ -50,7 +128,27 @@ function vbanx_enqueue_assets()
         '1.0'
     );
 
-    // ហៅចូល JS
+    wp_enqueue_style(
+        't24-solution-style',
+        get_template_directory_uri() . '/assets/css/t24-solution.css',
+        array( 'main-style' ),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'oambanking-style',
+        get_template_directory_uri() . '/assets/css/oambanking.css',
+        array( 'main-style' ),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'consumer-style',
+        get_template_directory_uri() . '/assets/css/oambanking.css',
+        array( 'main-style' ),
+        '1.0'
+    );
+
     wp_enqueue_script(
         'main-js',
         get_template_directory_uri() . '/assets/js/main.js',
@@ -58,91 +156,7 @@ function vbanx_enqueue_assets()
         '1.0',
         true
     );
-    // call parnership
-    wp_enqueue_style(
-        'partnerships-style',
-        get_stylesheet_directory_uri() . '/assets/css/partnerships.css',
-        array(),
-        '1.0'
-    );
-
-    // call profile
-    wp_enqueue_style(
-        'profile-style',
-        get_stylesheet_directory_uri() . '/assets/css/profile.css',
-        array(),
-        '1.0'
-    );
-
-    // call card
-    wp_enqueue_style(
-        'card-style',
-        get_stylesheet_directory_uri() . '/assets/css/card.css',
-        array(),
-        '1.0'
-    );
-
-    // call expert
-    wp_enqueue_style(
-        'expert-style',
-        get_stylesheet_directory_uri() . '/assets/css/expert.css',
-        array(),
-        '1.0'
-    );
-
-    // call value
-    wp_enqueue_style(
-        'value-style',
-        get_stylesheet_directory_uri() . '/assets/css/value.css',
-        array(),
-        '1.0'
-    );
-
-    // call strategic component
-    wp_enqueue_style(
-        'strategic-style',
-        get_stylesheet_directory_uri() . '/assets/css/strategic.css',
-        array(),
-        '1.0'
-    );
-
-    // call membership component
-    wp_enqueue_style(
-        'membership-style',
-        get_stylesheet_directory_uri() . '/assets/css/membership.css',
-        array(),
-        '1.0'
-    );
-
-     // call solution component
-    wp_enqueue_style(
-        'solution-style',
-        get_stylesheet_directory_uri() . '/assets/css/membership.css',
-        array(),
-        '1.0'
-    );
-
-      // call table component
-    wp_enqueue_style(
-        'statistics-table-style',
-        get_stylesheet_directory_uri() . '/assets/css/statistics-table.css',
-        array(),
-        '1.0'
-    );
 }
+add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
 
-add_action('wp_enqueue_scripts', 'vbanx_enqueue_assets');
 
-
-// Enqueue Montserrat font from Google Fonts
-
-function mytheme_enqueue_montserrat()
-{
-    wp_enqueue_style(
-        'montserrat-font',
-        'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap',
-        [],
-        null
-    );
-}
-add_action('wp_enqueue_scripts', 'mytheme_enqueue_montserrat');
