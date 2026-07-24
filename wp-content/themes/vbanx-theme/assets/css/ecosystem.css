@@ -62,7 +62,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  padding-left: 300px;
+  padding-left: 160px;
   border-radius: 0 0 200px 0;
   z-index: 2;
 }
@@ -192,12 +192,11 @@
 	margin: 0 auto 48px;
 	line-height: 1.7;
 }
-
 .eco-cards-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 15px;
-	max-width: 965px;
+	max-width: 1200px;   /* was 965px */
 	margin: 0 auto;
 }
 

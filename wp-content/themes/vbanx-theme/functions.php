@@ -77,12 +77,12 @@ function vbanx_enqueue_assets()
         '1.0'
     );
 
-    wp_enqueue_style(
-        'partnerships-style',
-        get_template_directory_uri() . '/assets/css/partnerships.css',
-        array(),
-        '1.0'
-    );
+    // wp_enqueue_style(
+    //     'partnerships-style',
+    //     get_template_directory_uri() . '/assets/css/partnerships.css',
+    //     array(),
+    //     '1.0'
+    // );
 
     wp_enqueue_style(
         'solution-style',
