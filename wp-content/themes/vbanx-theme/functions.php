@@ -78,8 +78,36 @@ function vbanx_enqueue_assets()
     );
 
     wp_enqueue_style(
-        'partnership-style',
-        get_template_directory_uri() . '/assets/css/partnership.css',
+        'partnerships-style',
+        get_template_directory_uri() . '/assets/css/partnerships.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'solution-style',
+        get_template_directory_uri() . '/assets/css/solution.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'statistics-table-style',
+        get_template_directory_uri() . '/assets/css/statistics-table.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'membership-style',
+        get_template_directory_uri() . '/assets/css/membership.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'strategic-style',
+        get_template_directory_uri() . '/assets/css/strategic.css',
         array(),
         '1.0'
     );
