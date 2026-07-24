@@ -3,17 +3,17 @@
    ========================================================== */
 
 :root {
-	--vbx-navy: #16213f;
+	--vbx-navy: #01319B;
 	--vbx-navy-light: #2a3a63;
 	--vbx-gold: #e0983c;
 	--vbx-gold-dark: #c97f28;
-	--vbx-gray-text: #6b7280;
+	--vbx-gray-text: #01319B;
 	--vbx-border: #e5e7eb;
 	--vbx-bg-light: #f4f6fb;
 	--vbx-white: #ffffff;
 	--vbx-radius: 14px;
 	--vbx-shadow: 0 8px 24px rgba(22, 33, 63, 0.08);
-	--navy-700: #16213f;
+	--navy-700: #01319B;
 	--orange-600: #e0983c;
 	--radius-pill: 999px;
 	--transition-smooth: all 0.2s ease;
@@ -67,7 +67,7 @@
   z-index: 2;
 }
 .eco-hero-banner__eyebrow {
-  color: var(--navy-700);
+  color: #8394DE;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -86,13 +86,13 @@
 }
 .eco-hero-banner__title-main {
   display: block;
-  color: var(--navy-700);
+  color: #01319B;
   font-size: 30px;
   font-weight: 800;
   margin-top: 2px;
 }
 .eco-hero-banner__desc {
-  color: #5a5f6a;
+  color: #01319B;
   font-size: 15px;
   line-height: 1.6;
   max-width: 380px;
