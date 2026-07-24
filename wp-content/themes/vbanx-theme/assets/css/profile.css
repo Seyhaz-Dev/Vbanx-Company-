@@ -66,7 +66,7 @@
 
 /* Title */
 .profile-hero-content h1 {
-    font-size: 56px;
+    font-size: 30px;
     line-height: 1.15;
     font-weight: 700;
     margin-bottom: 25px;
@@ -76,7 +76,7 @@
 /* Description */
 .profile-hero-content p {
    
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.7;
     color: #e5e5e5;
     margin-bottom: 35px;
@@ -93,7 +93,7 @@
 /* Primary button */
 .profile-btn-primary {
     display: inline-block;
-    padding: 15px 45px; /* Balanced padding to keep text centered neatly */
+    padding: 12px 55px; /* Balanced padding to keep text centered neatly */
     background: #f2932e;
     color: #ffffff;
     text-decoration: none;
@@ -111,7 +111,7 @@
 /* Secondary button */
 .profile-btn-secondary {
     display: inline-block;
-    padding: 15px 45px;
+    padding: 12px 22px;
     border: 2px solid #ffffff;
     color: #ffffff;
     text-decoration: none;
@@ -147,7 +147,7 @@
 /* Desktop layout constraint */
 @media (max-width: 1200px) {
     .profile-hero-content h1 {
-        font-size: 52px;
+        font-size: 22px;
     }
 }
 
@@ -186,11 +186,11 @@
     }
 
     .profile-hero-content h1 {
-        font-size: 38px;
+        font-size: 20px;
     }
 
     .profile-hero-content p {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .profile-hero-buttons {
@@ -214,7 +214,7 @@
 =========================== */
 
 .profile-dashboard-preview-section {
-    padding: 20px 0;
+    padding: 60px 0px;
     background-color: #ffffff; 
     width: 100%;
     font-family: "Montserrat", sans-serif;
@@ -242,7 +242,7 @@
 
 /* The small description text */
 .profile-preview-content p {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.7;
     color: #4a4a4a; 
 }
@@ -250,7 +250,7 @@
 /* The BIG text styling for VBANX */
 .profile-brand-highlight {
     display: block;            
-    font-size: 56px;          
+    font-size: 30px;          
     font-weight: 800;         
     color: #F5A623;
    
@@ -292,7 +292,7 @@
     }
 
     .profile-brand-highlight {
-        font-size: 46px; /* Shrinks big text slightly on tablet */
+        font-size: 22px; /* Shrinks big text slightly on tablet */
     }
 
     .profile-preview-image {
@@ -312,12 +312,12 @@
     }
 
     .profile-brand-highlight {
-        font-size: 38px; /* Safe mobile size for the big heading */
+        font-size: 20px; /* Safe mobile size for the big heading */
         margin-bottom: 15px;
     }
 
     .profile-preview-content p {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .profile-preview-image img {
@@ -330,10 +330,11 @@
 =========================== */
 
 .profile-main-section {
-    padding: 20px 0 40px 0;
+    padding: 60px 0px;
     width: 100%;
     font-family: "Montserrat", sans-serif;
     background: #F0F1FF;
+    margin-top: 20px;
 }
 
 /* Center Container */
@@ -350,20 +351,20 @@
 /* 1. Pill Badge Style at the Top */
 .profile-badge-tag {
     display: inline-block;
-    padding: 10px 30px;
+    padding: 5px 14px;
     background-color: #f6efe9; 
-    border: 2px solid #f2932e;  
+    border: 1px solid #f2932e;  
     border-radius: 50px;      
     color: #f2932e;           
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 400;
     letter-spacing: 0.5px;
     margin-bottom: 25px;       
 }
 
 /* 2. Main Title "Why VBANX?" */
 .profile-section-title {
-    font-size: 56px;           
+    font-size: 30x;           
     font-weight: 800;          
     color: #0038a8;            
     margin: 0 0 20px 0;       
@@ -372,7 +373,7 @@
 
 /* 3. Description Subtitle text */
 .profile-section-subtitle {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.6;
     color: #333333;            
     font-weight: 400;
@@ -389,11 +390,11 @@
     }
 
     .profile-section-title {
-        font-size: 40px;       /* Safely scales down on mobile screens */
+        font-size: 22px;       /* Safely scales down on mobile screens */
     }
 
     .profile-section-subtitle {
-        font-size: 16px;       /* Slightly smaller text size for mobile readers */
+        font-size: 13px;       /* Slightly smaller text size for mobile readers */
         max-width: 90%;
     }
 
@@ -487,7 +488,6 @@
 
 .ceo-message{
     width:100%;
-    padding:40px 0;
     background: #F0F1FF;
 }
 
@@ -495,15 +495,8 @@
     font-family: "Montserrat", sans-serif;
     width:100%;
     max-width:1200px;
-
     margin:auto;
-
     display:flex;
-    align-items:center;
-    justify-content:center;
-
-    gap:50px;
-
 }
 
 .ceo-image{
@@ -513,26 +506,18 @@
 
 }
 
-.ceo-image img{
-
-    width:100%;
-    display:block;
-
-}
-
 .quote-icon{
 
-    font-size:120px;
+    font-size:90px;
     font-family:Georgia;
     font-weight:bold;
     line-height:1;
     color:#000;
-    margin-bottom:15px;
 
 }
 
 .ceo-content h2{
-    font-size:48px;
+    font-size:30px;
     line-height:1.25;
     font-weight:800;
     color:#F5A623;
@@ -542,11 +527,24 @@
 
 .ceo-content p{
 
-    font-size:32px;
+    font-size:18px;
     line-height:1.55;
     color:#222;
     margin-bottom:18px;
     font-weight:300;
+
+}
+
+.ceo-content{
+    margin-top:60px;
+}
+
+.ceo-info h3{
+
+    font-size:22px;
+    letter-spacing:0px;
+    font-weight:800;
+    color:#000;
 
 }
 
@@ -556,19 +554,9 @@
 
 }
 
-.ceo-info h3{
-
-    font-size:32px;
-    letter-spacing:6px;
-    font-weight:800;
-    color:#000;
-    margin-bottom:8px;
-
-}
-
 .ceo-info span{
 
-    font-size:26px;
+    font-size:15px;
     color:#444;
     font-weight:500;
 
@@ -584,14 +572,14 @@
 
 }
 .profile-expert-title{
-    font-size: 56px;           
+    font-size: 30px;           
     font-weight: 800;          
     color: #01319B;            
     margin: 0 0 20px 0;       
     letter-spacing: -0.5px;
 }
 .profile-section-description {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.6;
     max-width: 850px;
     margin: 0 auto;

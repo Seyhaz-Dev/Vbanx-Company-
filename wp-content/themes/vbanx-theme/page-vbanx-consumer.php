@@ -46,9 +46,6 @@ $theme_uri = get_template_directory_uri();
 				<p><?php the_field( 'hero_paragraph' ); ?></p>
 				<a href="<?php the_field( 'hero_button_url' ); ?>" class="btn btn-primary">
 					<?php the_field( 'button_text' ); ?>
-					<span class="btn-arrow" aria-hidden="true">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-					</span>
 				</a>
 			</div>
 		</div>
@@ -113,7 +110,7 @@ $theme_uri = get_template_directory_uri();
 		<div class="container">
 			<div class="features-grid">
 
-				<div class="card">
+				<div class="card-1">
 					<div class="icon">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M2 20h20"/></svg>
 					</div>
@@ -121,7 +118,7 @@ $theme_uri = get_template_directory_uri();
 					<p><?php the_field( 'feature_1_text' ); ?></p>
 				</div>
 
-				<div class="card">
+				<div class="card-1">
 					<div class="icon">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7L3 9h7z"/></svg>
 					</div>
@@ -129,7 +126,7 @@ $theme_uri = get_template_directory_uri();
 					<p><?php the_field( 'feature_2_text' ); ?></p>
 				</div>
 
-				<div class="card">
+				<div class="card-1">
 					<div class="icon">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="1"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
 					</div>
@@ -137,7 +134,7 @@ $theme_uri = get_template_directory_uri();
 					<p><?php the_field( 'feature_3_text' ); ?></p>
 				</div>
 
-				<div class="card">
+				<div class="card-1">
 					<div class="icon">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
 					</div>
@@ -145,7 +142,7 @@ $theme_uri = get_template_directory_uri();
 					<p><?php the_field( 'feature_4_text' ); ?></p>
 				</div>
 
-				<div class="card">
+				<div class="card-1">
 					<div class="icon">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.1-1.2l2-1.5-2-3.4-2.3.9a7 7 0 00-2-1.2L14 3h-4l-.6 2.6a7 7 0 00-2 1.2l-2.3-.9-2 3.4 2 1.5A7 7 0 005 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.3-.9c.6.5 1.3.9 2 1.2L10 21h4l.6-2.6a7 7 0 002-1.2l2.3.9 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/></svg>
 					</div>
@@ -153,7 +150,7 @@ $theme_uri = get_template_directory_uri();
 					<p><?php the_field( 'feature_5_text' ); ?></p>
 				</div>
 
-				<div class="card">
+				<div class="card-1">
 					<div class="icon">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4z"/><path d="M17 5h3a3 3 0 01-3 4M7 5H4a3 3 0 003 4"/></svg>
 					</div>

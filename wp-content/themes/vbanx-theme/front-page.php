@@ -226,53 +226,6 @@ for ( $i = 1; $i <= 12; $i++ ) {
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section class="section">
-  <div class="section-inner">
-    <div class="contact-card">
-      <div class="contact-left">
-        <h3>Let's plan your digital transformation.</h3>
-        <p>Tell us about your institution and we'll walk you through the right VBANX modules — from core banking to CIFRS compliance and mobile banking.</p>
-        <ul class="contact-info">
-          <li><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>012 751 275 / 087 333 187 / 085 816 000</li>
-          <li><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 6l8 7 8-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>info@vbanx.com</li>
-          <li><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Building #314, Road 6A, Kean Khlaing Village, Chroy Changvar, Phnom Penh 12101, Cambodia</li>
-          <li><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>www.vbanx.com</li>
-        </ul>
-        <div class="contact-social">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="Gmail"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 5.5l9.5 7 9.5-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-     <form class="contact-right" onsubmit="event.preventDefault();" method="post">
-        <?php wp_nonce_field( 'vbanx_contact_form', 'vbanx_contact_nonce' ); ?>
-        <div class="form-row">
-          <div class="form-field"><label>First Name</label><input type="text" name="first_name" placeholder="John"></div>
-          <div class="form-field"><label>Last Name</label><input type="text" name="last_name" placeholder="Doe"></div>
-        </div>
-        <div class="form-field">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="you@company.com">
-        </div>
-        <div class="form-field">
-          <label>What service are you interested in</label>
-          <select name="service">
-            <option value="">Select project type</option>
-            <option>Core Banking</option>
-            <option>Microfinance</option>
-            <option>CIFRS Compliance</option>
-            <option>Mobile Banking</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label>Message</label>
-          <textarea rows="3" name="message" placeholder="Write your message..."></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Request a Free Demo</button>
-      </form>
-    </div>
-  </div>
-</section>
 
 <script>
 /* ---------------- Modern network globe ---------------- */
