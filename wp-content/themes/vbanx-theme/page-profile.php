@@ -93,9 +93,40 @@ get_header();
     </section>
 
     <!-- section messages CEO -->
+    <section class="ceo-message">
+        <div class="ceo-container">
+
+            <div class="ceo-image">
+                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/ceo.png" alt="CEO">
+            </div>
+
+            <div class="ceo-content">
+
+                <div class="quote-icon">“</div>
+
+                <h2>
+                    VBANX
+                </h2>
+
+                <p>we believe that banking should be simple,
+                    secure, and accessible. By combining innovative
+                    technology with deep financial expertise, we empower
+                    banks and financial institutions to accelerate their digital
+                    transformation and deliver exceptional experiences to their customers.
+                </p>
+
+                <div class="ceo-info">
+                    <h3>Mr. KAO Sereyrath</h3>
+                    <span>CEO & Founder of VBANX</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     <!-- Experts Section -->
-    <section class="profile-main-section">
+    <section class="profile-expert-section">
 
         <div class="profile-container">
 
@@ -149,7 +180,7 @@ get_header();
 
             <!-- Subtitle Paragraph -->
             <p class="profile-section-subtitle">
-               The principles that guide how we work, every day.
+                The principles that guide how we work, every day.
             </p>
 
         </div>
