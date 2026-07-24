@@ -2,7 +2,7 @@
    Hero Section
 =========================== */
 
-.hero-section {
+.profile-hero-section {
     font-family: "Montserrat", sans-serif;
     position: relative;
     width: 100%;
@@ -14,7 +14,7 @@
 }
 
 /* Dark overlay on background */
-.hero-overlay {
+.profile-hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +27,7 @@
 }
 
 /* Target the img inside the overlay to make it behave like a background cover */
-.hero-overlay img {
+.profile-hero-overlay img {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +42,7 @@
 }
 
 /* Container */
-.hero-container {
+.profile-hero-container {
     position: relative;
     z-index: 2; /* Sits completely on top of the dark overlay layer */
     width: 100%;
@@ -58,14 +58,14 @@
 }
 
 /* Content Column (Left Side) */
-.hero-content {
+.profile-hero-content {
     flex: 1;
     max-width: 650px;
     color: #F5A623;
 }
 
 /* Title */
-.hero-content h1 {
+.profile-hero-content h1 {
     font-size: 56px;
     line-height: 1.15;
     font-weight: 700;
@@ -74,7 +74,7 @@
 }
 
 /* Description */
-.hero-content p {
+.profile-hero-content p {
    
     font-size: 18px;
     line-height: 1.7;
@@ -84,14 +84,14 @@
 }
 
 /* Buttons wrapper */
-.hero-buttons {
+.profile-hero-buttons {
     
     display: flex;
     gap: 20px;
 }
 
 /* Primary button */
-.btn-primary {
+.profile-btn-primary {
     display: inline-block;
     padding: 15px 45px; /* Balanced padding to keep text centered neatly */
     background: #f2932e;
@@ -104,12 +104,12 @@
     text-align: center;
 }
 
-.btn-primary:hover {
+.profile-btn-primary:hover {
     background: #d97d1e;
 }
 
 /* Secondary button */
-.btn-secondary {
+.profile-btn-secondary {
     display: inline-block;
     padding: 15px 45px;
     border: 2px solid #ffffff;
@@ -122,20 +122,20 @@
     text-align: center;
 }
 
-.btn-secondary:hover {
+.profile-btn-secondary:hover {
     background: #ffffff;;
     color: #111;
 }
 
 /* Image Column (Right Side) */
-.hero-image {
+.profile-hero-image {
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 
 /* Rounded meeting picture style */
-.hero-image img {
+.profile-hero-image img {
     max-width: 100%;
     height: auto;
     border-radius: 16px; 
@@ -146,14 +146,14 @@
 
 /* Desktop layout constraint */
 @media (max-width: 1200px) {
-    .hero-content h1 {
+    .profile-hero-content h1 {
         font-size: 52px;
     }
 }
 
 /* Tablets and iPad screens */
 @media (max-width: 992px) {
-    .hero-container {
+    .profile-hero-container {
         flex-direction: column; 
         justify-content: center;
         text-align: center;
@@ -162,49 +162,49 @@
         padding-bottom: 60px;
     }
 
-    .hero-content {
+    .profile-hero-content {
         max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .hero-image {
+    .profile-hero-image {
         justify-content: center;
         width: 100%;
     }
 
-    .hero-image img {
+    .profile-hero-image img {
         max-width: 85%;
     }
 }
 
 /* Mobile Screens */
 @media (max-width: 768px) {
-    .hero-container {
+    .profile-hero-container {
         padding: 80px 20px 40px 20px;
     }
 
-    .hero-content h1 {
+    .profile-hero-content h1 {
         font-size: 38px;
     }
 
-    .hero-content p {
+    .profile-hero-content p {
         font-size: 16px;
     }
 
-    .hero-buttons {
+    .profile-hero-buttons {
         flex-direction: column;
         width: 100%;
         max-width: 320px;
     }
     
-    .btn-primary, .btn-secondary {
+    .profile-btn-primary, .profile-btn-secondary {
         padding: 15px 0;
         width: 100%;
     }
 
-    .hero-image img {
+    .profile-hero-image img {
         max-width: 100%;
     }
 }
@@ -213,7 +213,7 @@
    Dashboard Preview Section
 =========================== */
 
-.dashboard-preview-section {
+.profile-dashboard-preview-section {
     padding: 20px 0;
     background-color: #ffffff; 
     width: 100%;
@@ -221,7 +221,7 @@
 }
 
 /* Container to hold both sides */
-.preview-container {
+.profile-preview-container {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
@@ -235,20 +235,20 @@
 }
 
 /* Left Content Column */
-.preview-content {
+.profile-preview-content {
     flex: 1;
     max-width: 550px;
 }
 
 /* The small description text */
-.preview-content p {
+.profile-preview-content p {
     font-size: 18px;
     line-height: 1.7;
     color: #4a4a4a; 
 }
 
 /* The BIG text styling for VBANX */
-.brand-highlight {
+.profile-brand-highlight {
     display: block;            
     font-size: 56px;          
     font-weight: 800;         
@@ -257,14 +257,14 @@
 }
 
 /* Right Image Column */
-.preview-image {
+.profile-preview-image {
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 
 /* Dashboard Mockup Picture */
-.preview-image img {
+.profile-preview-image img {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
@@ -277,50 +277,50 @@
 
 /* Tablets and Smaller Screens */
 @media (max-width: 992px) {
-    .dashboard-preview-section {
+    .profile-dashboard-preview-section {
         padding: 60px 0;
     }
 
-    .preview-container {
+    .profile-preview-container {
         flex-direction: column; /* Stacks column layout vertically */
         text-align: center;
         gap: 40px;
     }
 
-    .preview-content {
+    .profile-preview-content {
         max-width: 100%;
     }
 
-    .brand-highlight {
+    .profile-brand-highlight {
         font-size: 46px; /* Shrinks big text slightly on tablet */
     }
 
-    .preview-image {
+    .profile-preview-image {
         justify-content: center;
         width: 100%;
     }
     
-    .preview-image img {
+    .profile-preview-image img {
         max-width: 90%; /* Keeps image neatly constrained */
     }
 }
 
 /* Mobile Devices */
 @media (max-width: 768px) {
-    .preview-container {
+    .profile-preview-container {
         padding: 0 20px;
     }
 
-    .brand-highlight {
+    .profile-brand-highlight {
         font-size: 38px; /* Safe mobile size for the big heading */
         margin-bottom: 15px;
     }
 
-    .preview-content p {
+    .profile-preview-content p {
         font-size: 16px;
     }
 
-    .preview-image img {
+    .profile-preview-image img {
         max-width: 100%;
     }
 }
@@ -329,7 +329,7 @@
    Why VBANX Section Header
 =========================== */
 
-.main-section {
+.profile-main-section {
     padding: 20px 0 40px 0;
     width: 100%;
     font-family: "Montserrat", sans-serif;
@@ -337,7 +337,7 @@
 }
 
 /* Center Container */
-.container {
+.profile-container {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -348,7 +348,7 @@
 }
 
 /* 1. Pill Badge Style at the Top */
-.badge-tag {
+.profile-badge-tag {
     display: inline-block;
     padding: 10px 30px;
     background-color: #f6efe9; 
@@ -362,7 +362,7 @@
 }
 
 /* 2. Main Title "Why VBANX?" */
-.section-title {
+.profile-section-title {
     font-size: 56px;           
     font-weight: 800;          
     color: #0038a8;            
@@ -371,7 +371,7 @@
 }
 
 /* 3. Description Subtitle text */
-.section-subtitle {
+.profile-section-subtitle {
     font-size: 18px;
     line-height: 1.6;
     color: #333333;            
@@ -384,20 +384,20 @@
 =========================== */
 
 @media (max-width: 768px) {
-    .why-vbanx-section {
+    .profile-why-vbanx-section {
         padding: 60px 0 30px 0;
     }
 
-    .section-title {
+    .profile-section-title {
         font-size: 40px;       /* Safely scales down on mobile screens */
     }
 
-    .section-subtitle {
+    .profile-section-subtitle {
         font-size: 16px;       /* Slightly smaller text size for mobile readers */
         max-width: 90%;
     }
 
-    .badge-tag {
+    .profile-badge-tag {
         font-size: 12px;
         padding: 8px 20px;     /* Makes the pill slightly smaller on mobile */
     }
@@ -406,13 +406,13 @@
 /* ===========================
    trust-cards-section 
 =========================== */
-.trust-cards-section {
+.profile-trust-cards-section {
     font-family: "Montserrat", sans-serif;
     width: 100%;
     padding: 10px 0;
 }
 
-.card-container {
+.profile-card-container {
     max-width: 1200px;
     margin: 0 auto;
 
@@ -425,7 +425,7 @@
 
 
 /* card component */
-.card {
+.profile-card {
     background: #ffffff;
     border-radius: 16px;
     padding: 30px;
@@ -439,13 +439,13 @@
 }
 
 
-.card__number {
+.profile-card__number {
     font-size: 48px;
     font-weight: 700;
 }
 
 
-.card__line {
+.profile-card__line {
     width: 50px;
     height: 3px;
     margin: 20px 0;
@@ -454,19 +454,19 @@
 }
 
 
-.card__title {
+.profile-card__title {
     font-size: 24px;
     font-weight: 600;
 }
 
 
-.card__description {
+.profile-card__description {
     margin-top: 15px;
     line-height: 1.6;
 }
 @media(max-width: 900px){
 
-    .card-container {
+    .profile-card-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -475,29 +475,122 @@
 
 @media(max-width: 600px){
 
-    .card-container {
+    .profile-card-container {
         grid-template-columns: 1fr;
     }
 
 }
 
 /* ===========================
+   section-message-ceo-section 
+=========================== */
+
+.ceo-message{
+    width:100%;
+    padding:40px 0;
+    background: #F0F1FF;
+}
+
+.ceo-container{
+    font-family: "Montserrat", sans-serif;
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:50px;
+
+}
+
+.ceo-image{
+
+    flex:0 0 42%;
+    position:relative;
+
+}
+
+.ceo-image img{
+
+    width:100%;
+    display:block;
+
+}
+
+.quote-icon{
+
+    font-size:120px;
+    font-family:Georgia;
+    font-weight:bold;
+    line-height:1;
+    color:#000;
+    margin-bottom:15px;
+
+}
+
+.ceo-content h2{
+    font-size:48px;
+    line-height:1.25;
+    font-weight:800;
+    color:#F5A623;
+    margin-bottom:25px;
+
+}
+
+.ceo-content p{
+
+    font-size:32px;
+    line-height:1.55;
+    color:#222;
+    margin-bottom:18px;
+    font-weight:300;
+
+}
+
+.ceo-info{
+
+    margin-top:50px;
+
+}
+
+.ceo-info h3{
+
+    font-size:32px;
+    letter-spacing:6px;
+    font-weight:800;
+    color:#000;
+    margin-bottom:8px;
+
+}
+
+.ceo-info span{
+
+    font-size:26px;
+    color:#444;
+    font-weight:500;
+
+}
+
+/* ===========================
    Experts Section
 =========================== */
-.expert-section{
+.profile-expert-section{
     font-family: "Montserrat", sans-serif;
     padding: 40px 0 20px 0;
     width: 100%;
 
 }
-.expert-title{
+.profile-expert-title{
     font-size: 56px;           
     font-weight: 800;          
     color: #01319B;            
     margin: 0 0 20px 0;       
     letter-spacing: -0.5px;
 }
-.section-description {
+.profile-section-description {
     font-size: 18px;
     line-height: 1.6;
     max-width: 850px;

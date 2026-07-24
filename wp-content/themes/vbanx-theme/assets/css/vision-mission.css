@@ -1,0 +1,168 @@
+/* =========================
+   Vision Mission 
+========================= */
+
+.profile-vision-mission-value{
+    font-family: "Montserrat", sans-serif;
+    padding: 80px 0;
+}
+
+.profile-vmv-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 32px;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+.profile-vmv-card {
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    padding: 36px;
+
+    border: 1px solid #e9e9e9;
+
+    transition: all 0.3s ease;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.profile-vmv-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+
+}
+
+/* Icon Box */
+
+.profile-vmv-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    background: #f5a623;
+
+    border-radius: 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:25px;
+
+}
+
+.profile-vmv-icon i {
+
+    font-size:32px;
+
+    color:white;
+
+}
+
+/* Badge */
+
+.profile-vmv-badge {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    padding:8px 18px;
+
+
+    border-radius:50px;
+
+
+    background:#111827;
+
+
+    color:white;
+
+
+    font-size:14px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:1px;
+
+
+    margin-bottom:18px;
+
+}
+
+/* Title */
+
+.profile-vmv-title{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color: #0038a8;  
+
+    line-height:1.3;
+
+    margin-bottom:14px;
+
+}
+
+/* Description */
+
+.profile-vmv-description {
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    color:#6b7280;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .profile-vmv-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .profile-vmv-card{
+
+        padding:24px;
+
+    }
+
+
+    .profile-vmv-title{
+
+        font-size:22px;
+
+    }
+
+}

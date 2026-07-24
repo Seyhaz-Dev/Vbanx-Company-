@@ -37,7 +37,9 @@ for ( $i = 1; $i <= 12; $i++ ) {
 <head>
   <link rel="stylesheet" href="<?php echo $theme_uri; ?>/assets/css/front-page.css">
   <style>
-  .perf-section{ background-image:url('<?php echo esc_url($bg); ?>'); }
+  .perf-section {
+      background-image: url('<?php echo esc_url($bg); ?>');background-position: center;background-size: cover;background-repeat: no-repeat;
+  }
 </style>
 </head>
 
@@ -104,9 +106,15 @@ for ( $i = 1; $i <= 12; $i++ ) {
               $desc = get_field( "module_{$i}_description" ); 
               $tag      = get_field( "module_{$i}_tag" );
 
+              $link = get_field( "module_{$i}_link" );
+              if ( ! $link ) {
+                  $link = home_url( '/page-product-core-banking/' );
+              }
+
               // Skip rendering a card entirely if it has no title set
               if ( ! $title ) { continue; }
           ?>
+          <a href="<?php echo esc_url( $link ); ?>" class="module-link">
             <article class="module-card">
               <div class="module-icon">
                 <?php if ( $icon ) : ?>
@@ -119,6 +127,7 @@ for ( $i = 1; $i <= 12; $i++ ) {
               <p><?php echo esc_html( $desc ); ?></p>
               <span class="module-tag"><?php echo esc_html( $tag ); ?></span>
             </article>
+            </a>
           <?php endfor; ?>
         </div>
       </div>

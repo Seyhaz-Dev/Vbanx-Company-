@@ -1,0 +1,178 @@
+.root{
+    --font-display: "Montserrat", sans-serif;
+    --heading: 48px;
+    --description: 18px;
+    --tittle: 24px;
+    --tittle-color: #01319B;
+    --bg-section: #F0F1FF;
+    --description-color: #000;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --button-radius: 50px;
+    --heading-color:#F5A623;
+    --card-radius: 20px;
+}
+
+
+.strategic-cards-container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 410px);
+    gap: 32px;
+    justify-content: center;
+}
+
+.strategic-card {
+    position: relative;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #fff;
+    border-radius: 20px;
+    padding: 130px 25px 25px;
+    min-height: 300px;
+    font-family: var(--font-display);
+    overflow: hidden;
+    border: 1px solid #E8EDF5;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    transition: var(--transition-smooth);
+}
+
+.strategic-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Navy header strip behind the pattern */
+.strategic-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #01319B;
+    z-index: 0;
+}
+
+/* Wave pattern sits on top of the navy strip */
+.strategic-card-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    object-fit: cover;
+    opacity: .18;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Logo overlaps the header/body boundary — MUST stay position: absolute */
+.strategic-card-logo {
+    position: absolute;
+    top: 40px;
+    left: 25px;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    background: #ffffff;
+    border-radius: 50%;
+    border: 2px solid #E8EDF5;
+    padding: 8px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Badge sits in the white area, clear of the logo */
+.strategic-card-badge {
+    position: absolute;
+    left:280px;
+    top:55px;
+    right: 25px;
+    z-index: 2;
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: #EAF2FF;
+    color: #01319B;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Partner name */
+.strategic-card-title {
+    font-size: var(--tittle);
+    color: var(--description-color);
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 8px 0 !important;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+/* Description */
+.strategic-card-description {
+    color: var(--description-color);
+    font-size: var(--description);
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+    text-align: left;
+    flex-grow: 1;
+}
+
+/* Status pinned to the bottom with a divider above it */
+.strategic-card-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #16A34A;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    padding-top: 10px;
+    margin-top: auto;
+    border-top: 1px solid #EDF1F7;
+    flex-shrink: 0;
+}
+
+.strategic-card-status::before {
+    content: "✓";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: #16A34A;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media(max-width:1024px){
+    .strategic-cards-container{
+        grid-template-columns: repeat(auto-fit, 360px);
+    }
+}
+
+@media(max-width:600px){
+    .strategic-cards-container{
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+}

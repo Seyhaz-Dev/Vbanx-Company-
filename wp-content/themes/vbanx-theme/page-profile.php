@@ -9,15 +9,15 @@ get_header();
 <main>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="profile-hero-section">
 
-        <div class="hero-overlay">
+        <div class="profile-hero-overlay">
             <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/hero-profile.png" alt="bg-hero">
         </div>
 
-        <div class="hero-container">
+        <div class="profile-hero-container">
 
-            <div class="hero-content">
+            <div class="profile-hero-content">
 
                 <h1>
                     Building the Future<br>
@@ -30,14 +30,14 @@ get_header();
                     Institutions.
                 </p>
 
-                <div class="hero-buttons">
-                    <a href="/contact" class="btn-primary">Contact Us</a>
-                    <a href="/partnerships" class="btn-secondary">Explore the Partners</a>
+                <div class="profile-hero-buttons">
+                    <a href="/contact" class="profile-btn-primary">Contact Us</a>
+                    <a href="/partnerships" class="profile-btn-secondary">Explore the Partners</a>
                 </div>
 
             </div>
 
-            <div class="hero-image">
+            <div class="profile-hero-image">
                 <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/meeting.png.png" alt="Meeting">
             </div>
 
@@ -46,19 +46,19 @@ get_header();
     </section>
 
     <!-- Dashboard Preview Section -->
-    <section class="dashboard-preview-section">
-        <div class="preview-container">
+    <section class="profile-dashboard-preview-section">
+        <div class="profile-preview-container">
 
-            <div class="preview-content">
+            <div class="profile-preview-content">
                 <p>
-                    <span class="brand-highlight">VBANX</span>
+                    <span class="profile-brand-highlight">VBANX</span>
                     empowers financial institutions with digital banking platforms,
                     AI-powered services, mobile banking, and enterprise software
                     designed for speed, security, and scalability.
                 </p>
             </div>
 
-            <div class="preview-image">
+            <div class="profile-preview-image">
                 <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/dashboard.png" alt="Dashboard Preview">
             </div>
 
@@ -66,18 +66,18 @@ get_header();
     </section>
 
     <!-- Why VBANX Section Header -->
-    <section class="main-section">
-        <div class="container">
+    <section class="profile-main-section">
+        <div class="profile-container">
 
-            <div class="badge-tag">
+            <div class="profile-badge-tag">
                 WHY CLIENT TRUST VBANX?
             </div>
 
             <!-- Main Bold Title -->
-            <h2 class="section-title">Why VBANX?</h2>
+            <h2 class="profile-section-title">Why VBANX?</h2>
 
             <!-- Subtitle Paragraph -->
-            <p class="section-subtitle">
+            <p class="profile-section-subtitle">
                 Built for performance. Designed for compliance.<br>
                 Trusted for Growth.
             </p>
@@ -86,22 +86,55 @@ get_header();
     </section>
 
     <!-- trust-cards-section -->
-    <section class="trust-cards-section">
-        <div class="card-container">
+    <section class="profile-trust-cards-section">
+        <div class="profile-card-container">
             <?php get_template_part('components/card'); ?>
         </div>
     </section>
 
+    <!-- section messages CEO -->
+    <section class="ceo-message">
+        <div class="ceo-container">
+
+            <div class="ceo-image">
+                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/ceo.png" alt="CEO">
+            </div>
+
+            <div class="ceo-content">
+
+                <div class="quote-icon">“</div>
+
+                <h2>
+                    VBANX
+                </h2>
+
+                <p>we believe that banking should be simple,
+                    secure, and accessible. By combining innovative
+                    technology with deep financial expertise, we empower
+                    banks and financial institutions to accelerate their digital
+                    transformation and deliver exceptional experiences to their customers.
+                </p>
+
+                <div class="ceo-info">
+                    <h3>Mr. KAO Sereyrath</h3>
+                    <span>CEO & Founder of VBANX</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
     <!-- Experts Section -->
-    <section class="main-section">
+    <section class="profile-expert-section">
 
-        <div class="container">
+        <div class="profile-container">
 
-            <h2 class="expert-title">
+            <h2 class="profile-expert-title">
                 MEET OUR EXPERTS
             </h2>
 
-            <p class="section-description">
+            <p class="profile-section-description">
                 Meet the experienced leaders behind VBANX, whose expertise, vision, and commitment drive
                 innovation in digital banking. Together, they empower financial institutions with trusted technology,
                 strategic guidance, and customer-focused solutions that create lasting value.
@@ -110,22 +143,22 @@ get_header();
         </div>
 
     </section>
-    <?php get_template_part('components/expert-cards'); ?>
+    <?php get_template_part('components/expert'); ?>
 
 
     <!-- Section Title Vision and Mission-->
-    <section class="main-section">
-        <div class="container">
+    <section class="profile-main-section">
+        <div class="profile-container">
 
-            <div class="badge-tag">
+            <div class="profile-badge-tag">
                 WHAT DRIVES US
             </div>
 
             <!-- Main Bold Title -->
-            <h2 class="section-title">Built on trust. Designed for what's next.</h2>
+            <h2 class="profile-section-title">Built on trust. Designed for what's next.</h2>
 
             <!-- Subtitle Paragraph -->
-            <p class="section-subtitle">
+            <p class="profile-section-subtitle">
                 The principles that shape every product decision, every transaction, and every partnership we build.
 
             </p>
@@ -134,71 +167,20 @@ get_header();
 
     </section>
 
-    <section>
+    <!-- vision and mission -->
 
-        <!-- Vision and Mission card-->
-
-        <div class="vision-mission-value">
-
-            <div class="vmv-container">
-
-                <!-- Vision Card -->
-                <div class="vmv-card">
-
-                    <div class="vmv-icon">
-                        <i class="fa-regular fa-eye"></i>
-                    </div>
-
-                    <span class="vmv-badge">
-                        VISION
-                    </span>
-
-                    <h3 class="vmv-title">
-                        Building Smarter Digital Solutions
-                    </h3>
-
-                    <p class="vmv-description">
-                        To facilitate the enhancement in customer’s business through the effective use of innovative ICT product and service.
-                    </p>
-
-                </div>
-
-                <!-- Mission Card -->
-                <div class="vmv-card">
-
-                    <div class="vmv-icon">
-                        <i class="fa-regular fa-compass"></i>
-                    </div>
-
-                    <span class="vmv-badge">
-                        MISSION
-                    </span>
-
-                    <h3 class="vmv-title">
-                        Delivering Trusted ICT Solutions
-                    </h3>
-
-                    <p class="vmv-description">
-                        To provide quality ICT product and service to various sectors with high technology, skillful engineers and trusted solutions for growth.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
+    <?php get_template_part('components/vision-mission'); ?>
 
     <!-- Section Title Vision and Mission-->
-    <section class="main-section">
-        <div class="container">
+    <section class="profile-main-section">
+        <div class="profile-container">
 
             <!-- Main Bold Title -->
-            <h2 class="section-title">Core Values</h2>
+            <h2 class="profile-section-title">Core Values</h2>
 
             <!-- Subtitle Paragraph -->
-            <p class="section-subtitle">
-               The principles that guide how we work, every day.
+            <p class="profile-section-subtitle">
+                The principles that guide how we work, every day.
             </p>
 
         </div>

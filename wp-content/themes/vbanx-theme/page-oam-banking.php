@@ -18,7 +18,6 @@ $oam_desc      = get_field('oam_hero_desc');
 $oam_btn       = get_field('oam_hero_btn');
 $oam_bg        = get_field('oam_hero_bg');
 ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/oambanking.css">
 <section class="oam-hero">
   <div class="oam-hero__inner" <?php if ( $oam_bg ) : ?>style="background-image: url('<?php echo esc_url( $oam_bg ); ?>');"<?php endif; ?>>
     <div class="oam-hero__panel">
@@ -62,7 +61,6 @@ $wwd_steps = array(
     array( 'title' => get_field('wwd_step3_title'), 'desc' => get_field('wwd_step3_desc') ),
 );
 ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/oambanking.css">
 
 <section class="oam-whatwedo">
   <div class="oam-whatwedo__inner">
@@ -80,6 +78,7 @@ $wwd_steps = array(
           <?php if ( $step['title'] ) : ?>
             <div class="oam-step">
               <div class="oam-step__number"><?php echo str_pad( $i + 1, 2, '0', STR_PAD_LEFT ); ?></div>
+              <br>
               <span class="oam-step__underline"></span>
               <h3 class="oam-step__title"><?php echo esc_html( $step['title'] ); ?></h3>
               <p class="oam-step__desc"><?php echo esc_html( $step['desc'] ); ?></p>
