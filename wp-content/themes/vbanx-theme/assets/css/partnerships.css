@@ -21,12 +21,16 @@
     height: 100%;
     z-index: 1;
 
-    background: rgba(30, 28, 29, 0.85);
+    /* Slight gradient instead of a flat tint — reads more like a bank
+       hero (depth, not just a dark filter) while staying subtle */
+    background: linear-gradient(
+        120deg,
+        rgba(15, 20, 40, 0.92) 0%,
+        rgba(30, 28, 29, 0.85) 55%,
+        rgba(30, 28, 29, 0.7) 100%
+    );
 }
 
-/* FIX: was set to `position: absolute` then immediately overridden to
-   `position: relative`, which cancelled the top/left/width/height fill.
-   Keep it absolute so it actually covers the section behind the overlay. */
 .vb-hero-overlay img {
     position: absolute;
     top: 0;
@@ -38,7 +42,7 @@
     z-index: -1;
 }
 
-/* Container */
+/* Container — locked to 1200px, consistent with the rest of the page */
 .vb-hero-container {
     position: relative;
     z-index: 2;
@@ -59,13 +63,39 @@
     max-width: 650px;
 }
 
+/* Small institutional eyebrow label above the title.
+   Optional: add <span class="vb-hero-eyebrow">Licensed & Regulated</span>
+   above the <h1> in the template to use it. */
+.vb-hero-eyebrow {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #F5A623;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(245, 166, 35, 0.4);
+}
+
 /* Title */
 .vb-hero-content h1 {
-    font-size: 56px;
+    font-size: clamp(34px, 4vw + 12px, 56px);
     line-height: 1.15;
     font-weight: 700;
+    letter-spacing: -0.5px;
     margin-bottom: 25px;
     color: #F5A623;
+}
+
+/* Thin gold rule under the heading, bank-charter style */
+.vb-hero-content h1::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin-top: 22px;
+    background: #F5A623;
 }
 
 /* Description */
@@ -81,22 +111,20 @@
    Responsive Design
 =========================== */
 
-/* Desktop layout constraint */
-@media (max-width: 1200px) {
-    .vb-hero-content h1 {
-        font-size: 52px;
+@media (max-width: 1400px) {
+    .vb-hero-container {
+        max-width: 1140px;
     }
 }
 
-/* Tablets and iPad screens */
 @media (max-width: 992px) {
     .vb-hero-container {
         flex-direction: column;
         justify-content: center;
         text-align: center;
         gap: 50px;
-        padding-top: 100px;
-        padding-bottom: 60px;
+        padding-top: 120px;
+        padding-bottom: 70px;
     }
 
     .vb-hero-content {
@@ -105,20 +133,27 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .vb-hero-content h1::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-/* Mobile Screens */
 @media (max-width: 768px) {
     .vb-hero-container {
-        padding: 80px 20px 40px 20px;
-    }
-
-    .vb-hero-content h1 {
-        font-size: 38px;
+        padding: 90px 24px 50px 24px;
     }
 
     .vb-hero-content p {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vb-hero-eyebrow {
+        font-size: 11px;
+        letter-spacing: 1.5px;
     }
 }
 
@@ -127,7 +162,7 @@
 =========================== */
 
 .vb-main-section {
-    padding: 20px 0 40px 0;
+    padding: 90px 0;
     width: 100%;
     font-family: "Montserrat", sans-serif;
     background: #F0F1FF;
@@ -138,19 +173,40 @@
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
+/* Small pill badge above the section title, formal/institutional feel.
+   Optional: add <span class="vb-badge-tag">Partnerships</span> above
+   the <h2> in the template to use it. */
+.vb-badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #0038a8;
+    background: #ffffff;
+    border: 1px solid rgba(0, 56, 168, 0.2);
+    border-radius: 50px;
+    padding: 8px 20px;
+    margin-bottom: 22px;
+}
+
 /* Main Title "Why VBANX?" */
 .vb-section-title {
-    font-size: 56px;
+    font-size: clamp(30px, 3vw + 14px, 56px);
     font-weight: 800;
     color: #0038a8;
     margin: 0 0 20px 0;
     letter-spacing: -0.5px;
+    line-height: 1.15;
 }
 
 /* Description Subtitle text */
@@ -159,7 +215,7 @@
     line-height: 1.6;
     color: #333333;
     font-weight: 400;
-    max-width: 500px;
+    max-width: 560px;
 }
 
 /* ===========================
@@ -167,8 +223,8 @@
 =========================== */
 
 @media (max-width: 768px) {
-    .vb-why-vbanx-section {
-        padding: 60px 0 30px 0;
+    .vb-main-section {
+        padding: 60px 0 40px 0;
     }
 
     .vb-section-title {
@@ -181,7 +237,7 @@
     }
 
     .vb-badge-tag {
-        font-size: 12px;
-        padding: 8px 20px;
+        font-size: 11px;
+        padding: 7px 16px;
     }
 }
