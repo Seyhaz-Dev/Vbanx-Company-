@@ -43,18 +43,46 @@ function vbanx_enqueue_assets()
     );
 
     wp_enqueue_style(
+        'profile-style',
+        get_template_directory_uri() . '/assets/css/profile.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'value-style',
+        get_template_directory_uri() . '/assets/css/value.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'card-style',
+        get_template_directory_uri() . '/assets/css/card.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
+        'expert-style',
+        get_template_directory_uri() . '/assets/css/expert.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_style(
         'vision-mission-style',
         get_template_directory_uri() . '/assets/css/vision-mission.css',
         array(),
         '1.0'
     );
 
-    // wp_enqueue_style(
-    //     'partnerships-style',
-    //     get_template_directory_uri() . '/assets/css/partnerships.css',
-    //     array(),
-    //     '1.0'
-    // );
+    wp_enqueue_style(
+        'partnerships-style',
+        get_template_directory_uri() . '/assets/css/partnerships.css',
+        array(),
+        '1.0'
+    );
 
     wp_enqueue_style(
         'solution-style',
@@ -96,42 +124,13 @@ function vbanx_enqueue_assets()
     wp_enqueue_style(
         'ecosystem-style',
         get_template_directory_uri() . '/assets/css/ecosystem.css',
-        array( 'main-style' ),
+        array('main-style'),
         '1.0'
     );
 
-    wp_enqueue_style(
-        'profile-style',
-        get_template_directory_uri() . '/assets/css/profile.css',
-        array( 'main-style' ),
-        '1.0'
-    );
-
-    // Enqueue T24 Solution CSS (depends on main-style for CSS variables)
     wp_enqueue_style(
         't24-solution-style',
         get_template_directory_uri() . '/assets/css/t24-solution.css',
-        array( 'main-style' ),
-        '1.0'
-    );
-
-    wp_enqueue_style(
-        'value-style',
-        get_template_directory_uri() . '/assets/css/value.css',
-        array( 'main-style' ),
-        '1.0'
-    );
-
-    wp_enqueue_style(
-        'expert-style',
-        get_template_directory_uri() . '/assets/css/expert.css',
-        array( 'main-style' ),
-        '1.0'
-    );
-
-    wp_enqueue_style(
-        'card-style',
-        get_template_directory_uri() . '/assets/css/card.css',
         array( 'main-style' ),
         '1.0'
     );
