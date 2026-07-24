@@ -74,7 +74,7 @@ get_header();
             </div>
 
             <!-- Main Bold Title -->
-            <h2 class="profile-section-title">Why VBANX?</h2>
+            <h1 class="profile-section-title">Why VBANX?</h1>
 
             <!-- Subtitle Paragraph -->
             <p class="profile-section-subtitle">
@@ -97,7 +97,7 @@ get_header();
         <div class="ceo-container">
 
             <div class="ceo-image">
-                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/ceo.png" alt="CEO">
+                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/CEO-Mr.-KAO-Sereyrath.png" alt="CEO">
             </div>
 
             <div class="ceo-content">
