@@ -231,7 +231,7 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
-  animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;te;
+  animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .t24-hero__title {
