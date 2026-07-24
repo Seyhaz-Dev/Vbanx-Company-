@@ -330,7 +330,6 @@ body {
   border-radius: var(--radius-md);
   padding: 30px 20px;
   text-align: center;
-  transition: var(--transition-smooth);
 }
 
 .vc-card:hover {
