@@ -482,6 +482,99 @@
 }
 
 /* ===========================
+   section-message-ceo-section 
+=========================== */
+
+.ceo-message{
+    width:100%;
+    padding:40px 0;
+    background: #F0F1FF;
+}
+
+.ceo-container{
+    font-family: "Montserrat", sans-serif;
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:50px;
+
+}
+
+.ceo-image{
+
+    flex:0 0 42%;
+    position:relative;
+
+}
+
+.ceo-image img{
+
+    width:100%;
+    display:block;
+
+}
+
+.quote-icon{
+
+    font-size:120px;
+    font-family:Georgia;
+    font-weight:bold;
+    line-height:1;
+    color:#000;
+    margin-bottom:15px;
+
+}
+
+.ceo-content h2{
+    font-size:48px;
+    line-height:1.25;
+    font-weight:800;
+    color:#F5A623;
+    margin-bottom:25px;
+
+}
+
+.ceo-content p{
+
+    font-size:32px;
+    line-height:1.55;
+    color:#222;
+    margin-bottom:18px;
+    font-weight:300;
+
+}
+
+.ceo-info{
+
+    margin-top:50px;
+
+}
+
+.ceo-info h3{
+
+    font-size:32px;
+    letter-spacing:6px;
+    font-weight:800;
+    color:#000;
+    margin-bottom:8px;
+
+}
+
+.ceo-info span{
+
+    font-size:26px;
+    color:#444;
+    font-weight:500;
+
+}
+
+/* ===========================
    Experts Section
 =========================== */
 .profile-expert-section{

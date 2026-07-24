@@ -151,5 +151,3 @@ function vbanx_enqueue_assets()
     );
 }
 add_action( 'wp_enqueue_scripts', 'vbanx_enqueue_assets' );
-
-
