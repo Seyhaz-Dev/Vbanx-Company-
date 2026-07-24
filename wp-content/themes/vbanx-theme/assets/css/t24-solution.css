@@ -456,8 +456,6 @@ body {
   border-radius: var(--radius-md);
   padding: 30px 20px;
   text-align: center;
-  transition: var(--transition-smooth);
-  animation: float 3s ease-in-out infinite;
 }
 
 .vc-card:hover {
