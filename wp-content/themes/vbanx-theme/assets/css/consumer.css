@@ -441,7 +441,7 @@ button:focus-visible{
 	gap: 26px;
 }
 
-.features-grid .card{
+.features-grid .card-1{
 	background: var(--surface);
 	border-radius: var(--radius);
 	padding: 40px 28px;
@@ -450,7 +450,7 @@ button:focus-visible{
 	transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.features-grid .card:hover{
+.features-grid .card-1:hover{
 	transform: translateY(-6px);
 	box-shadow: var(--shadow-card-hover);
 }
@@ -468,7 +468,7 @@ button:focus-visible{
 	transition: transform var(--transition-base), background var(--transition-base);
 }
 
-.features-grid .card:hover .icon{
+.features-grid .card-1:hover .icon{
 	transform: scale(1.1) rotate(-6deg);
 	background: var(--orange);
 	color: var(--white);
