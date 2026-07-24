@@ -302,7 +302,7 @@ body {
   border-radius: var(--radius-pill);
   box-shadow: 0 10px 20px rgba(245, 166, 35, 0.35);
   transition: var(--transition-smooth);
-  animation: slideInLeft 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+   animation: float 3s ease-in-out infinite;
 }
 
 .oam-hero__cta:hover {
