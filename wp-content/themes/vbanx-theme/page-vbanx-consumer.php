@@ -46,9 +46,6 @@ $theme_uri = get_template_directory_uri();
 				<p><?php the_field( 'hero_paragraph' ); ?></p>
 				<a href="<?php the_field( 'hero_button_url' ); ?>" class="btn btn-primary">
 					<?php the_field( 'button_text' ); ?>
-					<span class="btn-arrow" aria-hidden="true">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-					</span>
 				</a>
 			</div>
 		</div>
