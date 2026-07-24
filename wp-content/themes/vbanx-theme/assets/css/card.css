@@ -1,4 +1,4 @@
-.cards-container {
+.profile-cards-container {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
@@ -9,7 +9,7 @@
     justify-content: center;
 }
 
-.card{
+.profile-card{
     background:#fff;
     border-radius:20px;
     padding:32px 24px;
@@ -22,19 +22,19 @@
 }
 
 /* Hover Effect */
-.card:hover{
+.profile-card:hover{
     transform: translateY(-8px);
     box-shadow:0 18px 40px rgba(0,0,0,.12);
 }
 
-.card h2 {
+.profile-card h2 {
     font-size: 48px;
     font-weight: 700;
     margin: 0;
     color: #01319B;
 }
 
-.card-line {
+.profile-card-line {
     width: 40px;
     height: 4px;
 
@@ -43,7 +43,7 @@
     margin: 12px auto;
     flex-shrink: 0;
 }
-.card h3 {
+.profile-card h3 {
     font-size: 24px;
     font-weight: 600;
     margin-top: 20px;
@@ -51,7 +51,7 @@
 }
 
 
-.card p {
+.profile-card p {
     font-size: 16px;
     line-height: 1.6;
     margin-top: 15px;
@@ -61,13 +61,13 @@
 /* Small tablet */
 @media(max-width: 850px){
 
-    .cards-container {
+    .profile-cards-container {
         grid-template-columns: 1fr;
         padding: 0 20px;
     }
 
 
-    .card {
+    .profile-card {
         width: 100%;
         max-width: 410px;
         height: 270px;
@@ -80,24 +80,24 @@
 /* Mobile */
 @media(max-width: 480px){
 
-    .card {
+    .profile-card {
         height: auto;
         min-height: 270px;
         padding: 24px;
     }
 
 
-    .card h2 {
+    .profile-card h2 {
         font-size: 40px;
     }
 
 
-    .card h3 {
+    .profile-card h3 {
         font-size: 20px;
     }
 
 
-    .card p {
+    .profile-card p {
         font-size: 14px;
     }
 

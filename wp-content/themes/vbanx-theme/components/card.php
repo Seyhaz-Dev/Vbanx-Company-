@@ -35,7 +35,7 @@ $cards = [
         'title' => get_field('title_6'),
         'description' => get_field('description_6'),
     ],
-      [
+    [
         'number' => get_field('number_7'),
         'title' => get_field('title_7'),
         'description' => get_field('description_7'),
@@ -48,35 +48,35 @@ $cards = [
     ],
 
 
-    
+
 ];
 
 ?>
 
-<div class="cards-container">
+<div class="profile-cards-container">
 
-<?php foreach($cards as $card): ?>
+    <?php foreach ($cards as $card): ?>
 
-    <div class="card">
+        <div class="profile-card">
 
-        <h2>
-            <?php echo esc_html($card['number']); ?>
-        </h2>
-        
-        <!-- line for every card -->
-        <div class="card-line"></div>
+            <h2>
+                <?php echo esc_html($card['number']); ?>
+            </h2>
 
-        <h3>
-            <?php echo esc_html($card['title']); ?>
-        </h3>
+            <!-- line for every card -->
+            <div class="profile-card-line"></div>
+
+            <h3>
+                <?php echo esc_html($card['title']); ?>
+            </h3>
 
 
-        <p>
-            <?php echo esc_html($card['description']); ?>
-        </p>
+            <p>
+                <?php echo esc_html($card['description']); ?>
+            </p>
 
-    </div>
+        </div>
 
-<?php endforeach; ?>
+    <?php endforeach; ?>
 
 </div>
