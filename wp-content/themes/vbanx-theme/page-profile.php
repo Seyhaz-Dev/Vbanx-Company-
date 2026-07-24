@@ -31,8 +31,12 @@ get_header();
                 </p>
 
                 <div class="profile-hero-buttons">
-                    <a href="/contact" class="profile-btn-primary">Contact Us</a>
-                    <a href="/partnerships" class="profile-btn-secondary">Explore the Partners</a>
+                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="profile-btn-primary">
+                        Contact Us
+                    </a>
+                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('partnerships'))); ?>" class="profile-btn-secondary">
+                        Explore the Partners
+                    </a>
                 </div>
 
             </div>

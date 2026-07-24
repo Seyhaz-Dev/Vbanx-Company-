@@ -50,8 +50,12 @@ for ( $i = 1; $i <= 12; $i++ ) {
       <h1><?php the_field('hero_title'); ?><br><span class="accent"><?php the_field('hero_title_accent'); ?></span></h1>
       <p class="hero-desc"><?php the_field('hero_description'); ?></p>
       <div class="hero-actions">
-        <a class="cta-btn" href="<?php the_field('hero_cta_url'); ?>"><?php the_field('hero_cta_text'); ?></a>
-        <a class="btn-outline" href="<?php the_field('hero_outline_url'); ?>"><?php the_field('hero_outline_text'); ?></a>
+        <div class="header-cta">
+           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener" class="btn btn-primary">Booking for Free Demo </a>
+        </div>
+        <a class="btn-outline" href="<?php echo home_url('/ecosystem/'); ?>">
+    Explore Ecosystem
+</a>
       </div>
       <div class="stats">
         <div>
@@ -201,31 +205,70 @@ for ( $i = 1; $i <= 12; $i++ ) {
 </section>
 
 <!-- ============ PERFORMANCE / COMPLIANCE ============ -->
-<section class="perf-section">
+<section id="why-vbanx" class="perf-section">
+
   <div class="section-inner perf-grid-wrap">
+
     <div class="perf-copy">
-      <span class="eyebrow"><?php the_field('perf_eyebrow'); ?></span>
-      <h2 class="section-title light"><?php the_field('perf_title'); ?></h2>
-      <p class="section-desc light"><?php the_field('perf_description'); ?></p>
+
+      <span class="eyebrow">
+        <?php the_field('perf_eyebrow'); ?>
+      </span>
+
+      <h2 class="section-title light">
+        <?php the_field('perf_title'); ?>
+      </h2>
+
+      <p class="section-desc light">
+        <?php the_field('perf_description'); ?>
+      </p>
+
     </div>
+
+
     <div class="perf-grid">
-      <?php for ( $i = 1; $i <= 8; $i++ ) :
-          $tag     = get_field( "perf_card_{$i}_tag" );
-          $heading = get_field( "perf_card_{$i}_heading" );
-          $desc    = get_field( "perf_card_{$i}_description" );
 
-          if ( ! $heading ) { continue; }
+      <?php 
+      for ($i = 1; $i <= 8; $i++) :
+
+        $tag     = get_field("perf_card_{$i}_tag");
+        $heading = get_field("perf_card_{$i}_heading");
+        $desc    = get_field("perf_card_{$i}_description");
+
+        if (!$heading) {
+          continue;
+        }
+
       ?>
-        <div class="perf-card">
-          <span class="perf-tag"><?php echo esc_html( $tag ); ?></span>
-          <h4><?php echo esc_html( $heading ); ?></h4>
-          <p><?php echo esc_html( $desc ); ?></p>
-        </div>
-      <?php endfor; ?>
-    </div>
-  </div>
-</section>
 
+        <div class="perf-card">
+
+          <?php if ($tag): ?>
+            <span class="perf-tag">
+              <?php echo esc_html($tag); ?>
+            </span>
+          <?php endif; ?>
+
+
+          <h4>
+            <?php echo esc_html($heading); ?>
+          </h4>
+
+
+          <p>
+            <?php echo esc_html($desc); ?>
+          </p>
+
+        </div>
+
+
+      <?php endfor; ?>
+
+    </div>
+
+  </div>
+
+</section>
 
 <script>
 /* ---------------- Modern network globe ---------------- */

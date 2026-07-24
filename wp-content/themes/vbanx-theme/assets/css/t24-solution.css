@@ -219,7 +219,7 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 30px;
-  padding-left:300px ;
+  padding-left:360px ;
   border-radius: 0 0 200px 0;
   z-index: 2;
 }
@@ -231,7 +231,7 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
-  animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;te;
+  animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .t24-hero__title {

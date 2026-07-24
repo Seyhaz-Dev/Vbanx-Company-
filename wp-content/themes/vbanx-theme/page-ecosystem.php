@@ -43,16 +43,16 @@ get_header();
 
         <div class="hero-buttons">
             <?php if (get_field('button_1_text')): ?>
-                <a href="<?php echo esc_url(get_field('button_1_url')); ?>">
-                    <?php echo esc_html(get_field('button_1_text')); ?>
-                </a>
-            <?php endif; ?>
+    <a href="<?php echo esc_url(home_url('/contact/')); ?>">
+        <?php echo esc_html(get_field('button_1_text')); ?>
+    </a>
+<?php endif; ?>
 
-            <?php if (get_field('button_2_text')): ?>
-                <a href="<?php echo esc_url(get_field('button_2_url')); ?>">
-                    <?php echo esc_html(get_field('button_2_text')); ?>
-                </a>
-            <?php endif; ?>
+<?php if (get_field('button_2_text')): ?>
+    <a href="<?php echo esc_url(home_url('/t24-solution/')); ?>">
+        <?php echo esc_html(get_field('button_2_text')); ?>
+    </a>
+<?php endif; ?>
         </div>
 
     </div>

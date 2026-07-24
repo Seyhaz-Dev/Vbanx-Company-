@@ -35,9 +35,9 @@ $oam_bg        = get_field('oam_hero_bg');
       <?php if ( $oam_desc ) : ?>
         <p class="oam-hero__desc"><?php echo esc_html( $oam_desc ); ?></p>
       <?php endif; ?>
-      <?php if ( $oam_btn ) : ?>
-        <a href="#demo" class="oam-hero__cta"><?php echo esc_html( $oam_btn ); ?></a>
-      <?php endif; ?>
+      <div class="header-cta">
+           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener" class="btn btn-primary">Booking for Free Demo </a>
+        </div>
     </div>
   </div>
 </section>
