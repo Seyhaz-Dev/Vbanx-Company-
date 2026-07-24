@@ -12,7 +12,7 @@ get_header();
     <section class="profile-hero-section">
 
         <div class="profile-hero-overlay">
-            <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/hero-profile.png" alt="bg-hero">
+            <img src="http://localhost/wordpress/wp-content/uploads/2026/07/hero-profile-1.png" alt="bg-hero">
         </div>
 
         <div class="profile-hero-container">
@@ -38,7 +38,7 @@ get_header();
             </div>
 
             <div class="profile-hero-image">
-                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/meeting.png.png" alt="Meeting">
+                <img src="http://localhost/wordpress/wp-content/uploads/2026/07/meeting-1.png-1.png" alt="Meeting">
             </div>
 
         </div>
@@ -59,7 +59,7 @@ get_header();
             </div>
 
             <div class="profile-preview-image">
-                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/dashboard.png" alt="Dashboard Preview">
+                <img src="http://localhost/wordpress/wp-content/uploads/2026/07/dashboard-1.png" alt="Dashboard Preview">
             </div>
 
         </div>
@@ -97,7 +97,7 @@ get_header();
         <div class="ceo-container">
 
             <div class="ceo-image">
-                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/CEO-Mr.-KAO-Sereyrath.png" alt="CEO">
+                <img src="http://localhost/wordpress/wp-content/uploads/2026/07/CEO_-removebg-preview.png" alt="CEO">
             </div>
 
             <div class="ceo-content">
