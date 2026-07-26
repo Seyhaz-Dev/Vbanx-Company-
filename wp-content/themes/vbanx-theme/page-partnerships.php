@@ -9,15 +9,15 @@ get_header();
 <main>
 
 	<!-- Hero Section -->
-	<section class="hero-section">
+	<section class="vb-hero-section">
 
-		<div class="hero-overlay">
+		<div class="vb-hero-overlay">
 			<img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/partner-vbanx.png" alt="bg-hero">
 		</div>
 
-		<div class="hero-container">
+		<div class="vb-hero-container">
 
-			<div class="hero-content">
+			<div class="vb-hero-content">
 
 				<h1>
 					<span>Certifications &</span><br>
@@ -37,14 +37,14 @@ get_header();
 	</section>
 
 	<!-- Strategic Partners Section Header -->
-	<section class="main-section">
-		<div class="container">
+	<section class="vb-main-section">
+		<div class="vb-container">
 
 			<!-- Main Bold Title -->
-			<h2 class="section-title">Strategic Partners</h2>
+			<h2 class="vb-section-title">Strategic Partners</h2>
 
 			<!-- Subtitle Paragraph -->
-			<p class="section-subtitle">
+			<p class="vb-section-subtitle">
 
 				Our strategic alliances span banking infrastructure,
 				cloud, and enterprise technology to deliver a resilient,
@@ -55,15 +55,15 @@ get_header();
 	</section>
 
 	<!-- Strategic-Partners-cards-section -->
-	<section class="strategic-partners">
+	<section class="vb-strategic-partners">
 
-		<div class="container">
+		<div class="vb-cards-container">
 
-			<h2 class="section-title">
+			<h2 class="vb-section-title">
 				<?php the_field('section_title'); ?>
 			</h2>
 
-			<p class="section-description">
+			<p class="vb-section-description">
 				<?php the_field('section_description'); ?>
 			</p>
 
@@ -74,14 +74,14 @@ get_header();
 	</section>
 
 	<!-- Certified Partner & Membership Section Header -->
-	<section class="main-section">
-		<div class="container">
+	<section class="vb-main-section">
+		<div class="vb-container">
 
 			<!-- Main Bold Title -->
-			<h2 class="section-title">Certified Partner & Membership</h2>
+			<h2 class="vb-section-title">Certified Partner & Membership</h2>
 
 			<!-- Subtitle Paragraph -->
-			<p class="section-subtitle">
+			<p class="vb-section-subtitle">
 
 				Industry memberships and certifications that underpin
 				VBANX's commitment to global standards and regional
@@ -92,15 +92,15 @@ get_header();
 	</section>
 
 	<!-- Certified Partner & Membership-cards-section -->
-	<section class="strategic-partners">
+	<section class="vb-strategic-partners">
 
-		<div class="container">
+		<div class="vb-cards-container">
 
-			<h2 class="section-title">
+			<h2 class="vb-section-title">
 				<?php the_field('section_title'); ?>
 			</h2>
 
-			<p class="section-description">
+			<p class="vb-section-description">
 				<?php the_field('section_description'); ?>
 			</p>
 
@@ -111,14 +111,14 @@ get_header();
 	</section>
 
 	<!-- Our Solution Partner Section Header -->
-	<section class="main-section">
-		<div class="container">
+	<section class="vb-main-section">
+		<div class="vb-container">
 
 			<!-- Main Bold Title -->
-			<h2 class="section-title">Our Solution Partner</h2>
+			<h2 class="vb-section-title">Our Solution Partner</h2>
 
 			<!-- Subtitle Paragraph -->
-			<p class="section-subtitle">
+			<p class="vb-section-subtitle">
 
 				Technology and infrastructure partners that power VBANX's
 				platform with proven, enterprise-grade solutions.
@@ -128,15 +128,15 @@ get_header();
 	</section>
 
 	<!--  Our Solution Partner-cards-section -->
-	<section class="strategic-partners">
+	<section class="vb-strategic-partners">
 
-		<div class="container">
+		<div class="vb-cards-container">
 
-			<h2 class="section-title">
+			<h2 class="vb-section-title">
 				<?php the_field('section_title'); ?>
 			</h2>
 
-			<p class="section-description">
+			<p class="vb-section-description">
 				<?php the_field('section_description'); ?>
 			</p>
 
