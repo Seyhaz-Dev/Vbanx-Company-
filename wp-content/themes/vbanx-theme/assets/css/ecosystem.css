@@ -182,7 +182,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  padding-left: 160px;
+  padding-left: calc(max(0px, (100vw - 1200px) / 2) + 20px);
   border-radius: 0 0 200px 0;
   z-index: 2;
 
@@ -194,10 +194,12 @@
   letter-spacing: 1.2px;
   text-transform: uppercase;
   margin: 0;
+  max-width: 1200px;
 }
 .eco-hero-banner__title {
   margin: 0;
   line-height: 1.05;
+  max-width: 1200px;
 }
 .eco-hero-banner__title-accent {
   display: block;
@@ -218,7 +220,7 @@
   color: #01319B;
   font-size: 15px;
   line-height: 1.6;
-  max-width: 380px;
+  max-width: 1200px;
   margin: 0;
   animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 
@@ -322,7 +324,7 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 15px;
-	max-width: 1200px;   /* was 965px */
+	max-width: 1170px;   /* was 965px */
 	margin: 0 auto;
 }
 
