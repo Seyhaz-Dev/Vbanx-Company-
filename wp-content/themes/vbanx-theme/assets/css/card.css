@@ -1,45 +1,41 @@
-.cards-container {
+.profile-cards-container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     font-family: "Montserrat", sans-serif;
     display: grid;
     grid-template-columns: repeat(3, 410px);
     gap: 32px;
     justify-content: center;
+    padding: 60px;
 }
 
-.card {
-    width: 410px;
-    height: 270px;
-    background: #ffffff;
-    padding: 32px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.profile-card{
+    background:#fff;
+    border-radius:20px;
+    padding:20px 15px;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    font-family: "Montserrat", sans-serif;
 
-     /* Transition */
+    /* Transition */
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 /* Hover Effect */
-.card:hover{
+.profile-card:hover{
     transform: translateY(-8px);
     box-shadow:0 18px 40px rgba(0,0,0,.12);
 }
 
-.card h2 {
-    font-size: 48px;
+.profile-card h2 {
+    font-size: 30px;
     font-weight: 700;
     margin: 0;
     color: #01319B;
 }
 
-.card-line {
+.profile-card-line {
     width: 40px;
     height: 4px;
 
@@ -48,16 +44,16 @@
     margin: 12px auto;
     flex-shrink: 0;
 }
-.card h3 {
-    font-size: 24px;
+.profile-card h3 {
+    font-size: 20px;
     font-weight: 600;
     margin-top: 20px;
     color: #01319B;
 }
 
 
-.card p {
-    font-size: 16px;
+.profile-card p {
+    font-size: 15px;
     line-height: 1.6;
     margin-top: 15px;
 }
@@ -66,13 +62,13 @@
 /* Small tablet */
 @media(max-width: 850px){
 
-    .cards-container {
+    .profile-cards-container {
         grid-template-columns: 1fr;
         padding: 0 20px;
     }
 
 
-    .card {
+    .profile-card {
         width: 100%;
         max-width: 410px;
         height: 270px;
@@ -85,24 +81,24 @@
 /* Mobile */
 @media(max-width: 480px){
 
-    .card {
+    .profile-card {
         height: auto;
         min-height: 270px;
         padding: 24px;
     }
 
 
-    .card h2 {
+    .profile-card h2 {
         font-size: 40px;
     }
 
 
-    .card h3 {
+    .profile-card h3 {
         font-size: 20px;
     }
 
 
-    .card p {
+    .profile-card p {
         font-size: 14px;
     }
 

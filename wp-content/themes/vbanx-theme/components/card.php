@@ -51,18 +51,18 @@ $cards = [
 
 ?>
 
-<div class="cards-container">
+<div class="profile-cards-container">
 
     <?php foreach ($cards as $card): ?>
 
-        <div class="card">
+        <div class="profile-card">
 
             <h2>
                 <?php echo esc_html($card['number']); ?>
             </h2>
 
             <!-- line for every card -->
-            <div class="card-line"></div>
+            <div class="profile-card-line"></div>
 
             <h3>
                 <?php echo esc_html($card['title']); ?>

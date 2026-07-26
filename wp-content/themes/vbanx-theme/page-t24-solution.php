@@ -22,8 +22,6 @@ $logo1        = get_field('hero_logo1');
 $logo2        = get_field('hero_logo2');
 ?>
 
-<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/t24-solution.css' ); ?>">
-
 <section class="t24-hero">
   <div class="t24-hero__inner" style="background-image: url('<?php echo esc_url( $bg_photo ); ?>');">
 
@@ -115,8 +113,6 @@ $cards = array(
 );
 ?>
 
-<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/vc-stats.css' ); ?>">
-
 <section class="vc-stats">
   <div class="vc-stats__inner" <?php if ( $stats_bg ) : ?>style="background-image: url('<?php echo esc_url( $stats_bg ); ?>');"<?php endif; ?>>
 
@@ -179,8 +175,6 @@ $solutions = array(
 );
 ?>
 
-<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/t24-solutions.css' ); ?>">
-
 <section class="t24-solutions">
   <div class="t24-solutions__inner">
 
@@ -233,8 +227,6 @@ $sel_steps = array(
     array( 'title' => get_field('sel_step3_title'), 'desc' => get_field('sel_step3_desc') ),
 );
 ?>
-
-<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/t24-solution.css' ); ?>">
 
 <section class="t24-selection">
   <div class="t24-selection__inner">
@@ -535,7 +527,6 @@ $cifrs_card2 = array(
     get_field('cifrs_c2_item6'),
 );
 ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/t24-solution.css">
 <section class="t24-cifrs">
   <div class="t24-cifrs__inner">
 

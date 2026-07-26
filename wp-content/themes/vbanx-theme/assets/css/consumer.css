@@ -90,8 +90,8 @@ button:focus-visible{
 }
 
 .eyebrow{
-	font-size: 13px;
-	font-weight: 700;
+	font-size: 12px;
+	font-weight: 600;
 	letter-spacing: 0.14em;
 	color: var(--text-dim);
 	text-transform: uppercase;
@@ -250,7 +250,6 @@ button:focus-visible{
 .hero-copy p{
 	color: var(--text-dim);
 	font-size: 16.5px;
-	max-width: 460px;
 	margin: 0 0 32px;
 }
 
@@ -442,7 +441,7 @@ button:focus-visible{
 	gap: 26px;
 }
 
-.features-grid .card{
+.features-grid .card-1{
 	background: var(--surface);
 	border-radius: var(--radius);
 	padding: 40px 28px;
@@ -451,7 +450,7 @@ button:focus-visible{
 	transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.features-grid .card:hover{
+.features-grid .card-1:hover{
 	transform: translateY(-6px);
 	box-shadow: var(--shadow-card-hover);
 }
@@ -469,7 +468,7 @@ button:focus-visible{
 	transition: transform var(--transition-base), background var(--transition-base);
 }
 
-.features-grid .card:hover .icon{
+.features-grid .card-1:hover .icon{
 	transform: scale(1.1) rotate(-6deg);
 	background: var(--orange);
 	color: var(--white);
