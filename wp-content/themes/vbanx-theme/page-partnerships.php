@@ -12,7 +12,7 @@ get_header();
 	<section class="vb-hero-section">
 
 		<div class="vb-hero-overlay">
-			<img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/partner-vbanx.png" alt="bg-hero">
+			<img src="http://localhost/wordpress/wp-content/uploads/2026/07/partner-vbanx-1.png" alt="bg-hero">
 		</div>
 
 		<div class="vb-hero-container">
