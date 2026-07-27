@@ -30,14 +30,14 @@ get_header();
                     Institutions.
                 </p>
 
-                <div class="profile-hero-buttons">
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="profile-btn-primary">
-                        Contact Us
-                    </a>
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('partnerships'))); ?>" class="profile-btn-secondary">
+                <div class="hero-actions">
+        			<a class="btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener">Booking for Free Demo </a>
+                    <a class="btn-secondary" href="<?php echo esc_url(get_permalink(get_page_by_path('partnerships'))); ?>" target="_blank" rel="noopener">
                         Explore the Partners
                     </a>
-                </div>
+       		 	</div>
+                    
+               
 
             </div>
 
