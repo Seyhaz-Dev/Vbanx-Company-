@@ -50,12 +50,10 @@ for ( $i = 1; $i <= 12; $i++ ) {
       <h1><?php the_field('hero_title'); ?><br><span class="accent"><?php the_field('hero_title_accent'); ?></span></h1>
       <p class="hero-desc"><?php the_field('hero_description'); ?></p>
       <div class="hero-actions">
-        <div class="header-cta">
-           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener" class="btn btn-primary">Booking for Free Demo </a>
-        </div>
+        <a class="btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener">Booking for Free Demo </a>
         <a class="btn-outline" href="<?php echo home_url('/ecosystem/'); ?>">
-    Explore Ecosystem
-</a>
+            Explore Ecosystem
+        </a>
       </div>
       <div class="stats">
         <div>
