@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Contact 
+ * Template Name: Contact
  */
 
 if (!defined('ABSPATH')) {
@@ -65,20 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vbanx_contact_nonce']
         }
     }
 }
-
-/* ================= ACF FIELDS (matching your existing field names) ================= */
-$phone_number   = get_field('phone_number');
-$contact_email  = get_field('contact_email');
-$office_address = get_field('office_address');
-$working_hour   = get_field('working_hour');
-$map_embed_url  = get_field('map_embed_url');
-
-$social_url_1      = get_field('social_url_1');
-$social_platform_1 = get_field('social_platform_1');
-$social_url_2      = get_field('social_url_2');
-$social_platform_2 = get_field('social_platform_2');
-$social_url_3      = get_field('social_url_3');
-$social_platform_3 = get_field('social_platform_3');
 ?>
 
 <main class="contact-page">
@@ -195,79 +181,64 @@ $social_platform_3 = get_field('social_platform_3');
 
                 </div>
 
+
+
                 <!-- ================= RIGHT: MAP + INFO ================= -->
                 <div class="contact-map-col">
-
                     <div class="contact-info">
                         <h3 class="contact-info__title">Get in Touch</h3>
                         <ul class="contact-details">
-
-                            <?php if ($phone_number): ?>
+                            <?php if (get_field('phone_number')): ?>
                                 <li>
-                                    <span class="contact-icon">
-                                        <i class="fa-solid fa-phone"></i>
-                                    </span>
+                                    <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                                    <span><?php echo esc_html(get_field('phone_number')); ?></span>
+                                </li>
+                            <?php endif; ?>
 
-                                    <a href="tel:<?php echo esc_attr(preg_replace('/\s+/', '', $phone_number)); ?>">
-                                        <?php echo esc_html($phone_number); ?>
+                            <?php if (get_field('contact_email')): ?>
+                                <li>
+                                    <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                                    <a href="mailto:<?php echo esc_attr(get_field('contact_email')); ?>">
+                                        <?php echo esc_html(get_field('contact_email')); ?>
                                     </a>
                                 </li>
                             <?php endif; ?>
 
-
-                            <?php if ($contact_email): ?>
+                            <?php if (get_field('office_address')): ?>
                                 <li>
-                                    <span class="contact-icon">
-                                        <i class="fa-solid fa-envelope"></i>
-                                    </span>
+                                    <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                                    <span><?php echo nl2br(esc_html(get_field('office_address'))); ?></span>
+                                </li>
+                            <?php endif; ?>
 
-                                    <a href="mailto:<?php echo esc_attr($contact_email); ?>">
-                                        <?php echo esc_html($contact_email); ?>
+                            <?php if (get_field('contact_website')): ?>
+                                <li>
+                                    <span class="contact-icon"><i class="fas fa-globe"></i></span>
+                                    <a href="<?php echo esc_url(get_field('contact_website')); ?>" target="_blank" rel="noopener">
+                                        <?php echo esc_html(get_field('contact_website')); ?>
                                     </a>
                                 </li>
                             <?php endif; ?>
-
-
-                            <?php if ($office_address): ?>
-                                <li>
-                                    <span class="contact-icon">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                    </span>
-
-                                    <span>
-                                        <?php echo esc_html($office_address); ?>
-                                    </span>
-                                </li>
-                            <?php endif; ?>
-
                         </ul>
 
+                        <div class="contact-social">
+                            <?php if (get_field('social_url_1')) : ?>
+                                <a href="<?php echo esc_url(get_field('social_url_1')); ?>" target="_blank" rel="noopener">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            <?php endif; ?>
 
-                        <?php if ($social_url_1 || $social_url_2 || $social_url_3): ?>
-                            <div class="contact-social">
-                                <?php if ($social_url_1): ?>
-                                    <a href="<?php echo esc_url($social_url_1); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($social_platform_1 ?: 'Social link'); ?>">
-                                        <?php echo esc_html(mb_substr($social_platform_1 ?: '?', 0, 1)); ?>
-                                    </a>
-                                <?php endif; ?>
-                                <?php if ($social_url_2): ?>
-                                    <a href="<?php echo esc_url($social_url_2); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($social_platform_2 ?: 'Social link'); ?>">
-                                        <?php echo esc_html(mb_substr($social_platform_2 ?: '?', 0, 1)); ?>
-                                    </a>
-                                <?php endif; ?>
-                                <?php if ($social_url_3): ?>
-                                    <a href="<?php echo esc_url($social_url_3); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($social_platform_3 ?: 'Social link'); ?>">
-                                        <?php echo esc_html(mb_substr($social_platform_3 ?: '?', 0, 1)); ?>
-                                    </a>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
+                            <?php if (get_field('email_address')) : ?>
+                                <a href="mailto:<?php echo esc_attr(get_field('email_address')); ?>">
+                                    <i class="fas fa-envelope"></i> Email
+                                </a>
+                            <?php endif; ?>
+                        </div>
                     </div>
-
-                    <?php if ($map_embed_url): ?>
+                    <?php if (get_field('map_embed_url')): ?>
                         <div class="contact-map-wrap">
                             <iframe
-                                src="<?php echo esc_url($map_embed_url); ?>"
+                                src="<?php echo esc_url(get_field('map_embed_url')); ?>"
                                 width="100%"
                                 height="100%"
                                 style="border:0;"
@@ -290,5 +261,4 @@ $social_platform_3 = get_field('social_platform_3');
 </main>
 
 <?php
-get_footer();
-?>
+get_template_part( 'template-parts/footer' );

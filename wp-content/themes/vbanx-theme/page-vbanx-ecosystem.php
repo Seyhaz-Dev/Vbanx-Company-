@@ -11,6 +11,7 @@ if ( ! function_exists( 'get_field' ) ) {
     exit;
 }
 
+get_header();
 
 $eyebrow      = get_field('hero_eyebrow');
 $title_accent = get_field('hero_title_accent');
