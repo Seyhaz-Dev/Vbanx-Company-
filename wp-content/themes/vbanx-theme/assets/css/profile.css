@@ -97,8 +97,7 @@
     align-items:center;
     gap:16px;
     margin-bottom:48px;
-    justify-content:center;
-    display: flex;
+   
   }
   .btn-primary{
     background:var(--orange);
@@ -109,8 +108,7 @@
     border-radius:999px;
     transition:transform .2s ease, box-shadow .2s ease;
     white-space:nowrap;
-    justify-content:center;
-    display: inline-flex ;
+   
   }
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(253, 231, 208, 0.3); background-color: var(--blue-accent); color: var(--white);}
 
@@ -238,9 +236,12 @@
         max-width: 320px;
     }
     
-    .profile-btn-primary, .profile-btn-secondary {
+    .btn-primary, .btn-secondary {
         padding: 15px 0;
         width: 100%;
+        justify-content: center;
+        display: inline-flex;
+        
     }
 
     .profile-hero-image img {
