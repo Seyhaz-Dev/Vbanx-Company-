@@ -29,6 +29,7 @@
   --gray-500: #6b7280;
   --gray-600: #5a5f6a;
   --gray-700: #7a8099;
+   --navy-pill: rgba(46, 45, 174, 1);
   
   --white: #ffffff;
 
@@ -300,15 +301,13 @@ body {
   text-decoration: none;
   padding: 14px 36px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 10px 20px rgba(245, 166, 35, 0.35);
   transition: var(--transition-smooth);
    animation: float 3s ease-in-out infinite;
 }
 
 .oam-hero__cta:hover {
   transform: translateY(-3px);
-  background: var(--orange-500);
-  box-shadow: 0 15px 30px rgba(245, 166, 35, 0.5);
+  background: var(--navy-pill);
 }
 
 @media (max-width: 900px) {

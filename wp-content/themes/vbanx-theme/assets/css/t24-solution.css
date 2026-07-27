@@ -11,6 +11,7 @@
   --blue-accent: #01319B;
   --blue-bright: #2f7cf6;
   --blue-soft: #eaf1ff;
+   --navy-pill: rgba(46, 45, 174, 1);
 
   --dark-navy-1: #0a1330;
   --dark-navy-2: #132a63;
@@ -231,7 +232,7 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
-  animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;te;
+  animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .t24-hero__title {
@@ -277,7 +278,6 @@ body {
   text-decoration: none;
   padding: 14px 36px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 10px 20px rgba(245, 166, 35, 0.35);
   transition: var(--transition-smooth);
    animation: float 3s ease-in-out infinite;
 }
@@ -285,7 +285,7 @@ body {
 .t24-hero__cta:hover {
   transform: translateY(-3px);
   background: var(--orange-500);
-  box-shadow: 0 15px 30px rgba(245, 166, 35, 0.5);
+     background: var(--navy-pill);
 }
 
 .t24-hero__logos {
@@ -348,6 +348,19 @@ body {
     align-self: center; 
     width: 100%; 
     text-align: center; 
+  }
+}
+
+
+/* Responsive fix */
+@media (max-width: 700px) {
+  .t24-hero__cta { 
+    align-self: center; 
+    width: 80%; 
+    text-align: center;
+    padding: 10px 15px; /* Better padding for mobile */
+    display: block;
+    box-sizing: border-box;
   }
 }
 
