@@ -327,7 +327,6 @@ body {
 @media (max-width: 700px) {
   .oam-hero__inner {
     height: auto;
-    min-height: 400px;
   }
   .oam-hero__panel {
     position: relative;
@@ -350,6 +349,17 @@ body {
     align-self: center;
     width: 100%;
     text-align: center;
+  }
+}
+/* Responsive fix */
+@media (max-width: 700px) {
+  .oam-hero__cta { 
+    align-self: center; 
+    width: 80%; 
+    text-align: center;
+    padding: 10px 15px; /* Better padding for mobile */
+    display: block;
+    box-sizing: border-box;
   }
 }
 
