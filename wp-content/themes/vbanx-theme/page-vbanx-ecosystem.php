@@ -54,9 +54,9 @@ $logo2       = get_field('hero_logo2');
       <?php endif; ?>
 
       <?php if ( $btn_text ) : ?>
-        <a href="<?php echo esc_url( $btn_link ?: '#' ); ?>" class="eco-hero-banner__cta">
-          <?php echo esc_html( $btn_text ); ?>
-        </a>
+        <div class="hero-actions">
+        			<a class="btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener">Booking for Free Demo </a>
+       		 	</div>
       <?php endif; ?>
 
       <div class="eco-hero-banner__logos">
