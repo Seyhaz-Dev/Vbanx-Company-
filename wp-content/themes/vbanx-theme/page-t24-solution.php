@@ -54,11 +54,9 @@ $logo2        = get_field('hero_logo2');
       <?php endif; ?>
 
       <?php if ( $btn_text ) : ?>
-       <div class="header-cta">
-           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener" class="btn btn-primary">Booking for Free Demo </a>
-        </div>
-      <?php endif; ?>
-
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener">Booking for Free Demo </a>      <?php endif; ?>
+      </div>
       <div class="t24-hero__logos">
         <?php if ( $logo1 ) : ?>
           <img class="t24-logo1" src="<?php echo esc_url( $logo1 ); ?>" alt="Logo 1">
