@@ -219,7 +219,7 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 30px;
-  padding-left:300px ;
+  padding-left:360px ;
   border-radius: 0 0 200px 0;
   z-index: 2;
 }

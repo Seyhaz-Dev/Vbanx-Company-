@@ -52,6 +52,15 @@
     transition:transform .2s ease, box-shadow .2s ease;
     white-space:nowrap;
   }
+
+  html {
+    scroll-behavior: smooth;
+}
+
+
+#why-vbanx {
+    scroll-margin-top: 100px;
+}
   .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(247,165,30,0.30);}
 
   /* ---------- hero ---------- */

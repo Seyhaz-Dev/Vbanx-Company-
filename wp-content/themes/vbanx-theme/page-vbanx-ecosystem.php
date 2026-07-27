@@ -11,23 +11,21 @@ if ( ! function_exists( 'get_field' ) ) {
     exit;
 }
 
-
-$eyebrow      = get_field('hero_eyebrow');
-$title_accent = get_field('hero_title_accent');
-$title_main   = get_field('hero_title_main');
-$description  = get_field('hero_description');
-$bg_photo     = get_field('hero_image'); // <-- use your actual field name here (check ACF: is it hero_image, hero_bg_photo, hero_img, etc.)
-$btn_text     = get_field('hero_btn_text') ?: get_field('hero_button_text');
-$btn_link     = get_field('hero_btn_link') ?: get_field('hero_button_url');
-$logo1        = get_field('hero_logo1');
-$logo2        = get_field('hero_logo2');
+$eyebrow     = get_field('badge_text');
+$title       = get_field('hero_title');
+$description = get_field('hero_description');
+$bg_photo    = get_field('hero_image');
+$btn_text    = get_field('hero_button_text');
+$btn_link    = get_field('hero_button_link');
+$logo1       = get_field('hero_logo1');
+$logo2       = get_field('hero_logo2');
 ?>
 
 <section class="eco-hero-banner">
   <div class="eco-hero-banner__inner">
 
     <?php if ( $bg_photo ) : ?>
-      <img class="eco-hero-banner__bg" src="<?php echo esc_url( $bg_photo ); ?>" alt="<?php echo esc_attr( $title_accent ); ?>">
+      <img class="eco-hero-banner__bg" src="<?php echo esc_url( $bg_photo ); ?>" alt="<?php echo esc_attr( $title ); ?>">
     <?php endif; ?>
 
     <svg class="eco-hero-banner__icon eco-hero-banner__icon--wifi" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
@@ -45,14 +43,11 @@ $logo2        = get_field('hero_logo2');
         <p class="eco-hero-banner__eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
       <?php endif; ?>
 
-      <h1 class="eco-hero-banner__title">
-        <?php if ( $title_accent ) : ?>
-          <span class="eco-hero-banner__title-accent"><?php echo esc_html( $title_accent ); ?></span>
-        <?php endif; ?>
-        <?php if ( $title_main ) : ?>
-          <span class="eco-hero-banner__title-main"><?php echo esc_html( $title_main ); ?></span>
-        <?php endif; ?>
-      </h1>
+      <?php if ( $title ) : ?>
+        <h1 class="eco-hero-banner__title">
+          <span class="eco-hero-banner__title-main"><?php echo esc_html( $title ); ?></span>
+        </h1>
+      <?php endif; ?>
 
       <?php if ( $description ) : ?>
         <p class="eco-hero-banner__desc"><?php echo esc_html( $description ); ?></p>
@@ -106,12 +101,28 @@ $logo2        = get_field('hero_logo2');
 
 <?php
 // ---------- SIX PILLARS (6 parts, flat fields, up to 4 bullet points each) ----------
+$pillars_heading    = get_field( 'section_heading' );
+$pillars_subtext    = get_field( 'section_subtext' );
+$center_badge_label = get_field( 'center_badge_label' );
+$center_badge_icon  = get_field( 'center_badge_icon' );
 ?>
 <section class="eco-pillars">
-	<h2><?php echo esc_html( get_field( 'pillars_heading' ) ); ?></h2>
-	<p><?php echo esc_html( get_field( 'pillars_subtext' ) ); ?></p>
+	<h2><?php echo esc_html( $pillars_heading ); ?></h2>
+	<p><?php echo esc_html( $pillars_subtext ); ?></p>
 
 	<div class="eco-pillars-timeline">
+
+		<?php if ( $center_badge_label || $center_badge_icon ) : ?>
+			<div class="eco-pillars-center-badge">
+				<?php if ( $center_badge_icon ) : ?>
+					<img src="<?php echo esc_url( $center_badge_icon ); ?>" alt="<?php echo esc_attr( $center_badge_label ); ?>">
+				<?php endif; ?>
+				<?php if ( $center_badge_label ) : ?>
+					<span><?php echo esc_html( $center_badge_label ); ?></span>
+				<?php endif; ?>
+			</div>
+		<?php endif; ?>
+
 		<?php for ( $i = 1; $i <= 6; $i++ ) :
 			$label = get_field( "part_{$i}_label" );
 			$title = get_field( "part_{$i}_title" );

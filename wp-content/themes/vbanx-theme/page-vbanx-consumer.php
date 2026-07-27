@@ -44,9 +44,9 @@ $theme_uri = get_template_directory_uri();
 					<?php the_field( 'heading_main_text' ); ?>
 				</h1>
 				<p><?php the_field( 'hero_paragraph' ); ?></p>
-				<a href="<?php the_field( 'hero_button_url' ); ?>" class="btn btn-primary">
-					<?php the_field( 'button_text' ); ?>
-				</a>
+				<div class="header-cta">
+           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener" class="btn btn-primary">Booking for Free Demo </a>
+        </div>
 			</div>
 		</div>
 
