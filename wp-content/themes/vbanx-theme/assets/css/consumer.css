@@ -478,8 +478,16 @@ button:focus-visible{
 		right: 24px;
 		border-radius: 16px;
 	}
-	.hero-copy{ padding: 48px 0; }
+
+	/* Hero: text only, no background image on phones */
+	.hero{
+		background: #fff !important; /* overrides the inline background url() */
+	}
+	.hero-copy{
+		padding: 48px 24px;
+	}
 	.hero-copy h1{ font-size: 32px; }
+
 	.features-grid{ grid-template-columns: 1fr; }
 	.footer-grid{ grid-template-columns: 1fr; }
 }
