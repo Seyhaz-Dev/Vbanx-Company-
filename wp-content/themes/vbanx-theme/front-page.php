@@ -503,4 +503,4 @@ for ( $i = 1; $i <= 12; $i++ ) {
 })();
 </script>
 <?php
-get_footer();
+get_template_part( 'template-parts/footer' );
