@@ -117,7 +117,7 @@
   }
   .btn-primary{
     background:var(--orange);
-    color:#241300;
+    color: var(--white);
     font-weight:600;
     font-size:14px;
     padding:13px 24px;
@@ -127,7 +127,7 @@
     justify-content:center;
     display: inline-flex ;
   }
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(242,147,46,0.30);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(253, 231, 208, 0.3); background-color: var(--blue-accent); color: var(--white);}
   .btn-outline{
     border:1px solid var(--dark-navy-border);
     color:var(--dark-navy-ink);
