@@ -193,6 +193,5 @@ get_header();
     <?php get_template_part('components/value'); ?>
 
 </main>
-
-
-<?php get_footer(); ?>
+<?php
+get_template_part( 'template-parts/footer' );

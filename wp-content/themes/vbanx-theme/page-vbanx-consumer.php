@@ -167,4 +167,5 @@ $theme_uri = get_template_directory_uri();
 <?php wp_footer(); ?>
 </body>
 </html>
-<?php get_footer();
+<?php
+get_template_part( 'template-parts/footer' );

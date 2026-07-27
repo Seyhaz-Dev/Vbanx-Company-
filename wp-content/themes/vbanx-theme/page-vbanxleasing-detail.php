@@ -84,5 +84,5 @@ $product = array(
 	</div>
 
 </main>
-
-<?php get_footer(); ?>
+<?php
+get_template_part( 'template-parts/footer' );

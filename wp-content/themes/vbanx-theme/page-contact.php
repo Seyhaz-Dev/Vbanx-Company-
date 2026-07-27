@@ -261,5 +261,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vbanx_contact_nonce']
 </main>
 
 <?php
-get_footer();
-?>
+get_template_part( 'template-parts/footer' );
