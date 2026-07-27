@@ -127,6 +127,27 @@ button:focus-visible{
 	width: 84px;
 }
 
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:16px;
+    margin-bottom:48px;
+  }
+  .btn-primary{
+    background:var(--orange);
+    color: var(--white);
+    font-weight:600;
+    font-size:14px;
+    padding:13px 24px;
+    border-radius:999px;
+    transition:transform .2s ease, box-shadow .2s ease;
+    white-space:nowrap;
+    justify-content:center;
+    display: inline-flex ;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(253, 231, 208, 0.3); background-color: var(--blue-accent); color: var(--white);}
+
 .section-heading p{
 	color: var(--text-dim);
 	font-size: 16px;
