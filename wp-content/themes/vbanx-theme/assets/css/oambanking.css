@@ -249,8 +249,9 @@ body {
 }
 
 .oam-hero__eyebrow {
-  color: var(--blue-accent);
-  font-size: var(--text-xs);
+  	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.14em;
   font-weight: var(--weight-bold);
   letter-spacing: 2px;
   text-transform: uppercase;
