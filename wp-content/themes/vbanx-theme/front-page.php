@@ -269,27 +269,44 @@ for ( $i = 1; $i <= 12; $i++ ) {
 </section>
 
 <script>
-/* ---------------- Modern network globe ---------------- */
+/* ---------------- Modern network globe (resize-aware) ---------------- */
 (function(){
   const canvas = document.getElementById('globeCanvas');
   const ctx = canvas.getContext('2d');
-  const DPR = Math.min(window.devicePixelRatio || 1, 2);
-  const SIZE = 480;
-  canvas.width = SIZE * DPR;
-  canvas.height = SIZE * DPR;
-  canvas.style.width = SIZE + 'px';
-  canvas.style.height = SIZE + 'px';
-  ctx.scale(DPR, DPR);
+  const wrap = canvas.parentElement; // .globe-wrap
+  let DPR = Math.min(window.devicePixelRatio || 1, 2);
+  let SIZE = 480;
+  let R = 190;
+  let cx = SIZE/2, cy = SIZE/2;
 
-  const R = 190;
-  const cx = SIZE/2, cy = SIZE/2;
+  function resizeCanvas(){
+    // Match the canvas to whatever size .globe-wrap actually is
+    // (fixes mobile where the wrap is 210-340px, not 480px)
+    const rect = wrap.getBoundingClientRect();
+    SIZE = Math.min(rect.width, rect.height) || 480;
+    R = SIZE * 0.4; // keep same proportion as desktop (190/480)
+    cx = SIZE/2; cy = SIZE/2;
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = SIZE * DPR;
+    canvas.height = SIZE * DPR;
+    canvas.style.width = SIZE + 'px';
+    canvas.style.height = SIZE + 'px';
+    ctx.setTransform(1,0,0,1,0,0);
+    ctx.scale(DPR, DPR);
+  }
+  resizeCanvas();
+
+  let resizeTimer;
+  window.addEventListener('resize', ()=>{
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resizeCanvas, 150);
+  });
 
   function landDensity(lat, lon){
     return Math.sin(lat*2.1 + lon*1.3) + Math.sin(lat*3.7 - lon*2.6) * 0.6
          + Math.sin(lat*1.2 + lon*4.1) * 0.5 + Math.sin(lon*0.7) * 0.4;
   }
 
-  // base dot field
   const points = [];
   const latSteps = 30;
   for(let i=0;i<=latSteps;i++){
@@ -302,7 +319,6 @@ for ( $i = 1; $i <= 12; $i++ ) {
     }
   }
 
-  // pick a handful of "hub" land points to connect with arcs, like flight routes
   const landPoints = points.filter(p => p.land);
   const hubs = [];
   for(let i=0;i<9;i++){
@@ -315,9 +331,7 @@ for ( $i = 1; $i <= 12; $i++ ) {
     routes.push({a, b, offset: Math.random(), speed: 0.0028 + Math.random()*0.002});
   }
 
-  // gentle mouse parallax
   let tiltX = 0, tiltY = 0, targetTiltX = 0, targetTiltY = 0;
-  const wrap = canvas.parentElement.parentElement;
   wrap.addEventListener('mousemove', (e)=>{
     const rect = wrap.getBoundingClientRect();
     targetTiltX = ((e.clientX - rect.left) / rect.width - 0.5) * 0.35;
@@ -344,7 +358,6 @@ for ( $i = 1; $i <= 12; $i++ ) {
     tiltY += (targetTiltY - tiltY) * 0.06;
     pulse += 0.02;
 
-    // outer breathing ring
     const ringPulse = 1 + Math.sin(pulse) * 0.01;
     ctx.beginPath();
     ctx.arc(cx,cy,(R+2)*ringPulse,0,Math.PI*2);
@@ -352,7 +365,6 @@ for ( $i = 1; $i <= 12; $i++ ) {
     ctx.lineWidth = 1;
     ctx.stroke();
 
-    // faint latitude rings for structure
     for(let k=-2;k<=2;k++){
       const lat = k * 0.5;
       ctx.beginPath();
@@ -368,7 +380,6 @@ for ( $i = 1; $i <= 12; $i++ ) {
       ctx.stroke();
     }
 
-    // route arcs (great-circle-ish curved connectors)
     for(const r of routes){
       const pa = project(r.a.lat, r.a.lon, angle);
       const pb = project(r.b.lat, r.b.lon, angle);
@@ -387,7 +398,6 @@ for ( $i = 1; $i <= 12; $i++ ) {
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      // traveling pulse dot along the curve
       r.offset += r.speed;
       if(r.offset > 1) r.offset -= 1;
       const t = r.offset;
@@ -402,7 +412,6 @@ for ( $i = 1; $i <= 12; $i++ ) {
       ctx.shadowBlur = 0;
     }
 
-    // dot field, back-to-front
     const sorted = points.map(p=>{
       const proj = project(p.lat, p.lon, angle);
       return {x:proj.x, y:proj.y, z:proj.z, land:p.land};
@@ -430,7 +439,6 @@ for ( $i = 1; $i <= 12; $i++ ) {
   }
   draw();
 })();
-
 /* ---------------- Auto-scrolling partner logos ---------------- */
 (function(){
   // Populated from the WordPress Media Library — see the
