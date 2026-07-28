@@ -12,7 +12,7 @@ get_header();
     <section class="profile-hero-section">
 
         <div class="profile-hero-overlay">
-            <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/hero-profile.png" alt="bg-hero">
+            <img src="http://localhost/wordpress/wp-content/uploads/2026/07/hero-profile-1.png" alt="bg-hero">
         </div>
 
         <div class="profile-hero-container">
@@ -30,15 +30,19 @@ get_header();
                     Institutions.
                 </p>
 
-                <div class="profile-hero-buttons">
-                    <a href="/contact" class="profile-btn-primary">Contact Us</a>
-                    <a href="/partnerships" class="profile-btn-secondary">Explore the Partners</a>
-                </div>
+                <div class="hero-actions">
+        			<a class="btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=seyhaogaa@gmail.com&su=Demo Request from Website&body=Hi, I'd like to request a demo of VBANX." target="_blank" rel="noopener">Booking for Free Demo </a>
+                    <a class="btn-secondary" href="<?php echo esc_url(get_permalink(get_page_by_path('partnerships'))); ?>" target="_blank" rel="noopener">
+                        Explore the Partners
+                    </a>
+       		 	</div>
+                    
+               
 
             </div>
 
             <div class="profile-hero-image">
-                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/meeting.png.png" alt="Meeting">
+                <img src="http://localhost/wordpress/wp-content/uploads/2026/07/meeting-1.png-1.png" alt="Meeting">
             </div>
 
         </div>
@@ -59,7 +63,7 @@ get_header();
             </div>
 
             <div class="profile-preview-image">
-                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/dashboard.png" alt="Dashboard Preview">
+                <img src="http://localhost/wordpress/wp-content/uploads/2026/07/dashboard-1.png" alt="Dashboard Preview">
             </div>
 
         </div>
@@ -97,7 +101,7 @@ get_header();
         <div class="ceo-container">
 
             <div class="ceo-image">
-                <img src="http://localhost/Vbanx-Company-/wp-content/uploads/2026/07/CEO-Mr.-KAO-Sereyrath.png" alt="CEO">
+                <img src="http://localhost/wordpress/wp-content/uploads/2026/07/CEO_-removebg-preview.png" alt="CEO">
             </div>
 
             <div class="ceo-content">
@@ -189,6 +193,5 @@ get_header();
     <?php get_template_part('components/value'); ?>
 
 </main>
-
-
-<?php get_footer(); ?>
+<?php
+get_template_part( 'template-parts/footer' );

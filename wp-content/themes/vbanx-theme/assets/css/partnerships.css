@@ -2,53 +2,55 @@
    Hero Section
 =========================== */
 
-.hero-section {
+.vb-hero-section {
     font-family: "Montserrat", sans-serif;
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: #1e1c1d; 
+    background-color: #1e1c1d;
 }
 
-.hero-overlay {
+.vb-hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; 
-    
-    
-    background: rgba(30, 28, 29, 0.85); 
+    z-index: 1;
+
+    /* Slight gradient instead of a flat tint — reads more like a bank
+       hero (depth, not just a dark filter) while staying subtle */
+    background: linear-gradient(
+        120deg,
+        rgba(15, 20, 40, 0.92) 0%,
+        rgba(30, 28, 29, 0.85) 55%,
+        rgba(30, 28, 29, 0.7) 100%
+    );
 }
 
-
-.hero-overlay img {
+.vb-hero-overlay img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     object-position: center;
-    
-    
-    position: relative;
-    z-index: -1; 
+    z-index: -1;
 }
 
-/* Container */
-.hero-container {
+/* Container — locked to 1200px, consistent with the rest of the page */
+.vb-hero-container {
     position: relative;
-    z-index: 2; 
+    z-index: 2;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,23 +58,48 @@
 }
 
 /* Content Column (Left Side) */
-.hero-content {
+.vb-hero-content {
     flex: 1;
     max-width: 650px;
 }
 
+/* Small institutional eyebrow label above the title.
+   Optional: add <span class="vb-hero-eyebrow">Licensed & Regulated</span>
+   above the <h1> in the template to use it. */
+.vb-hero-eyebrow {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #F5A623;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(245, 166, 35, 0.4);
+}
+
 /* Title */
-.hero-content h1 {
-    font-size: 56px;
+.vb-hero-content h1 {
+    font-size: clamp(34px, 4vw + 12px, 56px);
     line-height: 1.15;
     font-weight: 700;
+    letter-spacing: -0.5px;
     margin-bottom: 25px;
     color: #F5A623;
-    
+}
+
+/* Thin gold rule under the heading, bank-charter style */
+.vb-hero-content h1::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin-top: 22px;
+    background: #F5A623;
 }
 
 /* Description */
-.hero-content p {
+.vb-hero-content p {
     font-size: 18px;
     line-height: 1.7;
     color: #e5e5e5;
@@ -84,88 +111,156 @@
    Responsive Design
 =========================== */
 
-/* Desktop layout constraint */
-@media (max-width: 1200px) {
-    .hero-content h1 {
-        font-size: 52px;
+@media (max-width: 1400px) {
+    .vb-hero-container {
+        max-width: 1140px;
     }
 }
 
-/* Tablets and iPad screens */
 @media (max-width: 992px) {
-    .hero-container {
-        flex-direction: column; 
+    .vb-hero-container {
+        flex-direction: column;
         justify-content: center;
         text-align: center;
         gap: 50px;
-        padding-top: 100px;
-        padding-bottom: 60px;
+        padding-top: 120px;
+        padding-bottom: 70px;
     }
 
-    .hero-content {
+    .vb-hero-content {
         max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    .vb-hero-content h1::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-/* Mobile Screens */
 @media (max-width: 768px) {
-    .hero-container {
-        padding: 80px 20px 40px 20px;
+    .vb-hero-container {
+        padding: 90px 24px 50px 24px;
     }
 
-    .hero-content h1 {
-        font-size: 38px;
-        color: #F5A623;
-    }
-
-    .hero-content p {
+    .vb-hero-content p {
         font-size: 16px;
     }
+}
 
+@media (max-width: 480px) {
+    .vb-hero-eyebrow {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
 }
 
 /* ===========================
- 	Section Header
+   Section Header
+   — padding matches VBANX Ecosystem's 72px vertical rhythm.
+   Bottom padding is reduced to 24px because the cards section
+   directly below (.vb-strategic-partners) supplies its own
+   bottom spacing, avoiding double gaps between header + cards.
 =========================== */
 
-.main-section {
-    padding: 20px 0 40px 0;
+.vb-main-section {
+    padding: 72px 0 24px 0;
     width: 100%;
     font-family: "Montserrat", sans-serif;
     background: #F0F1FF;
 }
 
-/* Center Container */
-.container {
+/* Center Container (for heading-only sections — kept narrow at 800px
+   so paragraph text stays readable, same intent as before) */
+.vb-container {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     text-align: center;
 }
 
-/* 2. Main Title "Why VBANX?" */
-.section-title {
-    font-size: 56px;           
-    font-weight: 800;          
-    color: #0038a8;            
-    margin: 0 0 20px 0;       
-    letter-spacing: -0.5px;
+/* Small pill badge above the section title, formal/institutional feel.
+   Optional: add <span class="vb-badge-tag">Partnerships</span> above
+   the <h2> in the template to use it. */
+.vb-badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #0038a8;
+    background: #ffffff;
+    border: 1px solid rgba(0, 56, 168, 0.2);
+    border-radius: 50px;
+    padding: 8px 20px;
+    margin-bottom: 22px;
 }
 
-/* 3. Description Subtitle text */
-.section-subtitle {
-    font-size: 18px;
+/* Main Title "Why VBANX?" */
+.vb-section-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #0038a8;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+}
+
+/* Description Subtitle text */
+.vb-section-subtitle {
+    font-size: 15px;
     line-height: 1.6;
-    color: #333333;            
+    color: #333333;
     font-weight: 400;
-    max-width: 500px;         
+    max-width: 560px;
+}
+
+/* ===========================
+   Cards Sections (Strategic Partners / Membership / Solution)
+   — these were previously unstyled: the PHP referenced
+   .strategic-partners and .section-description with no matching
+   CSS at all. Spacing matches VBANX Ecosystem's card-grid rhythm:
+   72px vertical padding, 1200px container width aligned with the
+   header/logo, 20px side padding, and a white background so it
+   alternates cleanly against the light .vb-main-section above it.
+=========================== */
+.vb-strategic-partners {
+    width: 100%;
+    background: #ffffff;
+    padding: 0 0 72px 0;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+/* Wide container for the card grid itself — 1200px so its edges align
+   with the header container (logo / nav), same as .eco-cards-grid
+   does on the Ecosystem page */
+.vb-cards-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.vb-cards-container .vb-section-title {
+    margin-bottom: 12px;
+}
+
+.vb-section-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333333;
+    font-weight: 400;
+    max-width: 560px;
+    margin: 0 auto 48px;
 }
 
 /* ===========================
@@ -173,21 +268,25 @@
 =========================== */
 
 @media (max-width: 768px) {
-    .why-vbanx-section {
-        padding: 60px 0 30px 0;
+    .vb-main-section {
+        padding: 48px 0 16px 0;
     }
 
-    .section-title {
-        font-size: 40px;       
-    }
-
-    .section-subtitle {
-        font-size: 16px;      
+    .vb-section-subtitle {
         max-width: 90%;
     }
 
-    .badge-tag {
-        font-size: 12px;
-        padding: 8px 20px;     
+    .vb-badge-tag {
+        font-size: 11px;
+        padding: 7px 16px;
+    }
+
+    .vb-strategic-partners {
+        padding: 0 0 48px 0;
+    }
+
+    .vb-section-description {
+        max-width: 90%;
+        margin-bottom: 32px;
     }
 }

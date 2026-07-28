@@ -43,16 +43,16 @@ get_header();
 
         <div class="hero-buttons">
             <?php if (get_field('button_1_text')): ?>
-                <a href="<?php echo esc_url(get_field('button_1_url')); ?>">
-                    <?php echo esc_html(get_field('button_1_text')); ?>
-                </a>
-            <?php endif; ?>
+    <a href="<?php echo esc_url(home_url('/contact/')); ?>">
+        <?php echo esc_html(get_field('button_1_text')); ?>
+    </a>
+<?php endif; ?>
 
-            <?php if (get_field('button_2_text')): ?>
-                <a href="<?php echo esc_url(get_field('button_2_url')); ?>">
-                    <?php echo esc_html(get_field('button_2_text')); ?>
-                </a>
-            <?php endif; ?>
+<?php if (get_field('button_2_text')): ?>
+    <a href="<?php echo esc_url(home_url('/t24-solution/')); ?>">
+        <?php echo esc_html(get_field('button_2_text')); ?>
+    </a>
+<?php endif; ?>
         </div>
 
     </div>
@@ -237,6 +237,32 @@ get_header();
 
   </div>
 </section>
+<!-- ================= DIGITALHR FOR BANKING ================= -->
+<section class="data-block">
+  <div class="container data-block-grid">
+    <div class="data-block-text">
+      <span class="badge-text"><?php echo esc_html(get_field('dhr_eyebrow')); ?></span>
+      <h2><?php echo esc_html(get_field('dhr_title')); ?></h2>
+      <p><?php echo esc_html(get_field('dhr_description')); ?></p>
+      <ul class="check-list">
+        <?php
+        $items = array_filter(array_map('trim', explode("\n", get_field('dhr_checklist'))));
+        foreach ($items as $item): ?>
+          <li><span class="check-icon">✓</span><?php echo esc_html($item); ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+    <?php $img = get_field('dhr_diagram'); if ($img): ?>
+      <div class="data-block-image">
+        <?php if (is_array($img)): ?>
+          <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+        <?php else: ?>
+          <img src="<?php echo esc_url($img); ?>" alt="DigitalHR for Banking">
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
+  </div>
+</section>
 
 
 </main>
@@ -245,5 +271,4 @@ get_header();
 
 
 <?php
-get_footer();
-?>
+get_template_part( 'template-parts/footer' );
